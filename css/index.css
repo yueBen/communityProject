@@ -1,0 +1,266 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    /*overflow: hidden;*/
+    margin: 0;
+    padding: 0;
+}
+
+/*主页背景*/
+.home-page{
+    height: 100%;
+    background-image: url("../img/3.jpg");
+    background-size: 100% 100%;
+    padding: 0;
+}
+
+/*页面头部信息*/
+.home-page-head{
+    float: right;
+    width: 80%;
+    height: 5%;
+
+    margin: 1% 0 0 0;
+
+    color: #9F9F9F;
+    font-weight: bold;
+
+    background: rgba(12,12,80,0.4);
+
+    border-radius: 5px;
+}
+
+/*左侧导航栏*/
+.home-page-left{
+    width: 18%;
+    height: 97%;
+
+    margin: 1% 0 0 2%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+
+    background: rgba(12,12,12,0.6);
+
+    border-radius: 5px;
+}
+
+/*右侧导航栏*/
+.home-page-right{
+    width: 18%;
+    height: 65%;
+
+    margin: 1% 2% 0 0;
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+
+    background: rgba(12,12,12,0.6);
+
+    border-radius: 5px;
+}
+
+/*文本主体*/
+.home-page-body{
+    width: 56%;
+    height: 90%;
+
+    margin: 1% 2% 0 2%;
+    display: inline-block;
+    vertical-align: top;
+
+    background: rgba(248,248,255,0.4);
+
+    overflow-y: auto;
+
+    border-radius: 5px;
+
+}
+
+/*主体内容*/
+.body-content{
+    position: relative;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    width: 99%;
+}
+
+/*设置div背景阴影*/
+.div-bg-shadow{
+    box-shadow: 10px 10px 20px 1px #000;
+}
+
+/*设置滚动条样式*/
+#pagebody::-webkit-scrollbar{
+    /*滚动条整体部分，其中的属性有width,height,background,border等（就和一个块级元素一样）*/
+    width: 5%;
+    height: 100%;
+}
+
+/*------------------------------主页头部样式--------------------------------------*/
+
+/*文章标签区*/
+.head-title-type {
+    width: 48%;
+    height: 100%;
+    float: left;
+}
+/*顶部标签项*/
+.title-type-item {
+    float: left;
+    width: 20%;
+    height: 88%;
+    padding: 1% 0 0 0;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    font-size: 150%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/*顶部搜索区*/
+.head-retrieve {
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+
+/*页面顶部搜索项输入框*/
+.head-input {
+    float: left;
+    width: 110px;
+    height: 93%;
+    margin: 0 5px 0 0;
+    padding: 0.3% 0 0 1%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 150%;
+    font-weight: 100;
+    color: #FFFFFF;
+
+    border: none;
+    display: inline-block;
+
+    border-radius: 10px;
+}
+
+/*页面顶部input*/
+.head-input > input {
+    width: 90%;
+    height: 90%;
+    background-color: transparent;
+    border-color: #3F3F3F;
+    /*border-width: 1px;*/
+    border-radius: 10px;
+}
+
+/*页面顶部重置按钮*/
+.head-btn-reset {
+    float: right;
+    width: 12%;
+    height: 80%;
+    background-color: transparent;
+    margin: 0.7% 3% 0 0;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    border-width: 1px;
+}
+
+/*页面顶部搜索按钮*/
+.head-btn-search {
+    float: right;
+    width: 12%;
+    height: 80%;
+    margin: 0.7% 2% 0 0;
+    border-radius: 5px;
+    border: none;
+    background: rgba(255,255,255,0.5);
+    color: white;
+}
+
+/*点击按钮改变背景颜色*/
+.head-btn-search:active {
+    background-color: #4E5465;
+}
+
+/*------------------------------主页左侧样式--------------------------------------*/
+/*用户头像*/
+.user-photo{
+    width: 70%;
+    height: 18.3%;
+    margin: 10% 15% 0 15%;
+    border-radius: 35%;
+}
+
+/*用户姓名*/
+.user-name{
+    width: 100%;
+    height: 35px;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    margin: 25% 0 10px 0;
+
+}
+
+/*用户消息*/
+.user-message{
+    width: 100%;
+    height: 6%;
+}
+
+/*用户消息项*/
+.user-message-item{
+    float: left;
+    width: 23%;
+    height: 78%;
+    margin: 1% 1% 0 1%;
+    padding: 2% 0 0 0;
+    display: inline-block;
+    text-align: center;
+    font-size: 100%;
+    color: white;
+    border-radius: 10px;
+    /*双击不选中文本*/
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    background: rgba(105,105,105,0.6);
+
+}
+/*点击消息项*/
+.user-message-item:active{
+    background: rgba(45,105,105,0.6);
+}
+
+/*用户操作*/
+.user-to-pages{
+    width: 100%;
+    height: 55%;
+}
+
+.user-page-1{
+    text-align: center;
+    height: 10%;
+    margin: 2% 3% 0 3%;
+    padding: 4% 0 0 0;
+    font-size: 200%;
+    font-weight: lighter;
+    border-radius: 15px;
+    color: #FFFFFF;
+    background: rgba(12,12,12,0.6);
+    /*双击不选中文本*/
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+
+}
+
+.user-page-1:active{
+    background: rgba(112,112,112,0.6);
+}
