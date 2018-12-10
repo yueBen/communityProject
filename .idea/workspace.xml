@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4b71312-fa24-4b53-b67e-379f317a66ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/postlist.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/A_Simulated_json/postlist.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/postlist.html" afterPath="$PROJECT_DIR$/page/postlist.html" />
     </list>
@@ -21,7 +21,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
+            <state relative-caret-position="504">
               <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="47" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -39,7 +39,7 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="576">
               <caret line="68" column="15" lean-forward="false" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="15" />
               <folding>
                 <element signature="e#9#100#0" expanded="false" />
@@ -71,8 +71,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="242" column="29" lean-forward="true" selection-start-line="242" selection-start-column="29" selection-end-line="242" selection-end-column="29" />
+            <state relative-caret-position="1944">
+              <caret line="242" column="29" lean-forward="false" selection-start-line="242" selection-start-column="29" selection-end-line="242" selection-end-column="29" />
               <folding>
                 <element signature="e#149#311#0" expanded="false" />
                 <element signature="e#378#639#0" expanded="false" />
@@ -90,17 +90,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="postlist.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="postlist.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/postlist.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+            <state relative-caret-position="288">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="postlist.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="postlist.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/A_Simulated_json/postlist.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="postlist.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/postlist.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -118,6 +128,7 @@
         <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="tsconfig.json" />
       </list>
     </option>
   </component>
@@ -168,11 +179,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/page/postlist.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/js/postlist.js" />
+        <option value="$PROJECT_DIR$/A_Simulated_json/postlist.json" />
+        <option value="$PROJECT_DIR$/page/postlist.html" />
       </list>
     </option>
   </component>
@@ -183,9 +195,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-35" />
-    <option name="y" value="26" />
-    <option name="width" value="1370" />
+    <option name="x" value="-95" />
+    <option name="y" value="72" />
+    <option name="width" value="1934" />
     <option name="height" value="1010" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -204,7 +216,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,12 +226,7 @@
             <path>
               <item name="communityProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="communityProject" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="communityProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="communityProject" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="A_Simulated_json" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="communityProject" type="b2602c69:ProjectViewProjectNode" />
@@ -232,6 +238,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,7 +291,8 @@
       <workItem from="1544143774179" duration="9998000" />
       <workItem from="1544173329539" duration="2725000" />
       <workItem from="1544247498940" duration="8789000" />
-      <workItem from="1544325059723" duration="20751000" />
+      <workItem from="1544325059723" duration="21844000" />
+      <workItem from="1544438524381" duration="1311000" />
     </task>
     <task id="LOCAL-00001" summary="网站主页面">
       <created>1544348144072</created>
@@ -293,16 +301,23 @@
       <option name="project" value="LOCAL" />
       <updated>1544348144072</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="文章列表">
+      <created>1544348171725</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1544348171725</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104439000" />
+    <option name="totallyTimeSpent" value="106843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -346,33 +361,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="网站主页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="网站主页面" />
+    <MESSAGE value="文章列表" />
+    <option name="LAST_COMMIT_MESSAGE" value="文章列表" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1404">
-          <caret line="39" column="70" lean-forward="false" selection-start-line="39" selection-start-column="70" selection-end-line="39" selection-end-column="70" />
-          <folding>
-            <element signature="e#149#311#0" expanded="false" />
-            <element signature="e#378#639#0" expanded="false" />
-            <element signature="e#848#5225#0" expanded="false" />
-            <element signature="e#5320#6054#0" expanded="false" />
-            <element signature="e#6148#6871#0" expanded="false" />
-            <element signature="e#6965#7688#0" expanded="false" />
-            <element signature="e#7790#8513#0" expanded="false" />
-            <element signature="e#8608#9331#0" expanded="false" />
-            <element signature="e#9425#10148#0" expanded="false" />
-            <element signature="e#10240#10963#0" expanded="false" />
-            <element signature="e#11025#11192#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/postlist.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1079,7 +1075,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
+        <state relative-caret-position="504">
           <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="47" />
           <folding>
             <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1095,7 +1091,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="576">
           <caret line="68" column="15" lean-forward="false" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="15" />
           <folding>
             <element signature="e#9#100#0" expanded="false" />
@@ -1125,8 +1121,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="242" column="29" lean-forward="true" selection-start-line="242" selection-start-column="29" selection-end-line="242" selection-end-column="29" />
+        <state relative-caret-position="1944">
+          <caret line="242" column="29" lean-forward="false" selection-start-line="242" selection-start-column="29" selection-end-line="242" selection-end-column="29" />
           <folding>
             <element signature="e#149#311#0" expanded="false" />
             <element signature="e#378#639#0" expanded="false" />
@@ -1143,18 +1139,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/postlist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/postlist.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A_Simulated_json/postlist.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/postlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
