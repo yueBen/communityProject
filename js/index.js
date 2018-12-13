@@ -30,70 +30,41 @@ layui.use('layer',function () {
         function openlastpage(pageNum) {
             switch(pageNum){
                 case 1:
-                    $('.home-page-body-1').removeClass('page-body');
-                    $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                    $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                    closepage();
                     $('.home-page-body-1').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                     closeotherpage(1);
-                    isPage[1] = true;
-                    $('.home-page-body-1').addClass('page-body');
                     break;
                 case 2:
-                    $('.home-page-body-2').removeClass('page-body');
-                    $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                    $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                    closepage();
                     $('.home-page-body-2').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                     closeotherpage(2);
-                    isPage[2] = true;
-                    $('.home-page-body-2').addClass('page-body');
                     break;
                 case 3:
-                    $('.home-page-body-3').removeClass('page-body');
-                    $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                    $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                    closepage();
                     $('.home-page-body-3').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                     closeotherpage(3);
-                    isPage[3] = true;
-                    $('.home-page-body-3').addClass('page-body');
                     break;
                 case 4:
-                    $('.home-page-body-4').removeClass('page-body');
-                    $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                    $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
                     $('.home-page-body-4').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                     closeotherpage(4);
-                    isPage[4] = true;
-                    $('.home-page-body-4').addClass('page-body');
                     break;
                 case 5:
-                    $('.home-page-body-5').removeClass('page-body');
-                    $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                    $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                    closepage();
                     $('.home-page-body-5').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                     closeotherpage(5);
-                    isPage[5] = true;
-                    $('.home-page-body-5').addClass('page-body');
                     break;
                 case 6:
-                    $('.home-page-body-6').removeClass('page-body');
-                    $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                    $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                    closepage();
                     $('.home-page-body-6').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                     closeotherpage(6);
-                    isPage[6] = true;
-                    $('.home-page-body-6').addClass('page-body');
                     break;
                 case 7:
-                    $('.home-page-body-7').removeClass('page-body');
-                    $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                    $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                    closepage();
                     $('.home-page-body-7').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                     closeotherpage(7);
-                    isPage[7] = true;
-                    $('.home-page-body-7').addClass('page-body');
                     break;
                 default:
-                    $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
+                    closepage();
                     $('.home-page-body').animate({width: '56%',height: '90%',margin: '1% 2% 0 2%',opacity: 1},200);
                     $('.home-page-right').animate({width: '18%',height: '65%',margin: '1% 2% 0 0'},400);
                     closeotherpage();
@@ -105,16 +76,13 @@ layui.use('layer',function () {
         isPage[1] = false;
         $('#pers-center').click(function () {
             if(isPage[1]){
-                $('.home-page-body-1').animate({width: 0,height: 0,margin: 0,opacity: 0},500);
+                closepage();
                 openlastpage(openPage[1]);
             }else{
                 openPage.unshift(1);
-                $('.home-page-body-1').removeClass('page-body');
-                $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0,opacity: 0},400);
-                $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                closepage();
                 $('.home-page-body-1').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                 closeotherpage(1);
-                isPage[1] = true;
             }
             $('.home-page-body-1').addClass('page-body');
         });
@@ -123,16 +91,13 @@ layui.use('layer',function () {
         isPage[2] = false;
         $('#my-focus').click(function () {
             if(isPage[2]){
-                $('.home-page-body-2').animate({width: 0,height: 0,margin: 0,opacity: 0},500);
+                closepage();
                 openlastpage(openPage[1]);
             }else{
                 openPage.unshift(2);
-                $('.home-page-body-2').removeClass('page-body');
-                $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                closepage();
                 $('.home-page-body-2').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                 closeotherpage(2);
-                isPage[2] = true;
             }
             $('.home-page-body-2').addClass('page-body');
         });
@@ -141,16 +106,13 @@ layui.use('layer',function () {
         isPage[3] = false;
         $('#iRelated').click(function () {
             if(isPage[3]){
-                $('.home-page-body-3').animate({width: 0,height: 0,margin: 0,opacity: 0},500);
+                closepage();
                 openlastpage(openPage[1]);
             }else{
                 openPage.unshift(3);
-                $('.home-page-body-3').removeClass('page-body');
-                $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                closepage();
                 $('.home-page-body-3').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                 closeotherpage(3);
-                isPage[3] = true;
             }
             $('.home-page-body-3').addClass('page-body');
         });
@@ -159,16 +121,13 @@ layui.use('layer',function () {
         isPage[4] = false;
         $('#historicalRecord').click(function () {
             if(isPage[4]){
-                $('.home-page-body-4').animate({width: 0,height: 0,margin: 0,opacity: 0},500);
+                closepage();
                 openlastpage(openPage[1]);
             }else{
                 openPage.unshift(4);
-                $('.home-page-body-4').removeClass('page-body');
-                $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                closepage();
                 $('.home-page-body-4').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                 closeotherpage(4);
-                isPage[4] = true;
             }
             $('.home-page-body-4').addClass('page-body');
         });
@@ -177,16 +136,13 @@ layui.use('layer',function () {
         isPage[5] = false;
         $('#myArticle').click(function () {
             if(isPage[5]){
-                $('.home-page-body-5').animate({width: 0,height: 0,margin: 0,opacity: 0},500);
+                closepage();
                 openlastpage(openPage[1]);
             }else{
                 openPage.unshift(5);
-                $('.home-page-body-5').removeClass('page-body');
-                $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                closepage();
                 $('.home-page-body-5').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                 closeotherpage(5);
-                isPage[5] = true;
             }
             $('.home-page-body-5').addClass('page-body');
         });
@@ -195,16 +151,13 @@ layui.use('layer',function () {
         isPage[6] = false;
         $('#draftBox').click(function () {
             if(isPage[6]){
-                $('.home-page-body-6').animate({width: 0,height: 0,margin: 0,opacity: 0},500);
+                closepage();
                 openlastpage(openPage[1]);
             }else{
                 openPage.unshift(6);
-                $('.home-page-body-6').removeClass('page-body');
-                $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                closepage();
                 $('.home-page-body-6').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                 closeotherpage(6);
-                isPage[6] = true;
             }
             $('.home-page-body-6').addClass('page-body');
         });
@@ -213,16 +166,13 @@ layui.use('layer',function () {
         isPage[7] = false;
         $('#notice').click(function () {
             if(isPage[7]){
-                $('.home-page-body-7').animate({width: 0,height: 0,margin: 0,opacity: 0},500);
+                closepage();
                 openlastpage(openPage[1]);
             }else{
                 openPage.unshift(7);
-                $('.home-page-body-7').removeClass('page-body');
-                $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-                $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+                closepage();
                 $('.home-page-body-7').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
                 closeotherpage(7);
-                isPage[7] = true;
             }
             $('.home-page-body-7').addClass('page-body');
         });
@@ -230,10 +180,52 @@ layui.use('layer',function () {
         //修改其他页面开关标识
         function closeotherpage(num) {
             $.each(isPage,function (i,v) {
-                if(v != num && i != 0 ){
+                if(i === num){
+                    isPage[i] = true;
+                }else if(i === 0){
                     isPage[i] = false;
                 }
             })
+        }
+
+        //关闭打开的页面
+        function closepage(){
+            $.each(isPage,function(i,v){
+                if(isPage[i]){
+                    switch(i){
+                        case 1:
+                            $('.home-page-body-1').animate({margin: '20% 0 0 0',width: 0,height: 0,opacity: 0},400);
+                            isPage[1] = false;
+                            break;
+                        case 2:
+                            $('.home-page-body-2').animate({width: 0,height: 0,margin: '24% 0 0 0',opacity: 0},400);
+                            isPage[2] = false;
+                            break;
+                        case 3:
+                            $('.home-page-body-3').animate({width: 0,height: 0,margin: '27.5% 0 0 0',opacity: 0},400);
+                            isPage[3] = false;
+                            break;
+                        case 4:
+                            $('.home-page-body-4').animate({width: 0,height: 0,margin: '31% 0 0 0',opacity: 0},400);
+                            isPage[4] = false;
+                            break;
+                        case 5:
+                            $('.home-page-body-5').animate({width: 0,height: 0,margin: '34.5% 0 0 0',opacity: 0},400);
+                            isPage[5] = false;
+                            break;
+                        case 6:
+                            $('.home-page-body-6').animate({width: 0,height: 0,margin: '38% 0 0 0',opacity: 0},400);
+                            isPage[6] = false;
+                            break;
+                        case 7:
+                            $('.home-page-body-7').animate({width: 0,height: 0,margin: '42% 0 0 0',opacity: 0},400);
+                            isPage[7] = false;
+                            break;
+                    }
+                }
+            });
+            $('.home-page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
+            $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
         }
 
         $('.title-type-item').click(function () {

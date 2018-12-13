@@ -1,13 +1,26 @@
-<style>
-    .test-yangshi{
-    }
-</style>
+<link rel="stylesheet" href="../css/postlist.css"/>
 <div class="postlist">
-    <div class="postlist-search">
-    </div>
+    <div class="postlist-search"></div>
     <div class="postlist-content">
-
+        <script type="text/html" id="postlistContentScr">
+            {{# var articles = d.data.list; }}
+            {{# $.each(articles,function(i,v){ }}
+                <div class="article-item">
+                    <div class="article-item-title">
+                        <a href="articlePage.html?id={{ v.id }}" target="_blank">{{ v.a }}</a>
+                    </div>
+                    <div class="article-item-content">{{ v.b }}</div>
+                    <div class="article-item-author">{{ v.c }}</div>
+                    <div class="article-item-time">{{ v.d }}</div>
+                    <div class="article-item-browse">{{ v.e }}</div>
+                    <div class="article-item-comment">{{ v.f }}</div>
+                </div>
+            {{# }); }}
+        </script>
     </div>
     <div class="postlist-topage">
     </div>
 </div>
+<script src="../layui/layui.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/postlist.js"></script>

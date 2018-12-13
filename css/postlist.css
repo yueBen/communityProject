@@ -1,0 +1,66 @@
+html{
+    overflow-y: scroll;
+}
+.postlist-search{
+    width: 100%;
+    height: 50px;
+    background-color: #00FF00;
+}
+.postlist-content{
+    width: 100%;
+}
+.article-item{
+    width: 98%;
+    height: auto;
+    margin: 10px 0 0 0;
+    padding: 2px 1% 0.2% 1%;
+    background: rgba(192,192,192,0.4);
+}
+.article-item:hover{
+    background: rgba(0,50,0,0.4);
+}
+.article-item:active{
+    background: rgba(220,220,220,0.4);
+}
+.article-item-title{
+    font-weight: bold;
+    font-size: 26px;
+    /*双击不选中文本*/
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.article-item-title>a{
+    display: block;
+    color: #000000;
+    text-decoration: none;
+}
+.article-item-title>a:visited{
+    color: 	#C0C0C0;
+}
+.article-item-title>a:hover{
+    color: #FF0000;
+}
+.article-item-content{
+    text-align: center;
+}
+.article-item-author{
+    margin: 0 0 0 5px;
+    display: inline-block;
+}
+.article-item-time{
+    margin: 0 0 0 5px;
+    display: inline-block;
+}
+.article-item-browse{
+    margin: 0 5px 0 0;
+    float: right;
+    display: inline-block;
+}
+.article-item-comment{
+    margin: 0 5px 0 0;
+    float: right;
+    display: inline-block;
+}
+
+
