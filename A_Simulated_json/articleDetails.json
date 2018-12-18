@@ -1,0 +1,25 @@
+{
+  "respCode": "0",
+  "data": {
+    "pageNo": 1,
+    "pageSize": 10000,
+    "count": 1,
+    "pageCount": 1,
+    "list": [
+      {
+        "id": "1",
+        "title": "title",
+        "collectionNum": "content",
+        "views": "author",
+        "heat": "time",
+        "like": "55",
+        "dislike": "2",
+        "commentsNum": "12"
+      }
+    ],
+    "ext": {},
+    "orderBy": ""
+  },
+  "ok": true,
+  "message": ""
+}

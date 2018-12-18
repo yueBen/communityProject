@@ -12,11 +12,11 @@ layui.use('laytpl',function () {
         }
     });
 
-    $(document).on()
-
     $('.article-item-title').click(function () {
         var val = $(this).children('input').val();
         console.log(1);
     });
+
+    $('.postlist-search').text(sessionStorage.getItem("type"));
     
 });

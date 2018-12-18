@@ -1,16 +1,9 @@
-html,body{
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-}
 
 /*主页背景*/
 .home-page{
     height: 100%;
-    background-image: url("../img/1.jpg");
-    background-size: 100% 100%;
+    /*background-image: url("../img/1.jpg");*/
+    /*background-size: 100% 100%;*/
     padding: 0;
 }
 
@@ -80,11 +73,6 @@ html,body{
 
     border-radius: 5px;
 
-}
-
-/*设置div背景阴影*/
-.div-bg-shadow{
-    box-shadow: 10px 10px 20px 1px #000;
 }
 
 /*!*设置滚动条样式*!*/
@@ -193,10 +181,10 @@ html,body{
 /*------------------------------主页左侧样式--------------------------------------*/
 /*用户头像*/
 .user-photo{
-    width: 70%;
-    height: 18.3%;
-    margin: 10% 15% 0 15%;
-    border-radius: 35%;
+    width: 80%;
+    height: 25.79%;
+    margin: 10% 10% 0 10%;
+    border-radius: 50%;
 }
 
 /*用户姓名*/
@@ -206,7 +194,7 @@ html,body{
     font-size: 24px;
     text-align: center;
     color: white;
-    margin: 25% 0 10px 0;
+    margin: 5% 0 10px 0;
 
 }
 
@@ -251,7 +239,7 @@ html,body{
     text-align: center;
     height: 12%;
     margin: 2% 3% 0 3%;
-    font-size: 180%;
+    font-size: 150%;
     font-weight: lighter;
     border-radius: 15px;
     color: #FFFFFF;

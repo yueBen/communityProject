@@ -2,24 +2,6 @@ layui.use('layer',function () {
     var layer = layui.layer,
         $ = layui.$;
 
-
-    //顶部输入框获焦，输入框边长
-    $('.head-input>input').focus(function () {
-        var index = this.id.charAt(this.id.length-1);
-        $('#head-input-'+index).animate({width:150},300);
-        console.log('.head-input-'+index);
-    });
-    //顶部输入框失焦，输入框还原
-    $('.head-input>input').blur(function () {
-        var index = this.id.charAt(this.id.length-1);
-        var wid = 60;
-        if(index === '2' || index === '3'){
-            wid = 110;
-        }
-        $('#head-input-'+index).animate({width:wid},300);
-        console.log('.head-input-'+index);
-    });
-
     //页面跳转动画和跳转控制
     {
         //记录最近打开的页面
@@ -228,6 +210,7 @@ layui.use('layer',function () {
             $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
         }
 
+        sessionStorage.setItem("type",1);
         $('.title-type-item').click(function () {
             $('.title-type-item').removeClass('title-type-item-check');
             $(this).addClass('title-type-item-check');
@@ -235,7 +218,30 @@ layui.use('layer',function () {
             closeotherpage();
             $('.home-page-right').animate({width: '18%',height: '65%',margin: '1% 2% 0 0'},400);
             $('.home-page-body').animate({width: '56%',height: '90%',margin: '1% 2% 0 2%',opacity: 1},300);
-        })
+            var title = $(this).text();
+            if(title === '推荐'){
+                $('.body-content').empty();
+                $('.body-content').append('<iframe src="page/postlist.html" class="page-body-iframe1"></iframe>');
+                sessionStorage.setItem("type",1);
+            }else if(title === '学习'){
+                $('.body-content').empty();
+                $('.body-content').append('<iframe src="page/postlist.html" class="page-body-iframe1"></iframe>');
+                sessionStorage.setItem("type",2);
+            }else if(title === '生活'){
+                $('.body-content').empty();
+                $('.body-content').append('<iframe src="page/postlist.html" class="page-body-iframe1"></iframe>');
+                sessionStorage.setItem("type",3);
+            }else if(title === '兴趣'){
+                $('.body-content').empty();
+                $('.body-content').append('<iframe src="page/postlist.html" class="page-body-iframe1"></iframe>');
+                sessionStorage.setItem("type",4);
+            }else if(title === '提问'){
+                $('.body-content').empty();
+                $('.body-content').append('<iframe src="page/postlist.html" class="page-body-iframe1"></iframe>');
+                sessionStorage.setItem("type",5);
+            }
+
+        });
 
     }
 
