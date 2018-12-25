@@ -5,7 +5,8 @@ layui.use('laytpl',function () {
    //加载作者头像
    $('.article-author-photo').append('<img src="../img/1.jpg" style="width: 100%;height: 100%;border-radius: 50%;">');
 
-   //评论部分
+    //评论部分
+
     {
         //评论输入框折叠
         $('#article-comments-text').focus(function () {
@@ -22,11 +23,13 @@ layui.use('laytpl',function () {
         });
 
         //加载评论
+        var dataBuffer;
         $.ajax({
             type: 'post',
             url: '../A_Simulated_json/articlecomments.json',
             dataType: 'json',
             success: function (data) {
+                dataBuffer = data.data.list;
                 commentLevel1(data.data.list);
             }
         });
@@ -38,7 +41,7 @@ layui.use('laytpl',function () {
                 if(v.pid === '-'){
                     h +='<div class="article-comment-content-item" id="article-comment_' + v.id + '">'+
                         '<div class="article-comment-content-item-body">'+
-                        '<div class="article-comment-content-item-body-user">' + v.user + '</div>'+
+                        '<div class="article-comment-content-item-body-user">' + v.user + '：</div>'+
                         '<div class="article-comment-content-item-body-content">' + v.content + '</div>'+
                         '<div class="article-comment-content-item-body-operation">'+
                         '<div class="commentTime">' + v.time + '</div>'+
@@ -54,7 +57,8 @@ layui.use('laytpl',function () {
                         '<hr style="width: 100%;border: 0.5px solid #5e5e5e">'+
                         '<textarea placeholder="说点什么吧。。。"></textarea>'+
                         '<span>还可以输入<span id="commentNum_'+ v.id +'" style="font-size: 14px;">X</span>个字符</span><div>发表</div>'+
-                        '</div></div></div>';
+                        '</div></div>'+'<div id="childComment_' + v.id + '"></div>'+
+                        '</div>';
                     $('.article-comment-content').append(h);
                 }
             });
@@ -95,10 +99,77 @@ layui.use('laytpl',function () {
         //展开评论
         $(document).on('click','.commentCom',function () {
             var id = $(this).attr('id').split('_')[1];
-            $('#commentText_'+id).css('display','inherit')
+            if($('#commentText_'+id).attr('style') != 'display: inherit;'){
+                $('#commentText_'+id).css('display','inherit');
+                initComment(getCommentData1(id),id);
+            }else{
+                $('#commentText_'+id).css('display','none');
+                $('#childComment_'+id).empty();
+            }
 
         });
 
+        //模拟请求数据(加载子评论)
+        function getCommentData1(id){
+            var getList = new Array();
+            $.each(dataBuffer,function(i,v){
+               if(v.pid === id){
+                   getList.push(v);
+               }
+            });
+            return getList;
+        }
+        //模拟查询（输入id查找父id的姓名）
+        function getCommentData2(id){
+            var pid = '';
+            var pName = '';
+            $.each(dataBuffer,function(i,v){
+               if(v.pid != '_'){
+                   if(v.id === id){
+                       pid = v.pid;
+                       return;
+                   }
+               }
+            });
+            $.each(dataBuffer,function(i,v){
+                if(v.id === pid){
+                    pName = v.user;
+                    return;
+                }
+            });
+
+            return pName;
+        }
+        //加载评论
+        function initComment(arr,id) {
+            $.each(arr,function(i,v){
+                var h = '';
+                h +='<div class="article-comment-content-item-body">'+
+                    '<div class="article-comment-content-item-body-user">' + v.user + '    回复了__' + getCommentData2(v.id) + '：</div>'+
+                    '<div class="article-comment-content-item-body-content">' + v.content + '</div>'+
+                    '<div class="article-comment-content-item-body-operation">'+
+                    '<div class="commentTime">' + v.time + '</div>'+
+                    '<div class="commentLike" id="commentLike_' + v.id + '">'+
+                    '<img src="../img/icon/like_1.png" style="display: inline-block;">'+
+                    '<img src="../img/icon/like_2.png" style="display: none;">'+'<div>'+ v.like + '</div>'+'</div>'+
+                    '<div class="commentDisLike" id="commentDisLike_' + v.id + '">'+
+                    '<img src="../img/icon/disLike_1.png" style="display: inline-block;">'+
+                    '<img src="../img/icon/disLike_2.png" style="display: none;">'+'<div>'+ v.dislike + '</div>'+'</div>'+
+                    '<div class="commentCom" id="commentCom_' + v.id + '">'+
+                    '<img src="../img/icon/comment.png">' + '<div>' + v.commentNum + '</div>' + '</div>' + '</div>'+
+                    '<div class="article-comment-content-item-body-textarea" id="commentText_' + v.id + '">'+
+                    '<hr style="width: 100%;border: 0.5px solid #5e5e5e">'+
+                    '<textarea placeholder="说点什么吧。。。"></textarea>'+
+                    '<span>还可以输入<span id="commentNum_'+ v.id +'" style="font-size: 14px;">X</span>个字符</span><div>发表</div>'+
+                    '</div></div>'+'<div id="childComment_' + v.id + '"></div>';
+                $('#childComment_'+id).append(h);
+            });
+        }
+
     }
 
+    //标题头部操作
+    {
+
+    }
 });

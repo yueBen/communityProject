@@ -365,6 +365,14 @@
     border-radius: 10px;
 }
 
+.jump-body-content{
+    height: 97%;
+    width: auto;
+    margin: 10px 1% 0 1%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
 .page-body-iframe1{
     width: 102.1%;
     /*width: 100%;*/

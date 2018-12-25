@@ -6,11 +6,64 @@
         <!--
             1、文章标题居中
             2、当前文章的浏览量、收藏的人数、热度（最近两天的浏览量）、评论量，居左
-            3、文章操作点赞、踩、收藏、我的头像
+            3、文章操作点赞、踩、收藏、我的头像，居右
         -->
-        <div class="article-title-left"></div>
+        <div class="article-title-left">
+            <!--文章浏览量-->
+            <div class="article-title-left-item" id="articleBrwose">
+                <div class="article-title-left-item-img">
+                    <img src="../img/icon/browse.png">
+                </div>
+                <div class="article-title-left-item-num">
+                    <p>23</p>
+                </div>
+            </div>
+            <div class="article-title-left-item" id="articleHot">
+                <div class="article-title-left-item-img">
+                    <img src="../img/icon/hot_1.png">
+                </div>
+                <div class="article-title-left-item-num">
+                    <p>1</p>
+                </div>
+            </div>
+            <!--评论量-->
+            <div class="article-title-left-item" id="articleComment">
+                <div class="article-title-left-item-img">
+                    <img src="../img/icon/white/5.png">
+                </div>
+                <div class="article-title-left-item-num">
+                    <p>1233</p>
+                </div>
+            </div>
+        </div>
         <div class="article-title-center"></div>
-        <div class="article-title-right"></div>
+        <div class="article-title-right">
+            <div class="article-title-right-item">
+                <div class="article-title-right-item-img">
+                    <img src="../img/icon/like_1.png">
+                </div>
+                <div class="article-title-right-item-num">
+                    <p>24</p>
+                </div>
+            </div>
+            <div class="article-title-right-item">
+                <div class="article-title-right-item-img">
+                    <img src="../img/icon/disLike_1.png">
+                </div>
+                <div class="article-title-right-item-num">
+                    <p>24</p>
+                </div>
+            </div>
+            <div class="article-title-right-item">
+                <div class="article-title-right-item-img">
+                    <img src="../img/icon/white/14.png">
+                </div>
+                <div class="article-title-right-item-num">
+                    <p>24</p>
+                </div>
+            </div>
+            <div class="article-title-right-photo"></div>
+        </div>
     </div>
     <!--作者信息-->
     <div class="article-author div-bg-shadow">
@@ -28,12 +81,48 @@
         </div>
         <!--作者信息-->
         <div class="article-author-message">
-            <div class="article-author-message-item" style="background-color: #F00000;"></div>
-            <div class="article-author-message-item" style="background-color: #0F0000;"></div>
-            <div class="article-author-message-item" style="background-color: #00F000;"></div>
-            <div class="article-author-message-item" style="background-color: #000F00;"></div>
-            <div class="article-author-message-item" style="background-color: #0000F0;"></div>
-            <div class="article-author-message-item" style="background-color: #00000F;"></div>
+            <!--总文章数-->
+            <div class="article-author-message-item">
+                <div name="img">
+                    <img src="../img/icon/black/1.png" style="width: 50%;height: 100%;">
+                </div>
+                <div name="num">512</div>
+            </div>
+            <!--粉丝数（关注的人数）-->
+            <div class="article-author-message-item">
+                <div name="img">
+                    <img src="../img/icon/black/7.png" style="width: 50%;height: 100%;">
+                </div>
+                <div name="num">789</div>
+            </div>
+            <!--总评论数-->
+            <div class="article-author-message-item">
+                <div name="img">
+                    <img src="../img/icon/black/5.png" style="width: 50%;height: 100%;">
+                </div>
+                <div name="num">1356</div>
+            </div>
+            <!--建号时间-->
+            <div class="article-author-message-item">
+                <div name="img">
+                    <img src="../img/icon/black/8.png" style="width: 50%;height: 100%;">
+                </div>
+                <div name="num">2.3年</div>
+            </div>
+            <!--被访问数-->
+            <div class="article-author-message-item">
+                <div name="img">
+                    <img src="../img/icon/black/13.png" style="width: 50%;height: 100%;">
+                </div>
+                <div name="num">1502</div>
+            </div>
+            <!--排名-->
+            <div class="article-author-message-item">
+                <div name="img">
+                    <img src="../img/icon/black/9.png" style="width: 50%;height: 100%;">
+                </div>
+                <div name="num">3</div>
+            </div>
         </div>
         <hr style="border-color: #D8BFD8;margin: 2%;">
         <!--文章推荐-->

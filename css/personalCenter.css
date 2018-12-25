@@ -1,0 +1,147 @@
+html{
+    /*background: rgba(5,5,5,0.7);*/
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.personalCenter{
+    width: 100%;
+}
+.personalCenter-top{
+    width: 100%;
+    height: 25%;
+    vertical-align: top;
+    float: left;
+    /*background-color: #FFB800;*/
+}
+.personalCenter-top-left{
+    width: 22.5%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    background: rgba(5,5,5,0.6);
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 2% 0 0;
+    /*background-color: #FF5722;*/
+}
+.personalCenter-top-left-item{
+    width: 45%;
+    height: 27%;
+    margin: 1.7% 2% 1.7% 2%;
+    display: inline-block;
+    float: left;
+    border-radius: 12px;
+    border: 1px solid #ADADAD;
+}
+.personalCenter-top-left-item>div[name='img']{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+.personalCenter-top-left-item>div[name='num']{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    background: rgba(255,255,255,0.6);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.personalCenter-top-center{
+    width: 57.5%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    border-radius: 10px;
+    color: white;
+    background: rgba(5,5,5,0.6);
+    /*background-color: #FFB800;*/
+}
+.personalCenter-top-right{
+    width: 16%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    background: rgba(5,5,5,0.6);
+    margin: 0 0 0 2%;
+    border-radius: 10px;
+    /*background-color: #FF5722;*/
+}
+#myPhoto{
+    width: 75%;
+    height: 72%;
+    margin: 5% 12.5% 0 12.5%;
+    /*background-color: #eb7350;*/
+    border-radius: 50%;
+    background-image: url("../img/1.jpg");
+    background-size: 100% 100%;
+}
+#updateMyPhoto{
+    height: 13%;
+    width: 46%;
+    margin: 5% 27% 0 27%;
+    padding: 1% 0 1% 0;
+    border: 1px solid #007DDB;
+    border-radius: 10px;
+    color: #FFFFFF;
+    /*background-color: #FBFBFB;*/
+    /*双击不选中文本*/
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.personalCenter-bottom{
+    width: 100%;
+    height: 74%;
+    vertical-align: top;
+    margin: 1% 0 0 0;
+    float: left;
+    /*background-color: #FF5722;*/
+}
+.personalCenter-bottom-left{
+    width: 6%;
+    height: 100%;
+    margin: 0 2% 0 0;
+    display: inline-block;
+    float: left;
+    border-radius: 10px;
+    background: rgba(5,5,5,0.6);
+
+}
+.personalCenter-bottom-center{
+    width: 70%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    border-radius: 10px;
+    background: rgba(5,5,5,0.6);
+    overflow: hidden;
+}
+.personalCenter-bottom-center-title{
+    width: 100%;
+    height: 10%;
+    margin: 1% 0 0 0;
+    display: inherit;
+    background: rgba(122,122,122,0.6);
+}
+.personalCenter-bottom-center-body{
+    overflow-y: scroll;
+    width: 102.27%;
+    height: 88%;
+    margin: 1% 0 0 0;
+    display: inherit;
+    background: rgba(255,255,255,0.6);
+
+}
+.personalCenter-bottom-right{
+    width: 20%;
+    height: 100%;
+    margin: 0 0 0 2%;
+    display: inline-block;
+    float: right;
+    border-radius: 10px;
+    background: rgba(5,5,5,0.6);
+}
