@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4b71312-fa24-4b53-b67e-379f317a66ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/iRelated.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/iRelated.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/iRelated.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/historical.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/historical.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/historical.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
@@ -20,21 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="iRelated.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/iRelated.html">
+      <file leaf-file-name="historical.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/page/historical.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="iRelated.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/iRelated.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -43,18 +33,48 @@
       <file leaf-file-name="iRelated.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/iRelated.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+            <state relative-caret-position="308">
+              <caret line="21" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personalCenter.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="iRelated.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/page/iRelated.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="3" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="historical.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/historical.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="historical.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/historical.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personalCenter.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/personalCenter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="127" column="47" lean-forward="true" selection-start-line="127" selection-start-column="47" selection-end-line="127" selection-end-column="47" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="127" selection-end-column="47" />
               <folding>
                 <element signature="n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -110,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="107" column="126" lean-forward="true" selection-start-line="107" selection-start-column="126" selection-end-line="107" selection-end-column="126" />
+            <state relative-caret-position="616">
+              <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -145,7 +165,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>iRelated</find>
       <find>isPage2</find>
       <find>isPage3</find>
       <find>isPage5</find>
@@ -175,6 +194,7 @@
       <find>height: 27.5%</find>
       <find>user-photo</find>
       <find>border-radius: 5px;</find>
+      <find>iRelated</find>
     </findStrings>
     <replaceStrings>
       <replace>4</replace>
@@ -195,6 +215,7 @@
       <replace>isPage[7]</replace>
       <replace>height: 27%</replace>
       <replace>border-radius: 10px;</replace>
+      <replace>historical</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -228,9 +249,12 @@
         <option value="$PROJECT_DIR$/css/myAttention.css" />
         <option value="$PROJECT_DIR$/page/myAttention.html" />
         <option value="$PROJECT_DIR$/js/iRelated.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/page/iRelated.html" />
         <option value="$PROJECT_DIR$/css/iRelated.css" />
+        <option value="$PROJECT_DIR$/js/historical.js" />
+        <option value="$PROJECT_DIR$/page/historical.html" />
+        <option value="$PROJECT_DIR$/css/historical.css" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -371,7 +395,7 @@
       <workItem from="1545554514624" duration="599000" />
       <workItem from="1545699904520" duration="23617000" />
       <workItem from="1545745772413" duration="2111000" />
-      <workItem from="1545802606189" duration="9133000" />
+      <workItem from="1545802606189" duration="9541000" />
     </task>
     <task id="LOCAL-00001" summary="网站主页面">
       <created>1544348144072</created>
@@ -429,11 +453,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545810842770</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="与我相关页面布局">
+      <created>1545813403458</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1545813403458</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261921000" />
+    <option name="totallyTimeSpent" value="262329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -489,7 +520,8 @@
     <MESSAGE value="个人中心主页" />
     <MESSAGE value="12-26" />
     <MESSAGE value="我的关注页面布局" />
-    <option name="LAST_COMMIT_MESSAGE" value="我的关注页面布局" />
+    <MESSAGE value="与我相关页面布局" />
+    <option name="LAST_COMMIT_MESSAGE" value="与我相关页面布局" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -498,21 +530,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/img/icon/black/4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/icon/black/9.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/icon/black/10.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/icon/black/11.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -790,30 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="107" column="126" lean-forward="true" selection-start-line="107" selection-start-column="126" selection-end-line="107" selection-end-column="126" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/iRelated.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/iRelated.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/personalCenter.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -824,8 +817,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/personalCenter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="127" column="47" lean-forward="true" selection-start-line="127" selection-start-column="47" selection-end-line="127" selection-end-column="47" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="127" selection-end-column="47" />
           <folding>
             <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -867,6 +860,54 @@
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/historical.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/iRelated.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="3" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/iRelated.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/historical.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/historical.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
