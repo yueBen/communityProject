@@ -1,0 +1,62 @@
+html,body{
+    /*background: rgba(255,255,255,0.7);*/
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.myArticle{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    /*background: rgba(5,5,5,0.6);*/
+}
+.myArticle-top{
+    width: 100%;
+    height: 10.4%;
+    border-radius: 10px;
+    margin: 0 0 1% 0;
+    /*background: rgba(5,5,5,0.6);*/
+}
+.myArticle-top-query{
+    width: 80%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    border-radius: 10px;
+    background: rgba(5,5,5,0.6);
+}
+.myArticle-top-add{
+    width: 19%;
+    height: 100%;
+    margin: 0 0 0 1%;
+    display: inline-block;
+    float: right;
+    border-radius: 10px;
+    background: rgba(5,5,5,0.6);
+}
+
+.myArticle-bottom{
+    width: 100%;
+    height: 88%;
+    border-radius: 10px;
+    /*background: rgba(5,5,5,0.6);*/
+}
+.myArticle-bottom-articles{
+    width: 80%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    border-radius: 10px;
+    background: rgba(5,5,5,0.6);
+}
+.myArticle-bottom-class{
+    width: 19%;
+    height: 100%;
+    margin: 0 0 0 1%;
+    display: inline-block;
+    float: right;
+    border-radius: 10px;
+    background: rgba(5,5,5,0.6);
+}
