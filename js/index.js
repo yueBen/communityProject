@@ -244,6 +244,10 @@ layui.use('layer',function () {
         });
 
     }
+    
+    $('#user-photo').click(function () {
+        window.open('page/bloggerPage.html','blogger');
+    })
 
 
 });

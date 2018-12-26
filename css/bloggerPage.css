@@ -1,0 +1,77 @@
+.bloggerPage-left{
+    width: 6%;
+    height: 94%;
+    margin: 2% 1% 2% 1%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    border-radius: 10px;
+    background: rgba(5,5,5,0.6);
+}
+.bloggerPage-center{
+    width: 72%;
+    height: 94%;
+    margin: 2% 0 2% 0;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    border-radius: 10px;
+    background: rgba(5,5,5,0.6);
+}
+.bloggerPage-right{
+    width: 18%;
+    height: 94%;
+    margin: 2% 1% 2% 1%;
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+
+    /*background: rgba(5,5,5,0.6);*/
+}
+.bloggerPage-right-top{
+    width: 100%;
+    height: 37.8%;
+    margin: 0 0 6% 0;
+    padding: 2% 0 0 0;
+    border-radius: 10px;
+
+    background: rgba(5,5,5,0.6);
+}
+#blogger-photo{
+    width: 80%;
+    height: 74%;
+    margin: 0 10% 0 10%;
+    border-radius: 50%;
+    background-image: url("../img/4.jpg");
+    background-size: 100% 100%;
+}
+#blogger-items{
+    width: 90%;
+    height: 23%;
+    margin: 2% 5% 0 5%;
+    /*background: rgba(255,0,255,0.4);*/
+}
+.blogger-item{
+    width: 30%;
+    height: 38%;
+    display: inline-block;
+    float: left;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    margin: 1%;
+}
+.bloggerPage-right-center{
+    width: 100%;
+    height: 29%;
+    margin: 0 0 6% 0;
+    border-radius: 10px;
+
+    background: rgba(5,5,5,0.6);
+}
+.bloggerPage-right-bottom{
+    width: 100%;
+    height: 28%;
+    border-radius: 10px;
+
+    background: rgba(5,5,5,0.6);
+}
