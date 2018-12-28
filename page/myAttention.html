@@ -1,18 +1,82 @@
 <link rel="stylesheet" href="../css/myAttention.css"/>
 <div class="myAttention">
+    <!--关注的人新发布的文章-->
     <div class="myAttention-left">
-        关注人发布的文章
+        <div class="myAttention-left-item">
+            <div class="item-photo"></div>
+            <div class="item-article">我就是文章</div>
+            <div class="item-state">
+                <div style="width: 100%;height: 36px;margin: 0 0 4px 0;border-radius: 10px;overflow: hidden">
+                    <!--该文章获得的赞-->
+                    <div class="item-state-item" style="margin: 0 2.5% 0 0;">
+                        <div class="item-state-item-img"></div>
+                        <div class="item-state-item-num"></div>
+                    </div>
+                    <!--该文章获得的踩-->
+                    <div class="item-state-item" style="margin: 0 0 0 2.5%;">
+                        <div class="item-state-item-img"></div>
+                        <div class="item-state-item-num"></div>
+                    </div>
+                </div>
+                <div style="width: 100%;height: 36px;margin: 8px 0 0 0;border-radius: 10px;overflow: hidden">
+                    <!--该文章的评论量-->
+                    <div class="item-state-item" style="margin: 0 2.5% 0 0;">
+                        <div class="item-state-item-img"></div>
+                        <div class="item-state-item-num"></div>
+                    </div>
+                    <!--该文章的浏览量-->
+                    <div class="item-state-item" style="margin: 0 0 0 2.5%;">
+                        <div class="item-state-item-img"></div>
+                        <div class="item-state-item-num"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="myAttention-right">
+        <!--博主添加、已关注的博主-->
         <div class="myAttention-right-top">
-            1、博主添加
-            2、已关注的博主
+            <!--搜索框-->
+            <input style="width: 73%;height: 30px;margin: 10px 0 0 5%;border-radius: 10px;outline:none;
+                background: transparent;padding: 0 0 0 6px;color: #FFFFFF;" type="text" placeholder="查找作者">
+            <button style="width: 14%;height: 30px;margin: 10px 5% 0 0;border-radius: 10px;outline:none;" id="queryBloggerBtn">+</button>
+            <!--搜索结果-->
+            <div style="width: 89%;margin: 0 5% 10px 5%;background: rgba(255,255,255,0.6);border-radius: 10px;
+            padding: 5px 0 1px 0;display: none;" id="queryBlogger">
+                <div class="query-blogger">
+                    <div class="query-blogger-img"></div>
+                    <div class="query-blogger-name"></div>
+                    <div class="query-blogger-attention"></div>
+                </div>
+                <div class="query-blogger">
+                    <div class="query-blogger-img"></div>
+                    <div class="query-blogger-name"></div>
+                    <div class="query-blogger-attention"></div>
+                </div>
+                <div class="query-blogger">
+                    <div class="query-blogger-img"></div>
+                    <div class="query-blogger-name"></div>
+                    <div class="query-blogger-attention"></div>
+                </div>
+            </div>
+            <!--我已经关注的博主-->
+            <div class="my-attention">
+                <div class="my-attention-img"></div>
+                <div class="my-attention-name"></div>
+                <div class="my-attention-del" style="display: none"></div>
+            </div>
         </div>
+        <!--博主推荐六个（根据浏览爱好推荐）-->
         <div class="myAttention-right-bottom">
-            博主推荐六个（根据浏览爱好推荐）
+            <div class="myAttention-recommend" style="margin: 0 3% 2.3% 0;"></div>
+            <div class="myAttention-recommend" style="margin: 0 1.5% 2.3% 1.5%;"></div>
+            <div class="myAttention-recommend" style="margin: 0 0 2.3% 3%;"></div>
+            <div class="myAttention-recommend" style="margin: 2.3% 3% 0 0;"></div>
+            <div class="myAttention-recommend" style="margin: 2.3% 1.5% 0 1.5%;"></div>
+            <div class="myAttention-recommend" style="margin: 2.3% 0 0 3%;"></div>
         </div>
     </div>
 </div>
 <script src="../layui/layui.js"></script>
 <script src="../js/jquery-3.3.1.min.js"></script>
-<script src="../js/myAttention.js.js"></script>
+<script src="../js/myAttention.js"></script>

@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="../css/draftBox.css"/>
+<div class="draftBox">
+    <div class="draftBox-top">
+        22222222222
+        <button id="textF5">刷新</button>
+    </div>
+    <div class="draftBox-bottom">
+        <div style="background: rgba(5,5,5,0.6);width: 101.5%;height: 100%;overflow-y: scroll;padding: 15px 0 0 0;">
+            <div class="draftBox-item" id="item_1">
+                <!--草稿箱的修改时间-->
+                <div class="draftBox-item-time">
+                    <div style="display: inline-block;float: left;width: 80%;height: 100%;">
+                        <p style="margin: 0;font-family: 'Courier New';font-size: 26px;font-weight: 200;
+                                        font-style: italic;text-align: center;height: 62px;margin: 19px 0 19px 0;">
+                            2018-12-12 12:12
+                        </p>
+                    </div>
+                    <div style="display: inline-block;float: right;width: 20%;height: 0;border-top: 2px solid #277A7F;margin: 50px 0 48px 0;"></div>
+                </div>
+                <!--草稿箱的文章标题-->
+                <div class="draftBox-item-title" id="draftBox-title_1">
+                    <!--<div style="width: 95%;height: 0;margin: 0 5% 0 0;border-bottom: 1px solid #FFFFFF;"></div>-->
+                    <div style="width: 100%;height: 40px;margin: 10px 0 0 0;vertical-align: top;float: left;">
+                        <p style="margin: 0;font-family: 楷体;font-weight: bold;font-size: 28px">我是标题</p>
+                    </div>
+                    <div style="width: 90%;height: 40px;margin: 0 5% 10px 5%;vertical-align: top;float: left;">
+                        <p style="margin: 0;font-family: 宋体;font-weight: bold;font-size: 20px;
+                                overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                            我是内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内容。。。
+                        </p>
+                    </div>
+                    <!--<div style="width: 95%;height: 0;margin: 99px 5% 0 0;border-bottom: 1px solid #FFFFFF;"></div>-->
+                </div>
+                <!--草稿箱的文章操作-->
+                <div class="draftBox-item-edit" style="display: none;" id="draftBox-edit_1">
+                    <div style="width: 30%;height: 50px;margin: 16px 7.5% 16px 12%;display: inline-block;float: left;" name="edit" id="edit_1">
+                        <p style="margin: 0;font-family: 仿宋;font-weight: 100;font-size: 24px;height: 28px;
+                                margin: 10px 0 10px 0;text-align: center;">
+                            编 辑
+                        </p>
+                    </div>
+                    <div style="width: 0;height: 50px;margin: 15px 0 15px 0;border-right: 1px solid #FFFFFF;display: inline-block;float: left;"></div>
+                    <div style="width: 30%;height: 50px;margin: 16px 12% 16px 8%;display: inline-block;float: right;" name="del" id="del_1">
+                        <p style="margin: 0;font-family: 仿宋;font-weight: 100;font-size: 24px;height: 28px;
+                                margin: 10px 0 10px 0;text-align: center;">
+                            删 除
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="draftBox-item" id="item_2">
+                <!--草稿箱的修改时间-->
+                <div class="draftBox-item-time">
+                    <div style="display: inline-block;float: left;width: 80%;height: 100%;">
+                        <p style="margin: 0;font-family: 'Courier New';font-size: 26px;font-weight: 200;
+                                        font-style: italic;text-align: center;height: 62px;margin: 19px 0 19px 0;">
+                            2018-12-12 12:12
+                        </p>
+                    </div>
+                    <div style="display: inline-block;float: right;width: 20%;height: 0;border-top: 2px solid #277A7F;margin: 50px 0 48px 0;"></div>
+                </div>
+                <!--草稿箱的文章标题-->
+                <div class="draftBox-item-title" id="draftBox-title_2">
+                    <!--<div style="width: 95%;height: 0;margin: 0 5% 0 0;border-bottom: 1px solid #FFFFFF;"></div>-->
+                    <div style="width: 100%;height: 40px;margin: 10px 0 0 0;vertical-align: top;float: left;">
+                        <p style="margin: 0;font-family: 楷体;font-weight: bold;font-size: 28px">我是标题</p>
+                    </div>
+                    <div style="width: 90%;height: 40px;margin: 0 5% 10px 5%;vertical-align: top;float: left;">
+                        <p style="margin: 0;font-family: 宋体;font-weight: bold;font-size: 20px;
+                                overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                            我是内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内内容。。。
+                        </p>
+                    </div>
+                    <!--<div style="width: 95%;height: 0;margin: 99px 5% 0 0;border-bottom: 1px solid #FFFFFF;"></div>-->
+                </div>
+                <!--草稿箱的文章操作-->
+                <div class="draftBox-item-edit" style="display: none;" id="draftBox-edit_2">
+                    <div style="width: 30%;height: 50px;margin: 16px 7.5% 16px 12%;display: inline-block;float: left;" name="edit" id="edit_2">
+                        <p style="margin: 0;font-family: 仿宋;font-weight: 100;font-size: 24px;height: 28px;
+                                margin: 10px 0 10px 0;text-align: center;">
+                            编 辑
+                        </p>
+                    </div>
+                    <div style="width: 0;height: 50px;margin: 15px 0 15px 0;border-right: 1px solid #FFFFFF;display: inline-block;float: left;"></div>
+                    <div style="width: 30%;height: 50px;margin: 16px 12% 16px 8%;display: inline-block;float: right;" name="del" id="del_2">
+                        <p style="margin: 0;font-family: 仿宋;font-weight: 100;font-size: 24px;height: 28px;
+                                margin: 10px 0 10px 0;text-align: center;">
+                            删 除
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../layui/layui.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/draftBox.js"></script>

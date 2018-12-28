@@ -1,0 +1,68 @@
+html,body{
+    /*background: rgba(255,255,255,0.7);*/
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.draftBox{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    /*background: rgba(5,5,5,0.6);*/
+}
+.draftBox-top{
+    width: 100%;
+    height: 10.4%;
+    border-radius: 10px;
+    margin: 0 0 1% 0;
+    background: rgba(5,5,5,0.6);
+}
+.draftBox-bottom{
+    width: 100%;
+    height: 88%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.draftBox-item{
+    width: 99%;
+    height: 100px;
+    margin: 0 0 0 1%;
+    overflow: hidden;
+    /*background: rgba(255,255,255,0.6);*/
+}
+.draftBox-item-time{
+    width: 19.8%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    border-right: 2px solid #277A7F;
+    /*background: rgba(255,255,0,0.3);*/
+}
+.draftBox-item-title{
+    width: 79%;
+    height: 100%;
+    padding: 0 0 0 1%;
+    display: inline-block;
+    float: left;
+    /*background: rgba(255,0,255,0.3);*/
+}
+.draftBox-item-edit{
+    width: 0;
+    height: 80px;
+    margin: 10px 0 10px 0;
+    display: inline-block;
+    float: left;
+    border-left: 2px solid #FFFFFF;
+    /*background: rgba(0,255,255,0.3);*/
+}
+.draftBox-item-edit>div{
+    cursor:pointer;
+}
+div[name='edit']:hover{
+    color: #FF5722;
+}
+div[name='del']:hover{
+    color: #FF5722;
+}
