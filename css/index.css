@@ -189,13 +189,22 @@
 
 /*用户姓名*/
 .user-name{
-    width: 100%;
+    width: 50%;
     height: 35px;
     font-size: 24px;
     text-align: center;
     color: white;
-    margin: 5% 0 10px 0;
-
+    margin: 5% 25% 10px 25%;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.user-name:active{
+    border: 1px solid #3F3F3F;
+    color: #3F3F3F;
 }
 
 /*用户消息*/

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>articleEdit</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../css/config.css">
+    <link rel="stylesheet" href="../css/articleEdit.css">
+</head>
+<body>
+    <div class="title">
+        <input placeholder="请输入标题。。。" style="width: 70%;height: 60px;margin: 10px 15% 0 15%;
+            font-size: 50px;background-color: transparent;border: none;
+            text-align: center">
+    </div>
+
+    <div class="operation">
+        <button class="layui-btn layui-btn-primary" id="previewBtn">预览</button>
+        <!--文章类型-->
+        <select id="operation-1">
+            <option>1</option>
+            <option>1</option>
+            <option>1</option>
+            <option>1</option>
+        </select>
+
+        <!--文章标签-->
+        <select id="operation-2" style="margin: 0 3px 0 0">
+            <option>2</option>
+            <option>2</option>
+            <option>2</option>
+            <option>2</option>
+        </select>
+
+        <!--添加标签按钮-->
+        <button class="layui-btn" style="width: 40px;height: 40px;" id="operation-2-1">
+            <i class="layui-icon">&#xe642;</i>
+        </button>
+
+        <!--发布日期-->
+        <input type="text" class="layui-input" id="operation-3">
+
+        <!--发布按钮-->
+        <button class="layui-btn layui-btn-radius" id="operation-4">发布</button>
+
+        <!--保存按钮-->
+        <button class="layui-btn layui-btn-normal layui-btn-radius" id="operation-5">保存</button>
+
+        <!--存草稿箱按钮-->
+        <button class="layui-btn layui-btn-warm layui-btn-radius" id="operation-6">存草稿箱</button>
+
+        <!--删除按钮-->
+        <button class="layui-btn layui-btn-danger layui-btn-radius" id="operation-7">删除</button>
+
+    </div>
+
+    <div style="background: rgba(245,245,245,0.6);width: 95%;height: 778px;margin: 20px 2.5% 0 2.5%;overflow: hidden;
+        border-radius: 15px">
+        <div class="content" id="content">
+        </div>
+
+        <div class="preview">
+            <div id="preview" style="overflow-y: scroll;width: 102%;height: 778px;"></div>
+        </div>
+    </div>
+
+</body>
+<script src="../layui/layui.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/articleEdit.js"></script>
+<script src="../js/tool/wangEditor.js"></script>
+<script type="text/javascript">
+    var con = window.wangEditor;
+    var e = new con('#content');
+    e.create();
+    //内容预览
+    function previewContent(){
+
+        $('#preview').html(e.txt.html());
+
+    }
+    $('#previewBtn').click(function () {
+        console.log('预览');
+        previewContent();
+    })
+</script>
+</html>

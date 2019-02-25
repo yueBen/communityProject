@@ -9,7 +9,8 @@
     width: 100%;
     height: 45px;
     margin: 1% 0 0 0;
-    background: rgba(5,5,5,0.9);
+    /*background: rgba(5,5,5,0.9);*/
+    background: rgba(245,245,245,0.6);
 }
 .article-title-left{
     width: 20%;
@@ -125,7 +126,8 @@
     width: 20%;
     height: 89%;
     margin: 1% 1% 0 3%;
-    background: rgba(5,5,5,0.6);
+    /*background: rgba(5,5,5,0.6);*/
+    background: rgba(245,245,245,0.6);
     border-radius: 10px;
     /*双击不选中文本*/
     -moz-user-select:none;
@@ -217,8 +219,9 @@
     width: 50%;
     height: 89%;
     margin: 1% 1% 0 1%;
-    background: rgba(5,5,5,0.6);
+    /*background: rgba(5,5,5,0.6);*/
     border-radius: 10px;
+    background: rgba(245,245,245,0.6);
 }
 /*--------------------------------------文章评论--------------------------------------*/
 .article-comments{
