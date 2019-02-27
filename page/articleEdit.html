@@ -54,34 +54,22 @@
 
     </div>
 
-    <div style="background: rgba(245,245,245,0.6);width: 95%;height: 778px;margin: 20px 2.5% 0 2.5%;overflow: hidden;
+    <div style="background: rgba(245,245,245,0.6);width: 95%;height: 730px;margin: 20px 2.5% 0 2.5%;overflow: hidden;
         border-radius: 15px">
         <div class="content" id="content">
         </div>
 
         <div class="preview">
-            <div id="preview" style="overflow-y: scroll;width: 102%;height: 778px;"></div>
+            <div id="preview" style="overflow-y: scroll;width: 102%;height: 730px;"></div>
         </div>
     </div>
 
 </body>
 <script src="../layui/layui.js"></script>
 <script src="../js/jquery-3.3.1.min.js"></script>
-<script src="../js/articleEdit.js"></script>
 <script src="../js/tool/wangEditor.js"></script>
+<script src="../js/articleEdit.js"></script>
 <script type="text/javascript">
-    var con = window.wangEditor;
-    var e = new con('#content');
-    e.create();
-    //内容预览
-    function previewContent(){
 
-        $('#preview').html(e.txt.html());
-
-    }
-    $('#previewBtn').click(function () {
-        console.log('预览');
-        previewContent();
-    })
 </script>
 </html>
