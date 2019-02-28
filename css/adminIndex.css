@@ -1,0 +1,29 @@
+.userManage{
+    width: 6%;
+    height: 870px;
+    margin: 2% 1% 2% 2%;
+    display: inline-block;
+    border-radius: 15px;
+    float: left;
+    background: rgba(5,5,5,0.4);
+}
+
+.articleManage{
+    width: 80%;
+    height: 870px;
+    margin: 2% 1% 2% 1%;
+    display: inline-block;
+    border-radius: 15px;
+    float: left;
+    background: rgba(5,5,5,0.4);
+}
+
+.noticeManage{
+    width: 6%;
+    height: 870px;
+    margin: 2% 2% 2% 1%;
+    display: inline-block;
+    border-radius: 15px;
+    float: right;
+    background: rgba(5,5,5,0.4);
+}

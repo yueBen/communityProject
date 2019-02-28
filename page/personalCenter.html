@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../css/personalCenter.css"/>
+<link rel="stylesheet" href="../layui/css/layui.css">
 <div class="personalCenter">
     <div class="personalCenter-top">
         <div class="personalCenter-top-left">
@@ -108,16 +109,189 @@
         </div>
     </div>
     <div class="personalCenter-bottom">
+
         <div class="personalCenter-bottom-left">
+            <!--左侧页面收起时隐藏-->
             <div id="bottom-left-hidden"></div>
             <div style="width: 100%;height: 100%;">
                 <img src="../img/12.png" style="width: 50%;height: 50%;margin: 150% 25% 0 25%">
             </div>
         </div>
+
         <div class="personalCenter-bottom-center">
             <div id="bottom-center-hidden">
-                <div class="personalCenter-bottom-center-title"></div>
-                <div class="personalCenter-bottom-center-body"></div>
+                <div class="personalCenter-bottom-center-title">
+                    <input class="layui-input" type="text" style="margin: 15px 0 15px 35px;" placeholder="发布时间">
+                    <input class="layui-input" type="text" placeholder="标题">
+                    <select>
+                        <option value="" style="display: none;" disabled selected>类型</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                    </select>
+                    <select>
+                        <option value="" style="display: none;" disabled selected>标签</option>
+                        <option>2</option>
+                        <option>2</option>
+                        <option>2</option>
+                        <option>2</option>
+                    </select>
+
+                    <button class="layui-btn layui-btn-primary" style="margin: 12px 0 15px 120px;">重置</button>
+                    <button class="layui-btn layui-btn-normal">搜索</button>
+                </div>
+
+                <div class="personalCenter-bottom-center-body">
+                    <!--后期使用laytpl动态加载，先做个模型-->
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">
+                                <span style="color: #FF5722;width: 65%;float:left;text-align: right;">2019-11-12 18:06</span>
+                                <span style="color: #FFFFBB;width: 35%;float: left;text-align: center;">张三</span>
+                            </div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">请问     阿斯达岁的</div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">请问     阿斯达岁的</div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">请问     阿斯达岁的</div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">请问     阿斯达岁的</div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">请问     阿斯达岁的</div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">请问     阿斯达岁的</div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">请问     阿斯达岁的</div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">请问     阿斯达岁的</div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">请问     阿斯达岁的</div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">请问     阿斯达岁的</div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">请问     阿斯达岁的</div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+                    <div class="friendsArticle-item">
+                        <div class="friendsArticle-item-title">
+                            <div class="friendsArticle-item-title-1">哈哈哈</div>
+                            <div class="friendsArticle-item-title-2">请问     阿斯达岁的</div>
+                        </div>
+                        <div class="friendsArticle-item-content">
+                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">
+                                甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
         <div class="personalCenter-bottom-right"></div>

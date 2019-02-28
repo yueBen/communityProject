@@ -1,7 +1,21 @@
 <link rel="stylesheet" href="../css/postlist.css"/>
+<link rel="stylesheet" href="../layui/css/layui.css">
 <div class="postlist">
     <!--搜索项-->
-    <div class="postlist-search"></div>
+    <div class="postlist-search">
+        <!--时间start-->
+        <input class="postlist-search-input" type="text" placeholder="TimeStart">
+        <!--时间end-->
+        <input class="postlist-search-input" type="text" placeholder="TimeEnd">
+        <!--标题-->
+        <input class="postlist-search-input" type="text" placeholder="标题">
+        <!--标题-->
+        <input class="postlist-search-input" type="text" placeholder="作者">
+
+
+        <button class="layui-btn layui-btn-primary" style="margin: 0 15px 0 100px;">重置</button>
+        <button class="layui-btn layui-btn-normal" style="margin: 0 25px 0 0;">搜索</button>
+    </div>
     <!--文章主体-->
     <div class="postlist-content">
         <script type="text/html" id="postlistContentScr">
@@ -22,6 +36,7 @@
     </div>
     <!--分页-->
     <div class="postlist-topage">
+
     </div>
 </div>
 <script src="../layui/layui.js"></script>
