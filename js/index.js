@@ -2,6 +2,9 @@ layui.use('layer',function () {
     var layer = layui.layer,
         $ = layui.$;
 
+    //画圆
+    $(".user-photo").height($(".user-photo").width());
+
     //加载验证码
     refreshCode();
 

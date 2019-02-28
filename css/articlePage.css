@@ -21,17 +21,18 @@
 }
 .article-title-left-item{
     width: 32%;
-    height: 100%;
+    height: 45px;
     display: inline-block;
     border-radius: 10px;
 }
 .article-title-left-item-img{
     width: 48%;
-    height: 100%;
+    height: 43px;
     float: left;
     text-align: center;
     display: inline-block;
-    background: rgba(0,191,244,0.6);
+    background: inherit;
+    border: 1px solid #d1d4d5;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -42,7 +43,8 @@
 }
 .article-title-left-item-num{
     width: 50%;
-    height: 100%;
+    height: 45px;
+    line-height: 45px;
     float: left;
     color: #000000;
     font-size: 120%;
@@ -56,9 +58,6 @@
     border-bottom-right-radius: 10px;
     background: rgba(255,255,255,0.8);
     /*background-color: #eb7350;*/
-}
-.article-title-left-item-num>p{
-    margin: 17% 0 0 0;
 }
 .article-title-center{
     width: 50%;
@@ -76,17 +75,18 @@
     /*background: #eb7350;*/
 }
 .article-title-right-item{
-    width: 27.5%;
-    height: 100%;
+    width: 32%;
+    height: 45px;
     display: inline-block;
     border-radius: 10px;
 }
 .article-title-right-item-img{
     display: inline-block;
     float: left;
-    width: 50%;
-    height: 100%;
-    background: rgba(0,191,244,0.6);
+    width: 48%;
+    height: 43px;
+    border: 1px solid #d1d4d5;
+    /*background: rgba(0,191,244,0.6);*/
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -100,8 +100,9 @@
     display: inline-block;
     float: left;
     width: 50%;
-    height: 100%;
-    font-size: 130%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 18px;
     text-align: center;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -111,14 +112,7 @@
     margin: 18% 0 0 0;
     color: #000000;
 }
-.article-title-right-photo{
-    width: 12%;
-    height: 100%;
-    display: inline-block;
-    border-radius: 50%;
-    background-image: url("../img/1.jpg");
-    background-size: 100% 100%;
-}
+
 /*--------------------------------------作者信息--------------------------------------*/
 .article-author{
     display: inline-block;
@@ -195,13 +189,14 @@
     float: left;
 }
 .article-author-message-item>div[name='num']{
-    width: 50%;
-    height: 100%;
+    width: 46.3%;
+    height: 92%;
+    line-height: 23px;
     color: #FFFFFF;
-    background: rgba(0,0,0,1);
+    border: 1px solid #d1d4d5;
+    background: rgba(0,0,0,0);
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
-    float: right;
     display: inline-block;
     text-align: center;
     float: left;

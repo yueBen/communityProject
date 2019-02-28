@@ -1,6 +1,9 @@
 layui.use('laytpl',function(){
    var laytpl = layui.laytpl,
        $ = layui.$;
+
+
+
    $('.personalCenter-bottom-left').click(function () {
        $(".personalCenter-bottom-center-title").hide();
        $('#bottom-center-hidden').hide(400);
