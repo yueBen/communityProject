@@ -34,7 +34,7 @@ layui.use('layer',function () {
             e.customConfig.uploadFileName = '22410';
 
             //设置图片上传大小
-            e.customConfig.uploadImgMaxSize = 3*1024*1024;
+            e.customConfig.uploadImgMaxSize = 10*1024*1024;
 
             //设置一次上传最多文件数
             e.customConfig.uploadImgMaxLength = 5;
