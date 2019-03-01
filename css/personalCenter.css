@@ -133,6 +133,42 @@ html,body{
     background: rgba(5,5,5,0.6);
 
 }
+.bottom-left-hidden{
+    display: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /*background: #e2e2e2;*/
+    overflow-y: scroll;
+}
+.bottom-left-hidden::-webkit-scrollbar{
+    display: none;
+}
+.user-messageBoard{
+    width: 96%;
+    line-height: 35px;
+    border-radius: 10px;
+    margin: 10px 2% 0 2%;
+}
+.user-messageBoard-top{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: rgba(145,45,45,0.6);
+}
+.user-messageBoard-content{
+    width: 98%;
+    line-height: 35px;
+    font-size: 20px;
+    padding: 5px 1% 5px 1%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    word-wrap:break-word;
+    word-break:break-all;
+    background: rgba(255,255,255,0.6);
+}
 .personalCenter-bottom-center{
     width: 70%;
     height: 100%;
@@ -196,7 +232,35 @@ html,body{
     border-radius: 10px;
     background: rgba(5,5,5,0.6);
 }
-
+.add-friend{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 15px;
+    right: 10px;
+}
+.friends-item{
+    width: 94%;
+    height: 45px;
+    margin: 10px 3% 0 3%;
+}
+.friends-item-img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.friends-item-name{
+    width: 76%;
+    height: 45px;
+    border-radius: 10px;
+    margin: 0 0 0 10px;
+}
+.friends-item-del{
+    width: 60px;
+    height: 45px;
+    border-radius: 10px;
+}
 .friendsArticle-item{
     width: 96%;
     height: 70px;

@@ -34,7 +34,7 @@ html,body{
 }
 .draftBox-item-time{
     width: 19.8%;
-    height: 100%;
+    height: 100px;
     display: inline-block;
     float: left;
     border-right: 2px solid #277A7F;

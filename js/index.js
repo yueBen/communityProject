@@ -2,58 +2,72 @@ layui.use('layer',function () {
     var layer = layui.layer,
         $ = layui.$;
 
-    //画圆
-    $(".user-photo").height($(".user-photo").width());
-
     //加载验证码
     refreshCode();
+
+    //找圆
+    $(".user-photo").height($(".user-photo").width());
 
     //页面跳转动画和跳转控制
     {
         //记录最近打开的页面
-        var openPage = new Array('-1');
         var isPage = new Array(8);
         isPage[0] = '-';
+
+        //刷新iframe页面
+        function refreshIframe(index){
+            $("#iframe-"+index).attr('src', $("#iframe-"+index).attr('src'));
+            // $("#iframe-"+index).reload();
+        }
+
         //再次点击返回上次的界面
         function openlastpage(pageNum) {
             switch(pageNum){
                 case 1:
                     closepage();
-                    $('.home-page-body-1').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                    refreshIframe(pageNum);
+                    $('.home-page-body-1').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(1);
                     break;
                 case 2:
                     closepage();
-                    $('.home-page-body-2').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                    refreshIframe(pageNum);
+                    $('.home-page-body-2').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(2);
                     break;
                 case 3:
                     closepage();
-                    $('.home-page-body-3').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                    refreshIframe(pageNum);
+                    $('.home-page-body-3').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(3);
                     break;
                 case 4:
-                    $('.home-page-body-4').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                    closepage();
+                    refreshIframe(pageNum);
+                    $('.home-page-body-4').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(4);
                     break;
                 case 5:
                     closepage();
-                    $('.home-page-body-5').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                    refreshIframe(pageNum);
+                    $('.home-page-body-5').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(5);
                     break;
                 case 6:
                     closepage();
-                    $('.home-page-body-6').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                    refreshIframe(pageNum);
+                    $('.home-page-body-6').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(6);
                     break;
                 case 7:
                     closepage();
-                    $('.home-page-body-7').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                    refreshIframe(pageNum);
+                    $('.home-page-body-7').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(7);
                     break;
                 default:
                     closepage();
-                    $('.home-page-body').animate({width: '56%',height: '90%',margin: '1% 2% 0 2%',opacity: 1},200);
+                    $('.home-page-body').animate({width: '56%',height: '90%',margin: '1% 2% 0 2%',opacity: 1},300);
                     $('.home-page-right').animate({width: '18%',height: '65%',margin: '1% 2% 0 0'},400);
                     closeotherpage();
                     break;
@@ -65,11 +79,11 @@ layui.use('layer',function () {
         $('#pers-center').click(function () {
             if(isPage[1]){
                 closepage();
-                openlastpage(openPage[1]);
+                openlastpage(1);
             }else{
-                openPage.unshift(1);
                 closepage();
-                $('.home-page-body-1').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                refreshIframe(1);
+                $('.home-page-body-1').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(1);
             }
             $('.home-page-body-1').addClass('page-body');
@@ -80,11 +94,11 @@ layui.use('layer',function () {
         $('#my-focus').click(function () {
             if(isPage[2]){
                 closepage();
-                openlastpage(openPage[1]);
+                openlastpage(2);
             }else{
-                openPage.unshift(2);
                 closepage();
-                $('.home-page-body-2').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                refreshIframe(2);
+                $('.home-page-body-2').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(2);
             }
             $('.home-page-body-2').addClass('page-body');
@@ -95,11 +109,11 @@ layui.use('layer',function () {
         $('#iRelated').click(function () {
             if(isPage[3]){
                 closepage();
-                openlastpage(openPage[1]);
+                openlastpage(3);
             }else{
-                openPage.unshift(3);
                 closepage();
-                $('.home-page-body-3').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                refreshIframe(3);
+                $('.home-page-body-3').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(3);
             }
             $('.home-page-body-3').addClass('page-body');
@@ -110,11 +124,11 @@ layui.use('layer',function () {
         $('#historicalRecord').click(function () {
             if(isPage[4]){
                 closepage();
-                openlastpage(openPage[1]);
+                openlastpage(4);
             }else{
-                openPage.unshift(4);
                 closepage();
-                $('.home-page-body-4').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                refreshIframe(4);
+                $('.home-page-body-4').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(4);
             }
             $('.home-page-body-4').addClass('page-body');
@@ -125,11 +139,11 @@ layui.use('layer',function () {
         $('#myArticle').click(function () {
             if(isPage[5]){
                 closepage();
-                openlastpage(openPage[1]);
+                openlastpage(5);
             }else{
-                openPage.unshift(5);
                 closepage();
-                $('.home-page-body-5').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                refreshIframe(5);
+                $('.home-page-body-5').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(5);
             }
             $('.home-page-body-5').addClass('page-body');
@@ -140,11 +154,11 @@ layui.use('layer',function () {
         $('#draftBox').click(function () {
             if(isPage[6]){
                 closepage();
-                openlastpage(openPage[1]);
+                openlastpage(6);
             }else{
-                openPage.unshift(6);
                 closepage();
-                $('.home-page-body-6').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                refreshIframe(6);
+                $('.home-page-body-6').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(6);
             }
             $('.home-page-body-6').addClass('page-body');
@@ -155,11 +169,11 @@ layui.use('layer',function () {
         $('#notice').click(function () {
             if(isPage[7]){
                 closepage();
-                openlastpage(openPage[1]);
+                openlastpage(7);
             }else{
-                openPage.unshift(7);
                 closepage();
-                $('.home-page-body-7').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},500);
+                refreshIframe(7);
+                $('.home-page-body-7').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(7);
             }
             $('.home-page-body-7').addClass('page-body');
@@ -182,48 +196,48 @@ layui.use('layer',function () {
                 if(isPage[i]){
                     switch(i){
                         case 1:
-                            $('.home-page-body-1').animate({margin: '20% 0 0 0',width: 0,height: 0,opacity: 0},400);
+                            $('.home-page-body-1').animate({margin: '20% 0 0 0',width: 0,height: 0,opacity: 0},300);
                             isPage[1] = false;
                             break;
                         case 2:
-                            $('.home-page-body-2').animate({width: 0,height: 0,margin: '24% 0 0 0',opacity: 0},400);
+                            $('.home-page-body-2').animate({width: 0,height: 0,margin: '24% 0 0 0',opacity: 0},300);
                             isPage[2] = false;
                             break;
                         case 3:
-                            $('.home-page-body-3').animate({width: 0,height: 0,margin: '27.5% 0 0 0',opacity: 0},400);
+                            $('.home-page-body-3').animate({width: 0,height: 0,margin: '27.5% 0 0 0',opacity: 0},300);
                             isPage[3] = false;
                             break;
                         case 4:
-                            $('.home-page-body-4').animate({width: 0,height: 0,margin: '31% 0 0 0',opacity: 0},400);
+                            $('.home-page-body-4').animate({width: 0,height: 0,margin: '31% 0 0 0',opacity: 0},300);
                             isPage[4] = false;
                             break;
                         case 5:
-                            $('.home-page-body-5').animate({width: 0,height: 0,margin: '34.5% 0 0 0',opacity: 0},400);
+                            $('.home-page-body-5').animate({width: 0,height: 0,margin: '34.5% 0 0 0',opacity: 0},300);
                             isPage[5] = false;
                             break;
                         case 6:
-                            $('.home-page-body-6').animate({width: 0,height: 0,margin: '38% 0 0 0',opacity: 0},400);
+                            $('.home-page-body-6').animate({width: 0,height: 0,margin: '38% 0 0 0',opacity: 0},300);
                             isPage[6] = false;
                             break;
                         case 7:
-                            $('.home-page-body-7').animate({width: 0,height: 0,margin: '42% 0 0 0',opacity: 0},400);
+                            $('.home-page-body-7').animate({width: 0,height: 0,margin: '42% 0 0 0',opacity: 0},300);
                             isPage[7] = false;
                             break;
                     }
                 }
             });
-            $('.home-page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
-            $('.home-page-right').animate({width: 0,height: 0,margin: 0},400);
+            $('.home-page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},300);
+            $('.home-page-right').animate({width: 0,height: 0,margin: 0},300);
         }
 
         sessionStorage.setItem("type",1);
         $('.title-type-item').click(function () {
             $('.title-type-item').removeClass('title-type-item-check');
             $(this).addClass('title-type-item-check');
-            $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},300);
+            $('.page-body').animate({width: 0,height: 0,margin: 0,opacity: 0},400);
             closeotherpage();
-            $('.home-page-right').animate({width: '18%',height: '65%',margin: '1% 2% 0 0'},400);
-            $('.home-page-body').animate({width: '56%',height: '90%',margin: '1% 2% 0 2%',opacity: 1},300);
+            $('.home-page-right').animate({width: '18%',height: '65%',margin: '1% 2% 0 0'},300);
+            $('.home-page-body').animate({width: '56%',height: '90%',margin: '1% 2% 0 2%',opacity: 1},400);
             var title = $(this).text();
             if(title === '推荐'){
                 $('.body-content').empty();
@@ -256,56 +270,62 @@ layui.use('layer',function () {
         window.open('page/bloggerPage.html','blogger');
     });
 
-    //用户登录注销
-    $('#userLanding').click(function () {
-        layer.open({
-            type: 1,
-            title: '请登录',
-            content: $('#landing'),
-            // area: ['500','1000'],
-            btn: ['重置','登录'],
-            btn1: function () {
-                console.log("重置");
-            },
-            btn2: function () {
-                provingCode();
-            },
-            closeBtn: 1
-        })
-    });
+    //登录注册
 
-    //刷新验证码
-    $('#refreshCode').click(function () {
-        refreshCode()
-    })
-    //生成验证码
-    function refreshCode() {
-        var code = '';
-        //设置长度，这里看需求，我这里设置了4
-        var codeLength = 4;
-        //设置随机字符
-        var random = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R', 'S','T','U','V','W','X','Y','Z');
-        //循环codeLength 我设置的4就是循环4次
-        for(var i = 0; i < codeLength; i++){
-            //设置随机数范围,这设置为0 ~ 36
-            var index = Math.floor(Math.random()*36);
-            //字符串拼接 将每次随机的字符 进行拼接
-            code += random[index];
+        //用户登录注销
+        $('#userLanding').click(function () {
+            layer.open({
+                type: 1,
+                title: '请登录',
+                content: $('#landing'),
+                // area: ['500','1000'],
+                btn: ['重置', '登录'],
+                btn1: function () {
+                    console.log("重置");
+                },
+                btn2: function () {
+                    provingCode();
+                },
+                closeBtn: 1
+            })
+        });
+
+        //刷新验证码
+        $('#refreshCode').click(function () {
+            refreshCode()
+        })
+
+        //生成验证码
+        function refreshCode() {
+            var code = '';
+            //设置长度，这里看需求，我这里设置了4
+            var codeLength = 4;
+            //设置随机字符
+            var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+            //循环codeLength 我设置的4就是循环4次
+            for (var i = 0; i < codeLength; i++) {
+                //设置随机数范围,这设置为0 ~ 36
+                var index = Math.floor(Math.random() * 36);
+                //字符串拼接 将每次随机的字符 进行拼接
+                code += random[index];
+            }
+            //将拼接好的字符串赋值给展示的Value
+            $('#refreshCode').val(code);
         }
-        //将拼接好的字符串赋值给展示的Value
-        $('#refreshCode').val(code);
-    }
-    
-    //效验验证码
-    function provingCode() {
-        console.log('121');
-        if($('#refreshCode') === $('#provingCode')) {
-            layer.msg('验证码正确')
-        }else if ($('#provingCode').length === 0) {
-            layer.msg('请输入验证码')
-        }else{
-            layer.msg('验证码错误')
+
+        //效验验证码
+        function provingCode() {
+            console.log('121');
+            if ($('#refreshCode') === $('#provingCode')) {
+                layer.msg('验证码正确')
+            } else if ($('#provingCode').length === 0) {
+                layer.msg('请输入验证码')
+            } else {
+                layer.msg('验证码错误')
+            }
         }
-    }
+
+
+
 
 });

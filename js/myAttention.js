@@ -1,6 +1,9 @@
 layui.use('laytpl',function () {
    var laytpl = layui.laytpl,
        $ = layui.$;
+
+
+
     //页面动画
     {
         //悬浮在已关注博主上时显示取消关注按钮
