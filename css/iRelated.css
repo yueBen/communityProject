@@ -13,15 +13,106 @@ html,body{
     /*background: rgba(5,5,5,0.6);*/
 }
 .iRelated-top{
-    width: 100%;
-    height: 10.4%;
+    display: inline-block;
+    float: left;
+    height: 7.4%;
+    line-height: 60px;
     border-radius: 10px;
-    margin: 0 0 1% 0;
     background: rgba(5,5,5,0.6);
 }
-.iRelated-bottom{
+
+.iRelated-top-item{
+    width: 5.5%;
+    margin: 0 0 1% 1%;
+}
+
+.iRelated-top-item-text{
     width: 100%;
-    height: 88%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 楷体;
+    color: #FFFFFF;
+    /*双击不选中文本*/
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.iRelated-top>input{
+    width: 160px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #d1d4d5;
+    background: transparent;
+    outline:none;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 0 0 15px;
+}
+
+.iRelated-bottom{
+    width: 99%;
+    height: 90%;
+    padding: 0.5%;
     border-radius: 10px;
     background: rgba(5,5,5,0.6);
+    overflow: scroll;
+}
+.iRelated-bottom::-webkit-scrollbar{
+    display: none;
+}
+.iRelated-message-item{
+    display: inline-block;
+    float: left;
+    width: 24%;
+    height: 100px;
+    margin: 0.5%;
+    border-radius: 15px;
+    background: rgba(245,245,245,0.6);
+}
+
+.massage-item-title{
+    width: 96%;
+    height: 36px;
+    margin: 0 2% 0 2%;
+}
+
+.item-title-time{
+    width: 50%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-family: 楷体;
+    font-size: 18px;
+    color: #2E2D3C;
+}
+
+.item-title-btn{
+    width: 14%;
+    height: 24px;
+    line-height: 24px;
+    margin: 5px 0 5px 5%;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 12px;
+    font-family: 楷体;
+    color: #0C0C0C;
+    border: 1px solid #5e5e5e;
+    cursor: pointer;
+    /*双击不选中文本*/
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.item-title-btn:active{
+    color: #5e5e5e;
+}
+
+.massage-item-content{
+    width: 96%;
+    height: 64px;
+    margin: 0 2% 0 2%;
 }

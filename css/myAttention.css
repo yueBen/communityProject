@@ -20,11 +20,15 @@ html,body{
     float: left;
     border-radius: 10px;
     background: rgba(5,5,5,0.6);
+    overflow: scroll;
+}
+.myAttention-left::-webkit-scrollbar{
+    display: none;
 }
 .myAttention-left-item{
     width: 96%;
     height: 80px;
-    margin: 10px 2% 0 2%;
+    margin: 10px 2% 10px 2%;
 
     /*background: rgba(255,255,255,0.2);*/
 }
@@ -42,10 +46,60 @@ html,body{
     width: 68%;
     height: 100%;
     margin: 0 1% 0 1%;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     float: left;
     display: inline-block;
-    background: rgba(255,255,255,0.8);
+    /*background: rgba(255,255,255,0.8);*/
+}
+.item-article-title{
+    display: inline-block;
+    float: left;
+    width: 30%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 22px;
+    font-family: 楷体;
+    color: #C2BE9E;
+}
+.item-article-time{
+    display: inline-block;
+    float: left;
+    width: 30%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 楷体;
+    color: #FF5722;
+}
+.item-article-author{
+    display: inline-block;
+    float: right;
+    width: 30%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 22px;
+    font-family: 楷体;
+    color: #8eaeff;
+}
+.item-article-text{
+    width: 100%;
+    height: 45px;
+
+}
+.item-article-text>p{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 22px;
+    font-family: 楷体;
+    color: #feffc1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0;
 }
 .item-state{
     width: 20%;

@@ -15,9 +15,47 @@ html,body{
 .draftBox-top{
     width: 100%;
     height: 10.4%;
+    line-height: 85px;
     border-radius: 10px;
     margin: 0 0 1% 0;
     background: rgba(5,5,5,0.6);
+}
+.draftBox-top>input{
+    width: 160px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #d1d4d5;
+    background: transparent;
+    outline:none;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 10px 0 0 25px;
+    font-size: 22px;
+}
+.draftBox-top>select{
+    width: 160px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #d1d4d5;
+    background: transparent;
+    outline:none;
+    text-align: center;
+    color: #d1d4d5;
+    margin: 10px 0 0 25px;
+    font-size: 18px;
+}
+.draftBox-top>select>option{
+    background: #374146;
+}
+.draftBox-top-btn{
+    width: 70px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 20px;
+    margin: 0 0 0 20px;
+}
+.draftBox-top-btn>i{
+    font-size: 22px;
 }
 .draftBox-bottom{
     width: 100%;

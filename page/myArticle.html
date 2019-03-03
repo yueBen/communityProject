@@ -1,12 +1,267 @@
 <link rel="stylesheet" href="../css/myArticle.css"/>
+<link rel="stylesheet" href="../css/tool/myCss.css">
+<link rel="stylesheet" href="../layui/css/layui.css">
 <div class="myArticle">
     <div class="myArticle-top">
-        <div class="myArticle-top-query"></div>
-        <div class="myArticle-top-add"></div>
+        <div class="myArticle-top-query">
+            <input type="text" placeholder="TimeStart">
+            <input type="text" placeholder="TimeEnd">
+            <input type="text" placeholder="Title">
+            <select>
+                <option value="" style="display: none;" disabled selected>标签</option>
+                <option>标签一</option>
+                <option>标签二</option>
+                <option>标签三</option>
+            </select>
+            <select>
+                <option value="" style="display: none;" disabled selected>类型</option>
+                <option>学习</option>
+                <option>生活</option>
+                <option>兴趣</option>
+                <option>提问</option>
+            </select>
+
+            <select>
+                <option value="" style="display: none;" disabled selected>发布状态</option>
+                <option>已发布</option>
+                <option>已下线</option>
+                <option>未发布</option>
+            </select>
+
+            <div class="btn-reset" style="margin: 0 15px 0 30px">重置</div>
+            <div class="btn-search">搜索</div>
+
+        </div>
+        <div class="myArticle-top-add">
+            新建文章
+        </div>
     </div>
     <div class="myArticle-bottom">
-        <div class="myArticle-bottom-articles"></div>
-        <div class="myArticle-bottom-class"></div>
+        <div class="myArticle-bottom-articles">
+
+            <div class="article-item">
+                <div class="article-item-title">
+                    我是文章标题
+                </div>
+                <div class="article-item-time">
+                    XXXX-XX-XX XX:XX
+                </div>
+                <div class="article-item-btn btn-1">编辑</div>
+                <div class="article-item-btn btn-2">已发布</div>
+                <div class="article-item-content">
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                </div>
+            </div>
+
+            <div class="article-item">
+                <div class="article-item-title">
+                    我是文章标题
+                </div>
+                <div class="article-item-time">
+                    XXXX-XX-XX XX:XX
+                </div>
+                <div class="article-item-btn btn-1">编辑</div>
+                <div class="article-item-btn btn-2">已发布</div>
+                <div class="article-item-content">
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                </div>
+            </div>
+            <div class="article-item">
+                <div class="article-item-title">
+                    我是文章标题
+                </div>
+                <div class="article-item-time">
+                    XXXX-XX-XX XX:XX
+                </div>
+                <div class="article-item-btn btn-1">编辑</div>
+                <div class="article-item-btn btn-2">已发布</div>
+                <div class="article-item-content">
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                </div>
+            </div>
+            <div class="article-item">
+                <div class="article-item-title">
+                    我是文章标题
+                </div>
+                <div class="article-item-time">
+                    XXXX-XX-XX XX:XX
+                </div>
+                <div class="article-item-btn btn-1">编辑</div>
+                <div class="article-item-btn btn-2">已发布</div>
+                <div class="article-item-content">
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                </div>
+            </div>
+            <div class="article-item">
+                <div class="article-item-title">
+                    我是文章标题
+                </div>
+                <div class="article-item-time">
+                    XXXX-XX-XX XX:XX
+                </div>
+                <div class="article-item-btn btn-1">编辑</div>
+                <div class="article-item-btn btn-2">已发布</div>
+                <div class="article-item-content">
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                </div>
+            </div>
+            <div class="article-item">
+                <div class="article-item-title">
+                    我是文章标题
+                </div>
+                <div class="article-item-time">
+                    XXXX-XX-XX XX:XX
+                </div>
+                <div class="article-item-btn btn-1">编辑</div>
+                <div class="article-item-btn btn-2">已发布</div>
+                <div class="article-item-content">
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                </div>
+            </div>
+            <div class="article-item">
+                <div class="article-item-title">
+                    我是文章标题
+                </div>
+                <div class="article-item-time">
+                    XXXX-XX-XX XX:XX
+                </div>
+                <div class="article-item-btn btn-1">编辑</div>
+                <div class="article-item-btn btn-2">已发布</div>
+                <div class="article-item-content">
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                </div>
+            </div>
+            <div class="article-item">
+                <div class="article-item-title">
+                    我是文章标题
+                </div>
+                <div class="article-item-time">
+                    XXXX-XX-XX XX:XX
+                </div>
+                <div class="article-item-btn btn-1">编辑</div>
+                <div class="article-item-btn btn-2">已发布</div>
+                <div class="article-item-content">
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                </div>
+            </div>
+            <div class="article-item">
+                <div class="article-item-title">
+                    我是文章标题
+                </div>
+                <div class="article-item-time">
+                    XXXX-XX-XX XX:XX
+                </div>
+                <div class="article-item-btn btn-1">编辑</div>
+                <div class="article-item-btn btn-2">已发布</div>
+                <div class="article-item-content">
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                </div>
+            </div>
+            <div class="article-item">
+                <div class="article-item-title">
+                    我是文章标题
+                </div>
+                <div class="article-item-time">
+                    XXXX-XX-XX XX:XX
+                </div>
+                <div class="article-item-btn btn-1">编辑</div>
+                <div class="article-item-btn btn-2">已发布</div>
+                <div class="article-item-content">
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                    甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯甲乙丙丁魑魅魍魉犄角旮旯
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="myArticle-bottom-class">
+            <div class="add-class">
+                <i class="layui-icon" style="font-size: 20px">&#xe654;</i>新增分类
+            </div>
+            <div class="class-item">
+                分类一
+            </div>
+        </div>
     </div>
 </div>
 <script src="../layui/layui.js"></script>

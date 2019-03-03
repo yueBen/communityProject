@@ -1,5 +1,6 @@
-<link rel="stylesheet" href="../css/postlist.css"/>
+<link rel="stylesheet" href="../css/tool/myCss.css"/>
 <link rel="stylesheet" href="../layui/css/layui.css">
+<link rel="stylesheet" href="../css/postlist.css"/>
 <div class="postlist">
     <!--搜索项-->
     <div class="postlist-search">
@@ -13,8 +14,8 @@
         <input class="postlist-search-input" type="text" placeholder="作者">
 
 
-        <button class="layui-btn layui-btn-primary" style="margin: 0 15px 0 100px;">重置</button>
-        <button class="layui-btn layui-btn-normal" style="margin: 0 25px 0 0;">搜索</button>
+        <div class="btn-reset postlist-search-btn" style="margin: 0 15px 0 130px;background: rgba(40,42,50,0.8);">重置</div>
+        <div class="btn-search postlist-search-btn">搜索</div>
     </div>
     <!--文章主体-->
     <div class="postlist-content">
@@ -25,11 +26,11 @@
                     <div class="article-item-title">
                         <a href="articlePage.html?id={{ v.id }}" target="_blank">{{ v.a }}</a>
                     </div>
-                    <div class="article-item-content">{{ v.b }}</div>
+                    <div class="article-item-content"><p>{{ v.b }}</p></div>
                     <div class="article-item-author">{{ v.c }}</div>
                     <div class="article-item-time">{{ v.d }}</div>
-                    <div class="article-item-browse">{{ v.e }}</div>
                     <div class="article-item-comment">{{ v.f }}</div>
+                    <div class="article-item-browse">{{ v.e }}</div>
                 </div>
             {{# }); }}
         </script>

@@ -45,7 +45,7 @@
     line-height: 30px;
     font-size: 18px;
     text-align: center;
-    border-radius: 10%;
+    border-radius: 10px;
     background: #d1d4d5;
     color: #000;
     font-family: 宋体;
@@ -65,7 +65,7 @@
     font-size: 18px;
     text-align: center;
     border: 1px solid #d1d4d5;
-    border-radius: 10%;
+    border-radius: 10px;
     background: rgba(0,0,0,0);
     color: #d1d4d5;
     font-family: 宋体;
@@ -92,5 +92,7 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
+
+
 
 

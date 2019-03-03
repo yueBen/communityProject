@@ -46,13 +46,13 @@ layui.use('laytpl',function () {
                         '<div class="article-comment-content-item-body-operation">'+
                         '<div class="commentTime">' + v.time + '</div>'+
                         '<div class="commentLike" id="commentLike_' + v.id + '">'+
-                        '<img src="../img/icon/like_1.png" style="display: inline-block;">'+
+                        '<img src="../img/icon/white/like_1.png" style="display: inline-block;">'+
                         '<img src="../img/icon/like_2.png" style="display: none;">'+'<div>'+ v.like + '</div>'+'</div>'+
                         '<div class="commentDisLike" id="commentDisLike_' + v.id + '">'+
-                        '<img src="../img/icon/disLike_1.png" style="display: inline-block;">'+
+                        '<img src="../img/icon/white/disLike_1.png" style="display: inline-block;">'+
                         '<img src="../img/icon/disLike_2.png" style="display: none;">'+'<div>'+ v.dislike + '</div>'+'</div>'+
                         '<div class="commentCom" id="commentCom_' + v.id + '">'+
-                        '<img src="../img/icon/comment.png">' + '<div>' + v.commentNum + '</div>' + '</div>' + '</div>'+
+                        '<img src="../img/icon/white/comment.png">' + '<div>' + v.commentNum + '</div>' + '</div>' + '</div>'+
                         '<div class="article-comment-content-item-body-textarea" id="commentText_' + v.id + '">'+
                         '<hr style="width: 100%;border: 0.5px solid #5e5e5e">'+
                         '<textarea placeholder="说点什么吧。。。"></textarea>'+
@@ -150,13 +150,13 @@ layui.use('laytpl',function () {
                     '<div class="article-comment-content-item-body-operation">'+
                     '<div class="commentTime">' + v.time + '</div>'+
                     '<div class="commentLike" id="commentLike_' + v.id + '">'+
-                    '<img src="../img/icon/like_1.png" style="display: inline-block;">'+
+                    '<img src="../img/icon/white/like_1.png" style="display: inline-block;">'+
                     '<img src="../img/icon/like_2.png" style="display: none;">'+'<div>'+ v.like + '</div>'+'</div>'+
                     '<div class="commentDisLike" id="commentDisLike_' + v.id + '">'+
-                    '<img src="../img/icon/disLike_1.png" style="display: inline-block;">'+
+                    '<img src="../img/icon/white/disLike_1.png" style="display: inline-block;">'+
                     '<img src="../img/icon/disLike_2.png" style="display: none;">'+'<div>'+ v.dislike + '</div>'+'</div>'+
                     '<div class="commentCom" id="commentCom_' + v.id + '">'+
-                    '<img src="../img/icon/comment.png">' + '<div>' + v.commentNum + '</div>' + '</div>' + '</div>'+
+                    '<img src="../img/icon/white/comment.png">' + '<div>' + v.commentNum + '</div>' + '</div>' + '</div>'+
                     '<div class="article-comment-content-item-body-textarea" id="commentText_' + v.id + '">'+
                     '<hr style="width: 100%;border: 0.5px solid #5e5e5e">'+
                     '<textarea placeholder="说点什么吧。。。"></textarea>'+

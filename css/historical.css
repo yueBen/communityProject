@@ -14,25 +14,28 @@ html,body{
 }
 .historical-top{
     width: 100%;
-    height: 50px;
+    height: 7.4%;
     border-radius: 10px;
     margin: 0 0 1% 0;
-    background: rgba(5,5,5,0);
+    background: rgba(5,5,5,0.6);
 }
 .historical-input{
     width: 160px;
     height: 40px;
     border-radius: 10px;
-    text-align: center;
+    border: 1px solid #d1d4d5;
+    background: transparent;
     outline:none;
-    margin: 7px 20px 0 0;
-    background: rgba(5,5,5,0.6);
+    text-align: center;
+    color: #FFFFFF;
+    margin: 10px 0 0 15px;
+    font-size: 22px;
 }
 .historical-btn{
     float: right;
     height: 35px;
     line-height: 35px;
-    margin: 7px 0 0 20px;
+    margin: 13px 20px 0 20px;
 }
 .historical-bottom{
     width: 100%;
@@ -70,6 +73,16 @@ html,body{
     border-radius: 20px;
     display: inline-block;
     float: left;
+}
+.author-content-body>div{
+    width: 100%;
+    height: 60px;
+    word-wrap: break-word;
+    overflow: hidden;
+    float: left;
+}
+.author-content-body>marquee{
+    display: none;
 }
 .article-num{
     width: 100px;

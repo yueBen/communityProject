@@ -14,7 +14,7 @@ html,body{
 }
 .myArticle-top{
     width: 100%;
-    height: 10.4%;
+    height: 7.4%;
     border-radius: 10px;
     margin: 0 0 1% 0;
     /*background: rgba(5,5,5,0.6);*/
@@ -22,24 +22,66 @@ html,body{
 .myArticle-top-query{
     width: 80%;
     height: 100%;
+    /*line-height: 60px;*/
     display: inline-block;
     float: left;
     border-radius: 10px;
     background: rgba(5,5,5,0.6);
 }
+.myArticle-top-query>input{
+    width: 140px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #d1d4d5;
+    background: transparent;
+    outline:none;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 10px 0 0 15px;
+    font-size: 22px;
+}
+.myArticle-top-query>select{
+    width: 140px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #d1d4d5;
+    background: transparent;
+    outline:none;
+    text-align: center;
+    color: #d1d4d5;
+    margin: 10px 0 0 15px;
+    font-size: 18px;
+}
+.myArticle-top-query>select>option{
+    background: #374146;
+}
+
 .myArticle-top-add{
     width: 19%;
     height: 100%;
+    line-height: 60px;
     margin: 0 0 0 1%;
     display: inline-block;
     float: right;
     border-radius: 10px;
     background: rgba(5,5,5,0.6);
+    text-align: center;
+    font-size: 30px;
+    font-family: 楷体;
+    color: #d1d4d5;
+    /*双击不选中文本*/
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.myArticle-top-add:active{
+    background: rgba(125,125,125,0.6);
+    color: #000000;
 }
 
 .myArticle-bottom{
     width: 100%;
-    height: 88%;
+    height: 91%;
     border-radius: 10px;
     /*background: rgba(5,5,5,0.6);*/
 }
@@ -50,7 +92,86 @@ html,body{
     float: left;
     border-radius: 10px;
     background: rgba(5,5,5,0.6);
+    overflow: scroll;
 }
+
+.myArticle-bottom-articles::-webkit-scrollbar{
+    display: none;
+}
+
+.article-item{
+    width: 96%;
+    height: 100px;
+    margin: 10px 2% 5px 2%;
+    border-radius: 15px;
+    background: rgba(245,245,245,0.6);
+}
+.article-item-check{
+    background: rgba(245,245,0,0.6);
+}
+.article-item-title{
+    display: inline-block;
+    float: left;
+    width: 30%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 楷体;
+    color: #494118;
+}
+.article-item-time{
+    display: inline-block;
+    float: left;
+    width: 20%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 楷体;
+    color: #133949;
+}
+.article-item-btn{
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    margin: 5px 23px 5px 0;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background: transparent;
+    color: #374146;
+    font-family: 宋体;
+    display: inline-block;
+    float: right;
+    /*双击不选中文本*/
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.article-item-btn:active{
+    color: #d1d4d5;
+    border: 1px solid #d1d4d5;
+}
+.article-item-content{
+    width: 96%;
+    height: 60px;
+    margin: 0 2% 0 2%;
+    line-height: 30px;
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: 100;
+    font-family: 新宋体;
+    color: #000;
+    //隐藏部分显示省略号
+    text-overflow: ellipsis;
+}
+article-item-content>p{
+
+}
+
 .myArticle-bottom-class{
     width: 19%;
     height: 100%;
@@ -60,3 +181,47 @@ html,body{
     border-radius: 10px;
     background: rgba(5,5,5,0.6);
 }
+.add-class{
+    width: 60%;
+    height: 35px;
+    line-height: 35px;
+    margin: 10px 20% 20px 20%;
+    font-family: 仿宋;
+    font-size: 20px;
+    color: #2E2D3C;
+    text-align: center;
+    background: rgba(245,245,245,0.6);
+    border-radius: 15px;
+    /*双击不选中文本*/
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.add-class:active{
+    background: rgba(45,46,60,0.6);
+    color: #a9adaf;
+}
+
+.class-item{
+    width: 90%;
+    height: 45px;
+    line-height: 45px;
+    margin: 10px 5% 10px 5%;
+    border-radius: 15px;
+    background: rgba(230,230,230,0.6);
+    font-size: 26px;
+    font-family: 楷体;
+    font-weight: 100;
+    text-align: center;
+    color: #2E2D3C;
+    /*双击不选中文本*/
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.class-item:active{
+    color: #9e9e9e;
+    background: rgba(45,45,45,0.6);
+}
+
+
