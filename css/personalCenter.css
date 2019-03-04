@@ -37,8 +37,12 @@ html,body{
 .personalCenter-top-left-item>div[name='img']{
     width: 50%;
     height: 55px;
+    line-height: 55px;
+    text-align: center;
     display: inline-block;
     float: left;
+}
+.personalCenter-top-left-item>div[name='img']>img{
 }
 .personalCenter-top-left-item>div[name='num']{
     width: 50%;
