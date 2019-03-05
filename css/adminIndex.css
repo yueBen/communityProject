@@ -210,13 +210,13 @@
     display: inline-block;
     border-radius: 15px;
     float: left;
-    /*background: rgba(5,5,5,0.4);*/
+    background: rgba(5,5,5,0.4);
 }
 .article-lexicon{
     width: 100%;
     height: 350px;
     border-radius: 15px;
-    background: rgba(5,5,5,0.4);
+    /*background: rgba(5,5,5,0.4);*/
 }
 .article-lexicon-query{
     width: 100%;
@@ -287,9 +287,9 @@
 .article-items{
     width: 100%;
     height: 500px;
-    margin: 20px 0 0 0;
+    margin: 19px 0 0 0;
     border-radius: 15px;
-    background: rgba(5,5,5,0.4);
+    /*background: rgba(5,5,5,0.4);*/
 }
 .article-item-query{
     width: 100%;
@@ -335,10 +335,64 @@
     display: none;
 }
 .articleMassage-item{
-    width: 16.6%;
+    display: inline-block;
+    float: left;
+    width: 15.66%;
     height: 120px;
     border-radius: 20px;
+    margin: 0 0.5% 10px 0.5%;
     background: rgba(255,255,255,0.6);
+}
+.articleMassage-item-operation{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+.articleMassage-item-operation>div{
+    display: inline-block;
+    width: 20%;
+    height: 25px;
+    line-height: 25px;
+    margin: 0 20px;
+    border-radius: 10px;
+    border: 1px solid #2E2D3C;
+    font-size: 12px;
+    font-family: 微软雅黑;
+    color: #2E2D3C;
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.articleMassage-item-operation>div:active{
+    border: 1px solid #5e5e5e;
+    color: #5e5e5e;
+}
+.articleMassage-item-title{
+    width: 100%;
+    height: 50px;
+}
+.articleMassage-item-title>p{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 100;
+    font-family: 新宋体;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.articleMassage-item-time{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 100;
+    font-family: 仿宋;
 }
 
 .noticeManage{
@@ -349,4 +403,18 @@
     border-radius: 15px;
     float: right;
     background: rgba(5,5,5,0.4);
+}
+
+.notice-manage{
+    display: inline-block;
+    float: left;
+    width: 60%;
+    height: 870px;
+}
+
+.user-notice{
+    display: inline-block;
+    float: left;
+    width: 39.8%;
+    height: 870px;
 }

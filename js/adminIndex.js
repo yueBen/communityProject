@@ -14,9 +14,12 @@ layui.use(['laytpl','layer'],function(){
                     $(".noticeManage").animate({width: 0,margin: "0 0 0 1%"},200);
                 });
 
-                $(".articleManage").animate({width: "6%"},300,function () {
-                    $(".article-hidden-hint").show(200);
+                $(".articleManage-hidden").hide(100,function () {
+                    $(".articleManage").animate({width: "6%"},200,function () {
+                        $(".article-hidden-hint").show(200);
+                    });
                 });
+
                 $(".user-hidden-hint").hide(100,function () {
                     $(".userManage").animate({width: "88%"},200,function () {
                         $(".userManage-query").show("normal");
@@ -39,6 +42,7 @@ layui.use(['laytpl','layer'],function(){
                    });
                    $(".article-hidden-hint").hide(100,function () {
                        $(".articleManage").animate({width: '80%'},200);
+                       $(".articleManage-hidden").show(100);
                    });
                    $(".noticeManage").animate({width: "6%",margin: "2% 2% 2% 1%"},300,function () {
                        $(".notice-hidden-hint").show(200);
@@ -53,6 +57,7 @@ layui.use(['laytpl','layer'],function(){
                    });
                    $(".article-hidden-hint").hide(100,function () {
                        $(".articleManage").animate({width: '80%'},200);
+                       $(".articleManage-hidden").show(100);
                    });
                    $(".userManage").animate({width: "6%",margin: "2% 1% 2% 2%"},300,function () {
                        $(".user-hidden-hint").show(200);
@@ -69,9 +74,13 @@ layui.use(['laytpl','layer'],function(){
                     $(".userManage").animate({width: 0,margin: "0 1% 0 0"},200);
                 });
 
-                $(".articleManage").animate({width: "6%"},300,function () {
-                    $(".article-hidden-hint").show(200);
+
+                $(".articleManage-hidden").hide(100,function () {
+                    $(".articleManage").animate({width: "6%"},200,function () {
+                        $(".article-hidden-hint").show(200);
+                    });
                 });
+
                 $(".notice-hidden-hint").hide(100,function () {
                     $(".noticeManage").animate({width: "88%"},300);
                 });
@@ -117,6 +126,17 @@ layui.use(['laytpl','layer'],function(){
         },function () {
             layer.close(tipsTh)
         });
+
+        //记录文章标题弹出层
+        var tipsTit;
+        $(".articleMassage-item-title>p").hover(function () {
+            tipsTit = layer.tips($(this).text(),this,{
+                tips: 2
+            });
+        },function () {
+            layer.clone(tipsTit);
+        });
+
     }
 
     //用户管理滚动到底部加载数据
