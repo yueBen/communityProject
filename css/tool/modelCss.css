@@ -1,0 +1,38 @@
+html{
+    overflow: scroll;
+    margin: 0;
+}
+html::-webkit-scrollbar{
+    display: none;
+}
+
+.modelBtn1{
+    width: 75px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #2E2D3C;
+    font-size: inherit;
+    color: #2E2D3C;
+    border-radius: 20px;
+    outline: none;
+}
+.modelBtn1:active{
+    color: #949592;
+    border-color: #949592;
+}
+
+.modelBtn2{
+    width: 75px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #d5d6d3;
+    font-size: inherit;
+    color: #d5d6d3;
+    border-radius: 20px;
+    outline: none;
+    background: #545552;
+}
+.modelBtn2:active{
+    color: #2E2D3C;
+    border-color: #2E2D3C;
+}

@@ -187,7 +187,8 @@ layui.use(['laytpl','layer'],function(){
                 title: false,
                 content: '../page/model/text.html',
                 skin: 'modelBg',
-                area: ['500px', '300px']
+                area: ['800px', '400px'],
+                closeBtn:1
             });
         }
     }

@@ -92,7 +92,11 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-
+/*模态框样式*/
+.modelBg{
+    background: transparent!important;
+    border-radius: 20px!important;
+}
 
 
 

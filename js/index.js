@@ -2,8 +2,6 @@ layui.use('layer',function () {
     var layer = layui.layer,
         $ = layui.$;
 
-    //加载验证码
-    refreshCode();
 
     //找圆
     $(".user-photo").height($(".user-photo").width());
@@ -272,59 +270,17 @@ layui.use('layer',function () {
 
     //登录注册
 
-        //用户登录注销
-        $('#userLanding').click(function () {
-            layer.open({
-                type: 1,
-                title: '请登录',
-                content: $('#landing'),
-                // area: ['500','1000'],
-                btn: ['重置', '登录'],
-                btn1: function () {
-                    console.log("重置");
-                },
-                btn2: function () {
-                    provingCode();
-                },
-                closeBtn: 1
-            })
-        });
-
-        //刷新验证码
-        $('#refreshCode').click(function () {
-            refreshCode()
+    //用户登录注销
+    $('#userLanding').click(function () {
+        layer.open({
+            type: 2,
+            title: false,
+            content: 'page/model/userLogin.html',
+            area: ['600px','400px'],
+            skin: 'modelBg',
+            closeBtn:1
         })
-
-        //生成验证码
-        function refreshCode() {
-            var code = '';
-            //设置长度，这里看需求，我这里设置了4
-            var codeLength = 4;
-            //设置随机字符
-            var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
-            //循环codeLength 我设置的4就是循环4次
-            for (var i = 0; i < codeLength; i++) {
-                //设置随机数范围,这设置为0 ~ 36
-                var index = Math.floor(Math.random() * 36);
-                //字符串拼接 将每次随机的字符 进行拼接
-                code += random[index];
-            }
-            //将拼接好的字符串赋值给展示的Value
-            $('#refreshCode').val(code);
-        }
-
-        //效验验证码
-        function provingCode() {
-            console.log('121');
-            if ($('#refreshCode') === $('#provingCode')) {
-                layer.msg('验证码正确')
-            } else if ($('#provingCode').length === 0) {
-                layer.msg('请输入验证码')
-            } else {
-                layer.msg('验证码错误')
-            }
-        }
-
+    });
 
 
 

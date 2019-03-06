@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="../../css/tool/modelCss.css">
+<link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
+<style type="text/css">
+
+    .page{
+        width: 100%;
+        height: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    .page::-webkit-scrollbar{
+        display: none;
+    }
+    .userLogin{
+        display: inline-block;
+        width: 600px;
+        height: 95%;
+        background: rgba(255,255,255,0.8);
+        text-align: center;
+        border-radius: 20px;
+    }
+    .userLogin-button{
+        margin: 35px 20px 0 20px;
+    }
+
+    .userLogin-input{
+        width: 300px;
+        height: 40px;
+        border-radius: 20px;
+        text-align: center;
+        background: transparent;
+        margin: 20px 0 10px 0;
+        outline: none;
+        font-size: 22px;
+        font-family: 楷体;
+    }
+    .userLogin-code{
+        width: 150px;
+        height: 40px;
+        border-radius: 20px;
+        text-align: center;
+        background: transparent;
+        margin: 20px 0 0 0;
+        outline: none;
+        font-size: 22px;
+        font-family: 楷体;
+    }
+
+    .userRegister{
+        display: inline-block;
+        width: 582px;
+        height: 415px;
+        background: rgba(0,255,255,0.8);
+        text-align: center;
+        border-radius: 20px;
+    }
+
+</style>
+<div class="page">
+<div class="userLogin">
+    <input class="userLogin-input" type="text" placeholder="用户名" style="margin: 100px 0 10px 0"><br>
+    <input class="userLogin-input" type="text" placeholder="密码"><br>
+    <input class="userLogin-code" type="text">
+    <input class="userLogin-code" type="text" placeholder="验证码"><br>
+
+    <button class="modelBtn1 userLogin-button" id="register">注册</button>
+    <button class="modelBtn2 userLogin-button">登陆</button>
+
+</div>
+<div class="userRegister">
+    <i class="layui-icon">&#xe65c;</i>
+
+    <input class="userLogin-input" type="text" placeholder="用户名" style="margin: 100px 0 10px 0"><br>
+    <input class="userLogin-input" type="text" placeholder="密码"><br>
+    <input class="userLogin-input" type="text" placeholder="确认密码"><br>
+
+    <button class="modelBtn1 userLogin-button">注册</button>
+</div>
+</div>
+<script src="../../layui/layui.all.js"></script>
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script>
+    layui.use('',function () {
+        var $ = layui.$;
+
+        var nScrollWidth = $(".page").scrollWidth;
+        $("#register").onClick(function () {
+            $(".page").scrollWidth(nScrollWidth,0);
+        });
+
+    });
+</script>
