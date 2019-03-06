@@ -49,6 +49,7 @@ layui.use(['laytpl','layer'],function(){
                    });
                }
                if (showNum == 3){
+                   $(".noticeManage-hidden").hide(200)
                    $(".noticeManage").animate({width: "6%"},300,function () {
                        $(".notice-hidden-hint").show(200);
                    });
@@ -83,6 +84,7 @@ layui.use(['laytpl','layer'],function(){
 
                 $(".notice-hidden-hint").hide(100,function () {
                     $(".noticeManage").animate({width: "88%"},300);
+                    $(".noticeManage-hidden").show(200)
                 });
                 showNum = 3;
             }
@@ -92,50 +94,61 @@ layui.use(['laytpl','layer'],function(){
 
     //悬浮提示
     {
-        //记录弹窗层
-        var tipsTh;
+        //记录弹出层
+        var tips;
+
+        //用户管理弹窗层
 
         $(".item-createTime").hover(function () {
-            tipsTh = layer.tips("注册时间",this,{
+            tips = layer.tips("注册时间",this,{
                 tips: 1
             })
         },function () {
-            layer.close(tipsTh)
+            layer.close(tips)
         });
 
         $(".item-onlineTime").hover(function () {
-            tipsTh = layer.tips("上线时间",this,{
+            tips = layer.tips("上线时间",this,{
                 tips: 1
             })
         },function () {
-            layer.close(tipsTh)
+            layer.close(tips)
         });
 
         $(".item-violate").hover(function () {
-            tipsTh = layer.tips("等级",this,{
+            tips = layer.tips("等级",this,{
                 tips: 1
             })
         },function () {
-            layer.close(tipsTh)
+            layer.close(tips)
         });
 
         $(".item-ranking").hover(function () {
-            tipsTh = layer.tips("排名",this,{
+            tips = layer.tips("排名",this,{
                 tips: 1
             })
         },function () {
-            layer.close(tipsTh)
+            layer.close(tips)
         });
 
-        //记录文章标题弹出层
-        var tipsTit;
+        //文章标题弹出层
         $(".articleMassage-item-title>p").hover(function () {
-            tipsTit = layer.tips($(this).text(),this,{
-                tips: 2
+            tips = layer.tips($(this).text(),this,{
+                tips: 3
             });
         },function () {
-            layer.clone(tipsTit);
+            layer.close(tips);
         });
+
+        //记录用户公告申请弹窗栏
+        $(".user-notice-pending-item-title>p").hover(function () {
+            tips = layer.tips($(this).text(),this,{
+                tips: 1
+            });
+        },function () {
+            layer.close(tips);
+        });
+
 
     }
 
@@ -151,6 +164,14 @@ layui.use(['laytpl','layer'],function(){
                 layer.load(1,{time: 2000});
             }
         });
+    }
+
+    //页面按钮
+    {
+        //用户公告申请时间排序按钮
+        $("#userNotice-timeRank").click(function () {
+
+        })
     }
 
 }
