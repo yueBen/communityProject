@@ -5,7 +5,28 @@ html{
 html::-webkit-scrollbar{
     display: none;
 }
-
+.bg {
+    background: url("../../img/6.jpg");
+    height:98%;
+    text-align: center;
+    border-radius: 20px;
+}
+.bg-blur {
+    margin: 1%;
+    position: fixed;
+    bottom: 0;
+    float: left;
+    width: 98%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    -webkit-filter: blur(5px);
+    /*-moz-filter: blur(15px);*/
+    /*-o-filter: blur(15px);*/
+    /*-ms-filter: blur(15px);*/
+    filter: blur(5px);
+}
 .modelBtn1{
     width: 75px;
     height: 40px;
