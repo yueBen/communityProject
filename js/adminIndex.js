@@ -182,14 +182,14 @@ layui.use(['laytpl','layer'],function(){
     //模态框弹出层
     {
         function openAddLexicon() {
-            layer.open({
-                type: 2,
-                title: false,
-                content: '../page/model/text.html',
-                skin: 'modelBg',
-                area: ['800px', '400px'],
-                closeBtn:1
-            });
+            // layer.open({
+            //     type: 2,
+            //     title: false,
+            //     content: '../page/model/text.html',
+            //     skin: 'modelBg',
+            //     area: ['800px', '400px'],
+            //     closeBtn:1
+            // });
         }
     }
 

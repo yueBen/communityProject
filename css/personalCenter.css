@@ -239,10 +239,22 @@ html,body{
 .add-friend{
     width: 35px;
     height: 35px;
+    line-height: 35px;
+    text-align: center;
     border-radius: 50%;
     position: fixed;
     bottom: 15px;
     right: 10px;
+    border: 1px solid #d1d4d5;
+    color: #d1d4d5;
+}
+.add-friend>i{
+    font-size: 22px;
+    color: inherit;
+}
+.add-friend:active{
+    border-color: #5e5e5e;
+    color: #5e5e5e;
 }
 .friends-item{
     width: 94%;
