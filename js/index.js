@@ -278,7 +278,8 @@ layui.use('layer',function () {
             content: 'page/model/userLogin.html',
             area: ['600px','400px'],
             skin: 'modelBg',
-            closeBtn:1
+            closeBtn:1,
+            shadeClose: true
         })
     });
 

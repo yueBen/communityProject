@@ -22,11 +22,13 @@ layui.use(['laytpl','layer'],function(){
         });
     }
 
-    //按钮
+    //model
     {
-        //添加好友按钮
+        //当前打开的弹窗对象
+        var showModel;
+        //添加好友
         $("#addFriend").click(function () {
-            layer.open({
+            showModel = layer.open({
                 type: 2,    //弹窗类型,2为页面层
                 title: false,   //弹出标题
                 content: '../page/model/addFriend.html',    //弹出内容,当前为HTML路径
@@ -42,8 +44,52 @@ layui.use(['laytpl','layer'],function(){
                 resize: false  //弹窗大小是否可拖动
                 //scrollbar: true   // 是否允许浏览器出现滚动条
                 // cancel: function () {} 右上角关闭按钮触发的回调
-            })
+            });
         });
+
+
+        //修改个人信息
+        $("#updateInfo").click(function () {
+            showModel = layer.open({
+                type: 2,    //弹窗类型,2为页面层
+                title: false,   //弹出标题
+                content: '../page/model/updateUserInfo.html',    //弹出内容,当前为HTML路径
+                skin: 'modelBg',    //弹窗样式
+                area: ['600px','800px'],  //弹窗大小
+                offset: ['0px','250px'],  //弹窗位置[top,left]，默认auto垂直水平居中
+                closeBtn: 0,     //右上角关闭按钮，有1、2两种样式，0是不显示
+                shade: 0.2,     //弹层外区域,可自定义样式shade: [0.8, '#393D49']
+                shadeClose: true,  //点击弹层外区域关闭
+                anim: 0,    //弹出动画
+                isOutAnim: true,    //关闭动画
+                fixed: true,    //鼠标滚动时，层是否固定在可视区域
+                resize: false  //弹窗大小是否可拖动
+                //scrollbar: true   // 是否允许浏览器出现滚动条
+                // cancel: function () {} 右上角关闭按钮触发的回调
+            });
+        });
+
+        $(".message-see").click(function () {
+            showModel = layer.open({
+                type: 2,    //弹窗类型,2为页面层
+                title: false,   //弹出标题
+                content: '../page/model/userLeaveMessage.html?id='+$(this).value,    //弹出内容,当前为HTML路径
+                skin: 'modelBg',    //弹窗样式
+                area: ['600px','800px'],  //弹窗大小
+                offset: ['0px','250px'],  //弹窗位置[top,left]，默认auto垂直水平居中
+                closeBtn: 0,     //右上角关闭按钮，有1、2两种样式，0是不显示
+                shade: 0.2,     //弹层外区域,可自定义样式shade: [0.8, '#393D49']
+                shadeClose: true,  //点击弹层外区域关闭
+                anim: 0,    //弹出动画
+                isOutAnim: true,    //关闭动画
+                fixed: true,    //鼠标滚动时，层是否固定在可视区域
+                resize: false  //弹窗大小是否可拖动
+                //scrollbar: true   // 是否允许浏览器出现滚动条
+                // cancel: function () {} 右上角关闭按钮触发的回调
+            });
+            console.log(111);
+        })
+
     }
 
 

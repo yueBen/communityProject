@@ -29,6 +29,8 @@ html::-webkit-scrollbar{
     filter: blur(5px);
 }
 .modelBtn1{
+    display: inline-block;
+    text-align: center;
     width: 75px;
     height: 40px;
     line-height: 40px;
@@ -37,6 +39,10 @@ html::-webkit-scrollbar{
     color: inherit;
     border-radius: 20px;
     outline: none;
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
 }
 .modelBtn1:active{
     color: #949592;
@@ -44,6 +50,8 @@ html::-webkit-scrollbar{
 }
 
 .modelBtn2{
+    display: inline-block;
+    text-align: center;
     width: 75px;
     height: 40px;
     line-height: 40px;
@@ -53,6 +61,10 @@ html::-webkit-scrollbar{
     border-radius: 20px;
     outline: none;
     background: #545552;
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
 }
 .modelBtn2:active{
     color: #2E2D3C;
