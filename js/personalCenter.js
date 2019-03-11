@@ -69,14 +69,14 @@ layui.use(['laytpl','layer'],function(){
             });
         });
 
-        $(".message-see").click(function () {
+        $(".message-reply").click(function () {
             showModel = layer.open({
                 type: 2,    //弹窗类型,2为页面层
                 title: false,   //弹出标题
-                content: '../page/model/userLeaveMessage.html?id='+$(this).value,    //弹出内容,当前为HTML路径
+                content: '../page/model/userLeaveMessage.html?id=' + $(this).attr("value"), //弹出内容,当前为HTML路径
                 skin: 'modelBg',    //弹窗样式
-                area: ['600px','800px'],  //弹窗大小
-                offset: ['0px','250px'],  //弹窗位置[top,left]，默认auto垂直水平居中
+                area: ['600px','400px'],  //弹窗大小
+                offset: ['100px','220px'],  //弹窗位置[top,left]，默认auto垂直水平居中
                 closeBtn: 0,     //右上角关闭按钮，有1、2两种样式，0是不显示
                 shade: 0.2,     //弹层外区域,可自定义样式shade: [0.8, '#393D49']
                 shadeClose: true,  //点击弹层外区域关闭
@@ -87,7 +87,6 @@ layui.use(['laytpl','layer'],function(){
                 //scrollbar: true   // 是否允许浏览器出现滚动条
                 // cancel: function () {} 右上角关闭按钮触发的回调
             });
-            console.log(111);
         })
 
     }
