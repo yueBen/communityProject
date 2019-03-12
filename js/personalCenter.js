@@ -30,7 +30,6 @@ layui.use(['laytpl','layer','laydate'],function(){
             layer.open({
                 type: 1,    //弹窗类型,2为页面层
                 title: false,   //弹出标题
-                // content: '../page/model/addFriend.html',    //弹出内容,当前为HTML路径
                 content: $("#addFriendModel"),
                 skin: 'modelBg',    //弹窗样式
                 area: ['800px','300px'],  //弹窗大小
@@ -46,7 +45,6 @@ layui.use(['laytpl','layer','laydate'],function(){
                 // cancel: function () {} 右上角关闭按钮触发的回调
             });
         });
-
 
         //修改个人信息
         $("#updateInfo").click(function () {
@@ -69,11 +67,12 @@ layui.use(['laytpl','layer','laydate'],function(){
             });
         });
 
+        //留言回复
         $(".message-reply").click(function () {
-            showModel = layer.open({
+           layer.open({
                 type: 2,    //弹窗类型,2为页面层
                 title: false,   //弹出标题
-                content: '../page/model/userLeaveMessage.html?id=' + $(this).attr("value"), //弹出内容,当前为HTML路径
+                content: '', //弹出内容,当前为HTML路径
                 skin: 'modelBg',    //弹窗样式
                 area: ['600px','400px'],  //弹窗大小
                 offset: ['100px','220px'],  //弹窗位置[top,left]，默认auto垂直水平居中
@@ -113,7 +112,7 @@ layui.use(['laytpl','layer','laydate'],function(){
                     console.log(rep);
                     if (rep.ok) {
 
-                        layer.msg("修改成功", {
+                        layer.msg(rep.message, {
                             time: 1000,
                             offset: ['400px','400px']
                         }, function () {
@@ -122,7 +121,12 @@ layui.use(['laytpl','layer','laydate'],function(){
                     }
                 },
                 error: function (err) {
-                    console.log(err)
+                    layer.msg(err.message, {
+                        time: 1000,
+                        offset: ['400px','400px']
+                    }, function () {
+
+                    });
                 }
             });
         });

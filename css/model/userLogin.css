@@ -7,7 +7,7 @@
 }
 
 input::-webkit-input-placeholder{
-    color: #000;
+    color: #feffc1;
 }
 
 .userLogin{
@@ -18,30 +18,57 @@ input::-webkit-input-placeholder{
     border-radius: 20px;
 }
 .userLogin-button{
+    border: 1px solid #feffc1;
     margin: 35px 20px 0 20px;
+    color: #feffc1;
+    background: transparent;
 }
 
 .userLogin-input{
     width: 300px;
-    height: 40px;
+    height: 50px;
     border-radius: 20px;
+    border: 1px solid #feffc1;
     text-align: center;
     background: transparent;
     margin: 20px 0 10px 0;
     outline: none;
     font-size: 22px;
     font-family: 楷体;
+    color: #feffc1;
 }
 .userLogin-code{
+    vertical-align: top;
     width: 150px;
-    height: 40px;
+    height: 50px;
     border-radius: 20px;
+    border: 1px solid #feffc1;
     text-align: center;
     background: transparent;
     margin: 20px 0 0 0;
     outline: none;
     font-size: 22px;
     font-family: 楷体;
+    color: #feffc1;
+}
+.check-code{
+    display: inline-block;
+    vertical-align: top;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 20px;
+    border: 1px solid #feffc1;
+    text-align: center;
+    background: transparent;
+    margin: 20px 0 0 0;
+    font-size: 26px;
+    font-family: 楷体;
+    color: #feffc1;
+    -webkit-user-select: none;
+}
+.check-code>span{
+    margin: 0 2px;
 }
 
 .userRegister{
