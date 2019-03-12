@@ -1,3 +1,5 @@
+var personPath = "http://localhost:8085/api/personInfo/personInfo/";
+
 function getParam(paramName) {
     var paramValue = "",
         url = this.location.search;

@@ -268,11 +268,9 @@ layui.use('layer',function () {
         window.open('page/bloggerPage.html','blogger');
     });
 
-    //登录注册
-
     //用户登录注销
     $('#userLanding').click(function () {
-        layer.open({
+        openLayer = layer.open({
             type: 2,
             title: false,
             content: 'page/model/userLogin.html',

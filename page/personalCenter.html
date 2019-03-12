@@ -1,6 +1,8 @@
+
 <link rel="stylesheet" href="../css/personalCenter.css"/>
 <link rel="stylesheet" href="../layui/css/layui.css">
 <link rel="stylesheet" href="../css/tool/myCss.css">
+<link rel="stylesheet" href="../css/tool/modelCss.css">
 <div class="personalCenter">
     <div class="personalCenter-top">
         <!--我的各项参数-->
@@ -400,6 +402,248 @@
         </div>
     </div>
 </div>
+<!--添加好友-->
+<style type="text/css">
+
+    html{
+        overflow: hidden;
+    }
+
+    .add{
+        width: 100%;
+        height: 100%;
+        background: rgba(105,105,105,0.9);
+        border-radius: 30px;
+    }
+
+    .add-query{
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        float: left;
+        margin: 20px 0 20px 0;
+        text-align: center;
+        /*background: rgba(45,45,45,0.6);*/
+    }
+    .add-query>input{
+        width: 480px;
+        height: 40px;
+        border-radius: 20px;
+        margin: 0 20px 0 0;
+        border: 1px solid #FFFFFF;
+        background: inherit;
+        text-align: center;
+        font-size: 18px;
+        color: #FFFFFF;
+        font-family: 楷体;
+    }
+    .add-query>input::-webkit-input-placeholder{
+        color: #d1d2d3;
+    }
+    .add-query>button{
+        border-color: #FFFFFF;
+        background: #FFFFFF;
+        color: #000000;
+    }
+
+    .add-items{
+        float: left;
+        width: 98%;
+        height: 200px;
+        margin: 0 1%;
+    }
+    .add-item{
+        display: inline-block;
+        float: left;
+        width: 31.33%;
+        height: 80px;
+        margin: 10px 1%;
+        border-radius: 40px;
+        background: rgba(245,245,245,0.8);
+
+    }
+    .add-item-name{
+        width: 100%;
+        height: 39px;
+        line-height: 39px;
+        text-align: center;
+        font-size: 24px;
+        font-family: 宋体;
+    }
+    .add-item-add{
+        display: inline-block;
+        float: left;
+        width: 25%;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        color: black;
+
+    }
+    .add-item-add:active{
+        color: #e5e5a4;
+    }
+    .add-item-add>i{
+        font-size: 35px;
+        color: inherit;
+    }
+    .add-item-id{
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 24px;
+        font-family: 宋体;
+    }
+
+</style>
+<div id="addFriendModel" style="display: none" class="add">
+    <div class="add-query">
+        <input type="text" placeholder="请输入用户名或ID">
+        <button class="modelBtn1"><i class="layui-icon">&#xe615;</i></button>
+    </div>
+    <div class="add-items">
+
+        <div class="add-item">
+            <div style="display: inline-block;float: left;width: 75%;height: 80px;">
+                <div class="add-item-name">王二牛儿</div>
+                <hr style="margin: 0 10%;background: #494118;width: 80%;">
+                <div class="add-item-id">XXXXXXXX</div>
+            </div>
+
+            <div class="add-item-add">
+                <i class="layui-icon">&#xe61f;</i>
+            </div>
+        </div>
+
+        <div class="add-item"></div>
+        <div class="add-item"></div>
+        <div class="add-item"></div>
+        <div class="add-item"></div>
+        <div class="add-item"></div>
+
+    </div>
+</div>
+
+<!--信息修改-->
+<style type="text/css">
+
+    .update{
+        width: 600px;
+        height: 775px;
+        border-radius: 30px;
+        background: rgba(105,105,105,0.9);
+        text-align: center;
+        padding: 25px 0 0 0;
+    }
+
+    .update-item{
+        width: 60%;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        margin: 0 10% 10px 10%;
+        padding: 0 10%;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: 楷体;
+        color: #FFFFFF;
+    }
+    .update-item>textarea{
+        background: rgba(25,255,255,0.1);
+        border: 1px solid #FFFFFF;
+        width: 240px;
+        height: 120px;
+        padding: 10px;
+        border-radius: 20px;
+        font-weight: 100;
+        font-size: 20px;
+        color: #FFFFFF;
+        overflow: scroll;
+    }
+    .update-item>textarea::-webkit-scrollbar{
+        display: none;
+    }
+    .update-item>textarea::placeholder{
+        color: #cee0ff;
+    }
+    .update-item>input{
+        width: 240px;
+        height: 40px;
+        border: 1px solid #FFFFFF;
+        border-radius: 20px;
+        background: rgba(25,255,255,0.1);
+        text-align: center;
+        color: #feffc1;
+    }
+    .update-item>input::placeholder{
+        color: #cee0ff;
+    }
+    .update-item>select{
+        width: 80px;
+        height: 40px;
+        border: 1px solid #FFFFFF;
+        border-radius: 20px;
+        background: rgba(25,255,255,0.1);
+        color: #feffc1;
+    }
+    .update-item>select>option{
+        background: rgba(25,255,255,0.1);
+        color: #00557d;
+    }
+
+    .photo>img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+    .btn{
+        border: 1px solid #FFFFFF;
+        color: #FFFFFF;
+    }
+
+</style>
+<div id="updateInfoModel" style="display: none" class="update">
+    <form id="info">
+        <input style="display: none" value="34e1aaadd681494c93a2ac278c23b1b8" name="id">
+        <input style="display: none" value="1" name="uid">
+        <div class="update-item">
+            <input type="text" value="" name="name" placeholder="姓名">
+        </div>
+        <div class="update-item">
+            <input type="text" value="" name="phone" placeholder="电话">
+        </div>
+        <div class="update-item">
+            <input type="text" value="" name="birthday" id="birthday" placeholder="请选择日期" readonly>
+        </div>
+        <div class="update-item">
+            <input type="text" value="" name="address" placeholder="地址">
+        </div>
+        <div class="update-item">
+            性别：<select name="gender">
+            <option value="男" selected>男</option>
+            <option value="女">女</option>
+        </select>
+        </div>
+        <div class="update-item" style="height: 120px;">
+            <textarea maxlength="84" name="introduce" placeholder="简介："></textarea>
+        </div>
+        <div class="update-item photo" style="height: 170px;text-align: center;">
+            <img id="photoShow" src="../img/6.jpg" style="display: block">
+            <input type="file" style="width: 100%;height: 10px;visibility: hidden" id="photoUpload-hidden" name="photo" accept="image/*">
+            <div class="modelBtn1 btn" style="width: 220px;margin: 0 auto" id="photoUpload">上传头像</div>
+        </div>
+    </form>
+    <div class="update-item" style="text-align: center">
+        <div class="modelBtn1 btn">取消</div>
+        <div class="modelBtn2" style="background: rgba(245,245,245,0.6);
+            color: #494118;margin: 0 0 0 40px">保存</div>
+    </div>
+</div>
+
 <script src="../layui/layui.js"></script>
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/personalCenter.js"></script>
+<script src="../js/tool/config.js"></script>
+

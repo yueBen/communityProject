@@ -1,6 +1,7 @@
-layui.use(['laytpl','layer'],function(){
+layui.use(['laytpl','layer','laydate'],function(){
    var laytpl = layui.laytpl,
        layer = layui.layer,
+       laydate = layui.laydate,
        $ = layui.$;
 
    //页面动画
@@ -24,14 +25,13 @@ layui.use(['laytpl','layer'],function(){
 
     //model
     {
-        //当前打开的弹窗对象
-        var showModel;
         //添加好友
         $("#addFriend").click(function () {
-            showModel = layer.open({
-                type: 2,    //弹窗类型,2为页面层
+            layer.open({
+                type: 1,    //弹窗类型,2为页面层
                 title: false,   //弹出标题
-                content: '../page/model/addFriend.html',    //弹出内容,当前为HTML路径
+                // content: '../page/model/addFriend.html',    //弹出内容,当前为HTML路径
+                content: $("#addFriendModel"),
                 skin: 'modelBg',    //弹窗样式
                 area: ['800px','300px'],  //弹窗大小
                 offset: ['150px','175px'],  //弹窗位置[top,left]，默认auto垂直水平居中
@@ -50,10 +50,10 @@ layui.use(['laytpl','layer'],function(){
 
         //修改个人信息
         $("#updateInfo").click(function () {
-            showModel = layer.open({
-                type: 2,    //弹窗类型,2为页面层
+            layer.open({
+                type: 1,    //弹窗类型,2为页面层
                 title: false,   //弹出标题
-                content: '../page/model/updateUserInfo.html',    //弹出内容,当前为HTML路径
+                content: $("#updateInfoModel"),    //弹出内容,当前为HTML路径
                 skin: 'modelBg',    //弹窗样式
                 area: ['600px','800px'],  //弹窗大小
                 offset: ['0px','250px'],  //弹窗位置[top,left]，默认auto垂直水平居中
@@ -89,6 +89,58 @@ layui.use(['laytpl','layer'],function(){
             });
         })
 
+    }
+
+    //update_info_model
+    {
+        //头像上传按钮
+        $("#photoUpload").click(function () {
+            $("#photoUpload-hidden").click();
+        });
+
+        //个人信息上传
+        $(".modelBtn2").click(function () {
+            var formDate = new FormData($("#info")[0]);
+            $.ajax({
+                type: "post",
+                url: personPath + "add",
+                data: formDate,
+                async: false,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (rep) {
+                    console.log(rep);
+                    if (rep.ok) {
+
+                        layer.msg("修改成功", {
+                            time: 1000,
+                            offset: ['400px','400px']
+                        }, function () {
+
+                        });
+                    }
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+            });
+        });
+
+        //头像选择回显
+        $("#photoUpload-hidden").change(function () {
+            var fr = new FileReader();
+            fr.readAsDataURL(this.files[0]);
+            fr.onloadend = function () {
+                $("#photoShow").attr("src", this.result)
+            }
+            console.log("222");
+        });
+
+        //时间选择
+        laydate.render({
+            elem: '#birthday'
+        })
     }
 
 
