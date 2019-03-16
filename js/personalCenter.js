@@ -100,6 +100,7 @@ layui.use(['laytpl','layer','laydate'],function(){
         //个人信息上传
         $(".modelBtn2").click(function () {
             var formDate = new FormData($("#info")[0]);
+            console.log(formDate);
             $.ajax({
                 type: "post",
                 url: personPath + "add",

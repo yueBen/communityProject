@@ -1,4 +1,4 @@
-var personPath = "http://localhost:8085/api/personInfo/personInfo/";
+var personPath = "http://localhost:8088/api/personInfo/personInfo/";
 
 function getParam(paramName) {
     var paramValue = "",

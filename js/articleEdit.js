@@ -36,7 +36,7 @@ layui.use('layer',function () {
         //配置本地图片上传
         {
             //设置上传接口
-            e.customConfig.uploadImgServer = 'http://localhost:8085/api/wangEditorPhoto/test';
+            e.customConfig.uploadImgServer = 'http://localhost:8088/api/wangEditorPhoto/test';
 
             //设置上传名称
             e.customConfig.uploadFileName = '22410';
