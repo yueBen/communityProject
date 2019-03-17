@@ -4,6 +4,32 @@ layui.use(['laytpl','layer','laydate'],function(){
        laydate = layui.laydate,
        $ = layui.$;
 
+   var user = JSON.parse(sessionStorage.getItem("user"));
+   if (user != null) {
+       userInfo(user);
+   }
+
+    //用户基本信息
+    function userInfo(user) {
+        $("#ranking").text(user.ranking);
+        $("#comment_num").text(user.commentNum);
+        $("#message_num").text(user.messageNum);
+        $("#browse_num").text(user.browseNum);
+        $("#like_num").text(user.praiseNum);
+        $("#longTime").text(user.photoPath);
+        $("#name").text(user.name);
+        $("#phone").text(user.phone);
+        $("#id").text(user.uid);
+        console.log(user.birthday);
+        console.log(typeof user.birthday);
+        $("#birth").text(toDate(user.birthday));
+        $("#addr").text(user.address);
+        $("#gender").text(user.gender);
+        $("#notice").text(user.introduce);
+        $("#uid").attr("value",user.uid);
+        $(".personalCenter-top-right>img").attr("src",path+"/personInfo/personInfo/" + user.uid + "/down")
+    }
+
    //页面动画
     {
         $('.personalCenter-bottom-left').click(function () {
@@ -66,7 +92,6 @@ layui.use(['laytpl','layer','laydate'],function(){
                 // cancel: function () {} 右上角关闭按钮触发的回调
             });
         });
-
         //留言回复
         $(".message-reply").click(function () {
            layer.open({
@@ -87,7 +112,6 @@ layui.use(['laytpl','layer','laydate'],function(){
                 // cancel: function () {} 右上角关闭按钮触发的回调
             });
         })
-
     }
 
     //update_info_model
@@ -103,7 +127,7 @@ layui.use(['laytpl','layer','laydate'],function(){
             console.log(formDate);
             $.ajax({
                 type: "post",
-                url: personPath + "add",
+                url: path + "/personInfo/personInfo/add",
                 data: formDate,
                 async: false,
                 cache: false,
@@ -112,12 +136,13 @@ layui.use(['laytpl','layer','laydate'],function(){
                 success: function (rep) {
                     console.log(rep);
                     if (rep.ok) {
-
-                        layer.msg(rep.message, {
+                        userInfo(rep.data);
+                        sessionStorage.setItem("user",JSON.stringify(rep.data));
+                        var n = layer.msg(rep.message, {
                             time: 1000,
                             offset: ['400px','400px']
                         }, function () {
-
+                            layer.close(n);
                         });
                     }
                 },
@@ -148,5 +173,9 @@ layui.use(['laytpl','layer','laydate'],function(){
         })
     }
 
+    //
+    {
+
+    }
 
 });

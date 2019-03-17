@@ -98,5 +98,14 @@
     border-radius: 20px!important;
 }
 
+.model{
+    background: transparent!important;
+    border-radius: 20px!important;
+    overflow: scroll;
+}
+.model::-webkit-scrollbar{
+    display: none;
+}
+
 
 

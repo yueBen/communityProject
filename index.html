@@ -12,7 +12,7 @@
 		<div class="home-page">
 
 			<!--页面顶部导航栏-->
-			<div class="home-page-head">
+			<div class="home-page-head div-bg-shadow">
 				<div class="head-title-type">
 					<div class="title-type-item title-type-item-check">推荐</div>
 					<div class="title-type-item">学习</div>
@@ -35,8 +35,9 @@
 
 				<!--用户姓名-->
 				<div class="user-name" id="userLanding">
-					滴滴滴
+					请登录
 				</div>
+				<div class="userOut" id="userOut">安全退出</div>
 
 				<!--用户消息栏-->
 				<div class="user-message">
@@ -216,7 +217,35 @@
 
 		</div>
 	</body>
-	<script src="layui/layui.js"></script>
+
+	<div id="loginPage" style="width: 600px;height: 400px;">
+		<link rel="stylesheet" href="css/tool/modelCss.css">
+		<link rel="stylesheet" href="css/model/userLogin.css">
+		<div class="loginPageBlur bg"></div>
+		<div class="loginPage">
+			<div class="userLogin">
+				<input class="userLogin-input" id="username" type="text" placeholder="用户名" style="margin: 60px 0 10px 0"><br>
+				<input class="userLogin-input" id="userpwd" type="password" placeholder="密码"><br>
+				<!--<input class="userLogin-code" type="text" id="check-code">-->
+				<div class="check-code"></div>
+				<input class="userLogin-code" type="text" id="check-code-input" placeholder="验证码"><br>
+
+				<button class="modelBtn1 userLogin-button"  id="register">注册</button>
+				<button class="modelBtn2 userLogin-button">登陆</button>
+			</div>
+			<div class="userRegister">
+
+				<input class="userLogin-input" id="regName" type="text" placeholder="用户名" style="margin: 60px 0 10px 0"><br>
+				<input class="userLogin-input" id="regPwd" type="text" placeholder="密码"><br>
+				<input class="userLogin-input" type="regPwdRep" placeholder="确认密码"><br>
+
+				<button class="modelBtn1 userLogin-button">注册</button>
+				<button class="modelBtn1 userLogin-button" id="backLogin"><i class="layui-icon">&#xe65c;</i></button>
+			</div>
+		</div>
+	</div>
+
+	<script src="layui/layui.all.js"></script>
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/tool/config.js"></script>
 	<script src="js/index.js"></script>

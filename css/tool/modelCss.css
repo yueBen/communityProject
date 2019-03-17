@@ -7,7 +7,7 @@ html::-webkit-scrollbar{
 }
 
 .bg {
-    background: rgba(45,45,45,0.8);
+    background: rgba(45,45,45,0.9);
     /*background: url("../../img/6.jpg");*/
     height:98%;
     text-align: center;

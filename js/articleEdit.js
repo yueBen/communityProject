@@ -36,10 +36,10 @@ layui.use('layer',function () {
         //配置本地图片上传
         {
             //设置上传接口
-            e.customConfig.uploadImgServer = 'http://localhost:8088/api/wangEditorPhoto/test';
+            e.customConfig.uploadImgServer = 'http://localhost:8088/api/article/article/test';
 
             //设置上传名称
-            e.customConfig.uploadFileName = '22410';
+            e.customConfig.uploadFileName = 'articleImg';
 
             //设置图片上传大小
             e.customConfig.uploadImgMaxSize = 10*1024*1024;
@@ -83,7 +83,7 @@ layui.use('layer',function () {
 
                     // 举例：假如上传图片成功后，服务器端返回的是 {url:'....'} 这种格式，即可这样插入图片：
                     console.log(result);
-                    var url = result.data;
+                    var url = "http://localhost:8088/api/article/article/" + result.data + "/down";
                     insertImg(url);
 
                     // result 必须是一个 JSON 格式字符串！！！否则报错
@@ -103,6 +103,7 @@ layui.use('layer',function () {
 
             $('#preview').html(e.txt.html());
             console.log(e.txt.html());
+            console.log(e.txt.text());
 
         }
         $('#previewBtn').click(function () {

@@ -12,7 +12,7 @@
                 <div name="img">
                     <img src="../img/icon/white/3.png">
                 </div>
-                <div name="num">
+                <div name="num" id="ranking">
                     23
                 </div>
             </div>
@@ -21,7 +21,7 @@
                 <div name="img">
                     <img src="../img/icon/white/4.png">
                 </div>
-                <div name="num">
+                <div name="num" id="comment_num">
                     23
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div name="img">
                     <img src="../img/icon/white/5.png">
                 </div>
-                <div name="num">
+                <div name="num" id="message_num">
                     23
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <div name="img">
                     <img src="../img/icon/white/6.png">
                 </div>
-                <div name="num">
+                <div name="num" id="browse_num">
                     2323
                 </div>
             </div>
@@ -48,7 +48,7 @@
                 <div name="img">
                     <img src="../img/icon/white/7.png">
                 </div>
-                <div name="num">
+                <div name="num" id="like_num">
                     23
                 </div>
             </div>
@@ -57,7 +57,7 @@
                 <div name="img">
                     <img src="../img/icon/white/8.png">
                 </div>
-                <div name="num">
+                <div name="num" id="longTime">
                     23
                 </div>
             </div>
@@ -66,28 +66,28 @@
         <div class="personalCenter-top-center">
             <div class="personalCenter-top-center-row" style="margin: 10px 0 0 0">
                 <div class="personalCenter-top-center-col" style="width: 25%">
-                    &nbsp;&nbsp;昵称：<span>XXX</span>
+                    &nbsp;&nbsp;昵称：<span id="name">XXX</span>
                 </div>
                 <div class="personalCenter-top-center-col" style="width: 45%">
-                    电话：<span>XXXXXXXXXXX</span>
+                    电话：<span id="phone">XXXXXXXXXXX</span>
                 </div>
                 <div class="personalCenter-top-center-col" style="width: 30%;">
-                    ID：<span>XXXXXXXX</span>
+                    ID：<span id="id">XXXXXXXX</span>
                 </div>
             </div>
             <div class="personalCenter-top-center-row">
                 <div class="personalCenter-top-center-col" style="width: 25%">
-                    &nbsp;&nbsp;生日：<span>XXXX-XX-XX</span>
+                    &nbsp;&nbsp;生日：<span id="birth">XXXX-XX-XX</span>
                 </div>
                 <div class="personalCenter-top-center-col" style="width: 45%">
-                    地址：<span>XXX-XXX-XXX-XXXXXXXXXXX</span>
+                    地址：<span id="addr">XXX-XXX-XXX-XXXXXXXXXXX</span>
                 </div>
                 <div class="personalCenter-top-center-col" style="width: 30%;">
-                    性别：<span>X</span>
+                    性别：<span id="gender">X</span>
                 </div>
             </div>
             <div class="personalCenter-top-center-row" style="width: 70%;line-height: 65px;display: inline-block">
-                &nbsp;&nbsp;简介：<span>XXXXXXXXXXXXXXXXXXXX</span>
+                &nbsp;&nbsp;简介：<span id="notice">XXXXXXXXXXXXXXXXXXXX</span>
             </div>
             <div id="updateInfo">
                 修改信息
@@ -95,7 +95,7 @@
         </div>
         <!--我的头像/修改-->
         <div class="personalCenter-top-right">
-            <img src="http://localhost:8085/api/personInfo/personInfo/2205808551/down"/>
+            <img src="../img/1.jpg"/>
         </div>
     </div>
     <div class="personalCenter-bottom">
@@ -606,7 +606,7 @@
 </style>
 <div id="updateInfoModel" style="display: none" class="update">
     <form id="info">
-        <input style="display: none" value="2205808551" name="uid">
+        <input style="display: none" value="-" name="uid" id="uid">
         <div class="update-item">
             <input type="text" value="" name="name" placeholder="姓名">
         </div>
