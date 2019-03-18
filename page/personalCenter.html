@@ -144,48 +144,43 @@
             <div id="bottom-center-hidden">
                 <!--搜索项-->
                 <div class="personalCenter-bottom-center-title">
-                    <input class="layui-input" type="text" style="margin: 15px 0 15px 35px;" placeholder="发布时间">
-                    <input class="layui-input" type="text" placeholder="标题">
-                    <select>
+                    <input class="layui-input" type="text" id="selTimeSta" style="margin: 15px 0 15px 35px;" placeholder="发布时间Start" readonly>
+                    <input class="layui-input" type="text" id="selTimeEnd" style="margin: 15px 0 15px 15px;" placeholder="发布时间End" readonly>
+                    <input class="layui-input" type="text" id="title" placeholder="标题">
+                    <select id="type">
                         <option value="" style="display: none;" disabled selected>类型</option>
-                        <option>1</option>
-                        <option>1</option>
-                        <option>1</option>
-                        <option>1</option>
-                    </select>
-                    <select>
-                        <option value="" style="display: none;" disabled selected>标签</option>
-                        <option>2</option>
-                        <option>2</option>
-                        <option>2</option>
-                        <option>2</option>
+                        <option value="0">学习</option>
+                        <option value="1">生活</option>
+                        <option value="2">兴趣</option>
+                        <option value="3">提问</option>
                     </select>
 
-                    <div class="btn-reset" style="margin: 12px 15px 15px 150px;">重置</div>
+                    <div class="btn-reset" id="queryResetFri" style="margin: 12px 15px 15px 150px;">重置</div>
                     <div class="btn-search">搜索</div>
                 </div>
 
                 <!--文章项-->
                 <div class="personalCenter-bottom-center-body">
+
                     <!--后期使用laytpl动态加载，先做个模型-->
-                    <div class="friendsArticle-item">
-                        <div class="friendsArticle-item-title">
-                            <div class="friendsArticle-item-title-1">哈哈哈</div>
-                            <div class="friendsArticle-item-title-2">
-                                <span style="color: #FF5722;width: 65%;float:left;text-align: right;">2019-11-12 18:06</span>
-                                <span style="color: #FFFFBB;width: 35%;float: left;text-align: center;">张三</span>
-                            </div>
-                        </div>
-                        <div class="friendsArticle-item-content">
-                            <p>
-                                <marquee direction="left" behavior="scroll" onmouseover=this.stop()
-                                         onmouseout=this.start()>
-                                    甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙
-                                    丙丁甲乙丙丁
-                                </marquee>
-                            </p>
-                        </div>
-                    </div>
+                    <!--<div class="friendsArticle-item">-->
+                        <!--<div class="friendsArticle-item-title">-->
+                            <!--<div class="friendsArticle-item-title-1">哈哈哈</div>-->
+                            <!--<div class="friendsArticle-item-title-2">-->
+                                <!--<span style="color: #FF5722;width: 65%;float:left;text-align: right;">2019-11-12 18:06</span>-->
+                                <!--<span style="color: #FFFFBB;width: 35%;float: left;text-align: center;">张三</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="friendsArticle-item-content">-->
+                            <!--<p>-->
+                                <!--<marquee direction="left" behavior="scroll" onmouseover=this.stop()-->
+                                         <!--onmouseout=this.start()>-->
+                                    <!--甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙丙丁甲乙-->
+                                    <!--丙丁甲乙丙丁-->
+                                <!--</marquee>-->
+                            <!--</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
 
                 </div>
             </div>
@@ -415,7 +410,7 @@
             <input type="text" value="" id="updatePhone" name="phone" placeholder="电话">
         </div>
         <div class="update-item">
-            <input type="text" value="" id="updateBir" name="birthday" id="birthday" placeholder="请选择日期" readonly>
+            <input type="text" value="" name="birthday" id="birthday" placeholder="请选择日期" readonly>
         </div>
         <div class="update-item">
             <input type="text" value="" id="updateAddr" name="address" placeholder="地址">

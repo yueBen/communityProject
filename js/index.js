@@ -410,7 +410,6 @@ layui.use('layer',function () {
 
                 },
                 success: function (data) {
-                    console.log(data);
                     var longtime = data.data.photoPath;
                     sessionStorage.setItem("user",JSON.stringify(data.data));
                     sessionStorage.setItem("longtime",longtime);

@@ -4,12 +4,16 @@ layui.use(['laytpl','layer','laydate'],function(){
        laydate = layui.laydate,
        $ = layui.$;
 
+   var index = 1;//页码
+
    var user = JSON.parse(sessionStorage.getItem("user"));
    if (user != null) {
        userInfo(user);
    }
 
-    $("#longTime").text(sessionStorage.getItem("longtime"));
+    queryfriendArticle();
+
+   $("#longTime").text(sessionStorage.getItem("longtime"));
 
     //用户基本信息
     function userInfo(user) {
@@ -33,7 +37,7 @@ layui.use(['laytpl','layer','laydate'],function(){
         $("#updateAddr").val(user.address);
         $("#updateNot").val(user.introduce);
         $("#photoShow").attr("src",path+"/personInfo/personInfo/" + user.uid + "/down?t="+(new Date()).getTime());
-        window.parent.document.getElementById("img-photo");
+        window.parent.document.getElementById("img-photo").setAttribute("src",path+"/personInfo/personInfo/" + user.uid + "/down?t="+(new Date()).getTime());
     }
 
    //页面动画
@@ -55,7 +59,7 @@ layui.use(['laytpl','layer','laydate'],function(){
         });
     }
 
-    //model
+    //添加好友弹窗
     {
         //添加好友
         $("#addFriend").click(function () {
@@ -120,7 +124,7 @@ layui.use(['laytpl','layer','laydate'],function(){
         })
     }
 
-    //update_info_model
+    //个人信息修改
     {
         //头像上传按钮
         $("#photoUpload").click(function () {
@@ -130,7 +134,6 @@ layui.use(['laytpl','layer','laydate'],function(){
         //个人信息上传
         $(".modelBtn2").click(function () {
             var formDate = new FormData($("#info")[0]);
-            console.log(formDate);
             $.ajax({
                 type: "post",
                 url: path + "/personInfo/personInfo/add",
@@ -140,16 +143,14 @@ layui.use(['laytpl','layer','laydate'],function(){
                 processData: false,
                 contentType: false,
                 success: function (rep) {
-                    console.log(rep);
                     if (rep.ok) {
                         userInfo(rep.data);
                         sessionStorage.setItem("user",JSON.stringify(rep.data));
-                        var n = layer.msg(rep.message, {
+                        window.location.reload();
+                        layer.closeAll();
+                        layer.msg(rep.message, {
                             time: 1000,
                             offset: ['400px','400px']
-                        }, function () {
-                            layer.close(n);
-                            window.location.reload();
                         });
                     }
                 },
@@ -177,11 +178,66 @@ layui.use(['laytpl','layer','laydate'],function(){
         laydate.render({
             elem: '#birthday'
         })
+
+        laydate.render({
+            elem: '#selTimeSta'
+        })
+
+        laydate.render({
+            elem: '#selTimeEnd'
+        })
     }
 
-    //
-    {
+    //好友文章列表加载
 
+    function queryfriendArticle() {
+        var data = {
+            "page": index,
+            "pageSize": 10,
+            "uid":  user.uid,
+            "status": 0,
+            "type": null,
+            "releaseTime": toDate(new Date()),
+            "releaseTime1": null,
+            "releaseTime2": null,
+            "title": null
+        };
+
+        $.ajax({
+            type: "get",
+            url: path + "/article/article/friPage",
+            data: data,
+            contentType: false,
+            success: function (data) {
+                console.log(data.data.list+"-");
+                var h = htmlAddFriItem(data.data.list);
+                $(".personalCenter-bottom-center-body").append(h);
+            }
+        });
+    }
+
+
+    function htmlAddFriItem(list) {
+        var h = '';
+        $.each(list,function (i,v) {
+            h += '<div class="friendsArticle-item"><div class="friendsArticle-item-title">'+
+                '<div class="friendsArticle-item-title-1">' + v.title + '</div><div class="friendsArticle-item-title-2">'+
+                '<span style="color: #FF5722;width: 65%;float:left;text-align: right;">' + toDate(v.updateTime,0) + '</span>'+
+                '<span style="color: #FFFFBB;width: 35%;float: left;text-align: center;">' + v.status + '</span></div></div>' +
+                '<div class="friendsArticle-item-content"><p><marquee direction="left" behavior="scroll" '+
+                'onmouseover=this.stop() onmouseout=this.start()>' + v.content + '</marquee></p></div></div>'
+        });
+
+        return h;
+    }
+
+
+    //搜索
+    {
+        $("#queryResetFri").click(function () {
+           $(".personalCenter-bottom-center-title>input").val("");
+           $("#type").val("");
+        });
     }
 
 });

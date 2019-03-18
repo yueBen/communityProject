@@ -48,6 +48,12 @@ function toJSON(str) {
     return str;
 }
 
+/**
+ * 时间转换
+ * @param date
+ * @param type
+ * @returns {*}
+ */
 function toDate(date,type) {
     if (typeof date == 'string') {
         if (type == 0) {
@@ -62,10 +68,23 @@ function toDate(date,type) {
         var dd = time.getDay();
         var hh = time.getHours();
         var mm = time.getMinutes();
+        var ss = time.getSeconds();
         if (type == 0) {
-            return ""+yyyy+"-"+MM+"-"+dd+" "+hh+":"+mm;
+            return ""+yyyy+"-"+MM+"-"+dd+" "+hh+":"+mm+":"+ss;
         } else {
             return ""+yyyy+"-"+MM+"-"+dd;
         }
     }
+}
+
+function isNull(data) {
+    if (data != null) {
+        if (data.length == 0) {
+            return null;
+        } else {
+            return data;
+        }
+    }
+
+    return null;
 }

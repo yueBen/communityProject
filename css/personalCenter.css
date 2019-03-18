@@ -194,6 +194,7 @@ html,body{
     background: transparent;
     display: inline-block;
     color: #ffffff;
+    text-align: center;
 }
 .personalCenter-bottom-center-title>select{
     width: 130px;
