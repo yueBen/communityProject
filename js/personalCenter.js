@@ -9,6 +9,8 @@ layui.use(['laytpl','layer','laydate'],function(){
        userInfo(user);
    }
 
+    $("#longTime").text(sessionStorage.getItem("longtime"));
+
     //用户基本信息
     function userInfo(user) {
         $("#ranking").text(user.ranking);
@@ -16,18 +18,22 @@ layui.use(['laytpl','layer','laydate'],function(){
         $("#message_num").text(user.messageNum);
         $("#browse_num").text(user.browseNum);
         $("#like_num").text(user.praiseNum);
-        $("#longTime").text(user.photoPath);
         $("#name").text(user.name);
         $("#phone").text(user.phone);
         $("#id").text(user.uid);
-        console.log(user.birthday);
-        console.log(typeof user.birthday);
-        $("#birth").text(toDate(user.birthday));
+        $("#birth").text(toDate(user.birthday,1));
         $("#addr").text(user.address);
         $("#gender").text(user.gender);
         $("#notice").text(user.introduce);
         $("#uid").attr("value",user.uid);
-        $(".personalCenter-top-right>img").attr("src",path+"/personInfo/personInfo/" + user.uid + "/down")
+        $(".personalCenter-top-right>img").attr("src",path+"/personInfo/personInfo/" + user.uid + "/down?t="+(new Date()).getTime());
+        $("#updateName").val(user.name);
+        $("#updatePhone").val(user.phone);
+        $("#updateBir").val(toDate(user.birthday,1));
+        $("#updateAddr").val(user.address);
+        $("#updateNot").val(user.introduce);
+        $("#photoShow").attr("src",path+"/personInfo/personInfo/" + user.uid + "/down?t="+(new Date()).getTime());
+        window.parent.document.getElementById("img-photo");
     }
 
    //页面动画
@@ -143,6 +149,7 @@ layui.use(['laytpl','layer','laydate'],function(){
                             offset: ['400px','400px']
                         }, function () {
                             layer.close(n);
+                            window.location.reload();
                         });
                     }
                 },
@@ -164,7 +171,6 @@ layui.use(['laytpl','layer','laydate'],function(){
             fr.onloadend = function () {
                 $("#photoShow").attr("src", this.result)
             }
-            console.log("222");
         });
 
         //时间选择

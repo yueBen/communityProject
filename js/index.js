@@ -6,8 +6,6 @@ layui.use('layer',function () {
     $(".user-photo").height($(".user-photo").width());
 
     var person = JSON.parse(sessionStorage.getItem("user"));
-    console.log(person != null);
-    console.log(person);
     if (person != null) {
         getUserInfo(person);
     } else {
@@ -371,7 +369,7 @@ layui.use('layer',function () {
     function getUserInfo(user) {
         $("#userLanding").text(user.name);
         $("#userLanding").attr("value",1);
-        $("#user-photo>img").attr("src",path+"/personInfo/personInfo/" + user.uid + "/down");
+        $("#user-photo>img").attr("src",path+"/personInfo/personInfo/" + user.uid + "/down?t="+(new Date()).getTime());
     }
 
     //登录注册
@@ -413,7 +411,9 @@ layui.use('layer',function () {
                 },
                 success: function (data) {
                     console.log(data);
+                    var longtime = data.data.photoPath;
                     sessionStorage.setItem("user",JSON.stringify(data.data));
+                    sessionStorage.setItem("longtime",longtime);
                     getUserInfo(data.data);
                     layer.closeAll();
                 }

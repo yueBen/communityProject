@@ -53,7 +53,7 @@ function toDate(date,type) {
         if (type == 0) {
             return date;
         } else {
-            return date.substr(0,10);
+            return date.substr(0,11);
         }
     } else if (typeof date == 'number'){
         var time = new Date(date);
