@@ -81,6 +81,10 @@ layui.use('layer',function () {
         //判断page1是否展开
         isPage[1] = false;
         $('#pers-center').click(function () {
+            if (person == null) {
+                layer.msg("请登陆！！！");
+                return;
+            }
             if(isPage[1]){
                 closepage();
                 openlastpage(1);
@@ -96,6 +100,10 @@ layui.use('layer',function () {
         //判断page2是否展开
         isPage[2] = false;
         $('#my-focus').click(function () {
+            if (person == null) {
+                layer.msg("请登陆！！！");
+                return;
+            }
             if(isPage[2]){
                 closepage();
                 openlastpage(2);
@@ -111,6 +119,10 @@ layui.use('layer',function () {
         //判断page3是否展开
         isPage[3] = false;
         $('#iRelated').click(function () {
+            if (person == null) {
+                layer.msg("请登陆！！！");
+                return;
+            }
             if(isPage[3]){
                 closepage();
                 openlastpage(3);
@@ -126,6 +138,10 @@ layui.use('layer',function () {
         //判断page4是否展开
         isPage[4] = false;
         $('#historicalRecord').click(function () {
+            if (person == null) {
+                layer.msg("请登陆！！！");
+                return;
+            }
             if(isPage[4]){
                 closepage();
                 openlastpage(4);
@@ -141,6 +157,10 @@ layui.use('layer',function () {
         //判断page5是否展开
         isPage[5] = false;
         $('#myArticle').click(function () {
+            if (person == null) {
+                layer.msg("请登陆！！！");
+                return;
+            }
             if(isPage[5]){
                 closepage();
                 openlastpage(5);
@@ -156,6 +176,10 @@ layui.use('layer',function () {
         //判断page6是否展开
         isPage[6] = false;
         $('#draftBox').click(function () {
+            if (person == null) {
+                layer.msg("请登陆！！！");
+                return;
+            }
             if(isPage[6]){
                 closepage();
                 openlastpage(6);
@@ -171,6 +195,10 @@ layui.use('layer',function () {
         //判断page7是否展开
         isPage[7] = false;
         $('#notice').click(function () {
+            if (person == null) {
+                layer.msg("请登陆！！！");
+                return;
+            }
             if(isPage[7]){
                 closepage();
                 openlastpage(7);

@@ -1,4 +1,4 @@
-layui.use('layer',function () {
+layui.use(['layer','laydate'],function () {
     var layer = layui.layer,
         $ = layui.$,
         laydate = layui.laydate;
@@ -8,14 +8,14 @@ layui.use('layer',function () {
     
     var user = JSON.parse(sessionStorage.getItem("user"));
 
+    var con = window.wangEditor;
+    var e = new con('#content');
+
     //加载标签
     loadingLabel();
 
     //文章编辑器部分
     {
-        var con = window.wangEditor;
-        var e = new con('#content');
-
         //配置编辑器参数
         e.customConfig.menus = [
             'head',  // 标题
@@ -152,6 +152,7 @@ layui.use('layer',function () {
 
     //发布按钮
     $("#operation-4").click(function () {
+        console.log(e.text.html());
         var data = JSON.stringify({
             "content": e.text.html(),
             "labelId": $("#operation-2").val(),
@@ -164,8 +165,13 @@ layui.use('layer',function () {
         addArticle(data);
     });
 
+    laydate.render({
+        elem: '#operation-3'
+    });
+
     //保存按钮
     $("#operation-5").click(function () {
+        console.log(e.text.html());
         var data = JSON.stringify({
             "content": e.text.html(),
             "labelId": $("#operation-2").val(),
@@ -212,4 +218,4 @@ layui.use('layer',function () {
 
 
 
-})
+});
