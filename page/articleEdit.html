@@ -11,25 +11,23 @@
     <div class="title">
         <input placeholder="请输入标题。。。" style="width: 70%;height: 60px;margin: 10px 15% 0 15%;
             font-size: 50px;background-color: transparent;border: none;
-            text-align: center">
+            text-align: center" id="title">
     </div>
 
     <div class="operation">
         <button class="layui-btn layui-btn-primary" id="previewBtn">预览</button>
         <!--文章类型-->
         <select id="operation-1">
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
+            <option value="" style="display: none;" selected>类型</option>
+            <option value="0">学习</option>
+            <option value="1">生活</option>
+            <option value="2">兴趣</option>
+            <option value="3">提问</option>
         </select>
 
         <!--文章标签-->
         <select id="operation-2" style="margin: 0 3px 0 0">
-            <option>2</option>
-            <option>2</option>
-            <option>2</option>
-            <option>2</option>
+            <option value="" style="display: none;" selected>标签</option>
         </select>
 
         <!--添加标签按钮-->
@@ -49,8 +47,6 @@
         <!--存草稿箱按钮-->
         <button class="layui-btn layui-btn-warm layui-btn-radius" id="operation-6">存草稿箱</button>
 
-        <!--删除按钮-->
-        <button class="layui-btn layui-btn-danger layui-btn-radius" id="operation-7">删除</button>
 
     </div>
 
@@ -70,4 +66,5 @@
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/tool/wangEditor.js"></script>
 <script src="../js/articleEdit.js"></script>
+<script src="../js/tool/config.js"></script>
 </html>

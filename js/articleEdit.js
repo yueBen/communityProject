@@ -3,6 +3,13 @@ layui.use('layer',function () {
         $ = layui.$,
         laydate = layui.laydate;
 
+    //判断是新增(0)还是修改(1)文章
+    var status = location.search.substr(8,9);
+    
+    var user = JSON.parse(sessionStorage.getItem("user"));
+
+    //加载标签
+    loadingLabel();
 
     //文章编辑器部分
     {
@@ -36,7 +43,7 @@ layui.use('layer',function () {
         //配置本地图片上传
         {
             //设置上传接口
-            e.customConfig.uploadImgServer = 'http://localhost:8088/api/article/article/test';
+            e.customConfig.uploadImgServer = path+'/article/article/imgUpLoad';
 
             //设置上传名称
             e.customConfig.uploadFileName = 'articleImg';
@@ -100,12 +107,11 @@ layui.use('layer',function () {
         e.create();
         //内容预览
         function previewContent(){
-
             $('#preview').html(e.txt.html());
             console.log(e.txt.html());
             console.log(e.txt.text());
-
         }
+
         $('#previewBtn').click(function () {
             console.log('预览');
             previewContent();
@@ -114,19 +120,95 @@ layui.use('layer',function () {
 
     //保存编辑内容（获取编辑器中的内容）
     //保存内容不要使用JSON格式直接获取e.txt.html()
-    function addContent(){
-        //获取当前编辑器对象
-        // var nowContent = new edit('#content');
-
-        //获取当前编辑器内容数据
-        console.log(e.txt.html());
-
-
+    //文章提交
+    function addArticle(data) {
+        var url = "";
+        if (status == 0) {
+            url = "/article/article/add";
+        } else {
+            url = "/article/article/update";
+        }
+        $.ajax({
+            type: "post",
+            url: path + url,
+            data: data,
+            dataType: "json",
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+                if (data.ok) {
+                    //成功
+                } else {
+                    if (data.respCode == 0) {
+                        //删除
+                    } else if (data.respCode == 1) {
+                        //提示移交管理员
+                    } else if (data.respCode == 2) {
+                        //检查确认发布
+                    }
+                }
+            }
+        });
     }
-    //点击保存
-    $("#operation-5").click(function () {
-        addContent();
+
+    //发布按钮
+    $("#operation-4").click(function () {
+        var data = JSON.stringify({
+            "content": e.text.html(),
+            "labelId": $("#operation-2").val(),
+            "type": $("#operation-1").val(),
+            "uid": user.uid,
+            "releaseTime": toDate($("#operation-3").val(),0),
+            "status": 0,
+            "title": $("#title").val()
+        });
+        addArticle(data);
     });
+
+    //保存按钮
+    $("#operation-5").click(function () {
+        var data = JSON.stringify({
+            "content": e.text.html(),
+            "labelId": $("#operation-2").val(),
+            "type": $("#operation-1").val(),
+            "uid": user.uid,
+            "releaseTime": null,
+            "status": 0,
+            "title": $("#title").val()
+        });
+        addArticle(data);
+    });
+
+    //保存草稿箱
+    $("#operation-6").click(function () {
+        var data = JSON.stringify({
+            "content": e.text.html(),
+            "labelId": $("#operation-2").val(),
+            "type": $("#operation-1").val(),
+            "uid": user.uid,
+            "releaseTime": null,
+            "status": 3,
+            "title": $("#title").val()
+        });
+        addArticle(data);
+    });
+
+    //加载文章标签列表
+    function loadingLabel() {
+        console.log(user.uid);
+        $.ajax({
+            type: "get",
+            data: {"uid": user.uid},
+            url: path+"/article/label/list",
+            success: function (data) {
+                $.each(data.data,function (i,v) {
+                    $("#operation-2").append("<option value='" + v.id + "'>" + v.labelName + "</option>")
+                });
+            }
+        });
+    }
+
+
+
 
 
 

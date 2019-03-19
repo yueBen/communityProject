@@ -16,4 +16,9 @@ layui.use('laytpl',function () {
         e.stopPropagation();
     });
 
+    //新增文章
+    $("#addArticle").click(function () {
+        window.open("articleEdit.html?status=0");
+    });
+
 });

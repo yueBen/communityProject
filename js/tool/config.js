@@ -12,15 +12,11 @@ function getParam(paramName) {
         var param = url.substr(1,url.length);
         var split = param.split("&");
         $.each(split,function (i,v) {
-            if (paramName === v.substr(0, paramName.length)) {
-                return v.substr(v.indexOf('='), v.length);
-            } else {
-                return null;
+            if (v.lastIndexOf(paramName) >= 0) {
+                paramValue = v.substr(v.indexOf('=')+1, v.length);
+                return paramValue;
             }
         });
-
-    } else {
-        return null;
     }
 }
 
@@ -65,7 +61,7 @@ function toDate(date,type) {
         var time = new Date(date);
         var yyyy = 1900+time.getYear();
         var MM = time.getMonth()+1;
-        var dd = time.getDay();
+        var dd = time.getDate();
         var hh = time.getHours();
         var mm = time.getMinutes();
         var ss = time.getSeconds();
@@ -74,6 +70,9 @@ function toDate(date,type) {
         } else {
             return ""+yyyy+"-"+MM+"-"+dd;
         }
+    }
+    if (date == null || date.length <= 0)  {
+        return toDate(new Date(),0);
     }
 }
 

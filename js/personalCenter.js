@@ -33,7 +33,7 @@ layui.use(['laytpl','layer','laydate'],function(){
         $(".personalCenter-top-right>img").attr("src",path+"/personInfo/personInfo/" + user.uid + "/down?t="+(new Date()).getTime());
         $("#updateName").val(user.name);
         $("#updatePhone").val(user.phone);
-        $("#updateBir").val(toDate(user.birthday,1));
+        $("#birthday").val(toDate(user.birthday,1));
         $("#updateAddr").val(user.address);
         $("#updateNot").val(user.introduce);
         $("#photoShow").attr("src",path+"/personInfo/personInfo/" + user.uid + "/down?t="+(new Date()).getTime());
@@ -191,10 +191,11 @@ layui.use(['laytpl','layer','laydate'],function(){
     //好友文章列表加载
 
     function queryfriendArticle() {
+        var uid = user != null?user.uid:"-";
         var data = {
             "page": index,
             "pageSize": 10,
-            "uid":  user.uid,
+            "uid":  uid,
             "status": 0,
             "type": null,
             "releaseTime": toDate(new Date()),
@@ -216,7 +217,7 @@ layui.use(['laytpl','layer','laydate'],function(){
         });
     }
 
-
+    //拼接好友文章项
     function htmlAddFriItem(list) {
         var h = '';
         $.each(list,function (i,v) {
@@ -234,6 +235,7 @@ layui.use(['laytpl','layer','laydate'],function(){
 
     //搜索
     {
+        //重置
         $("#queryResetFri").click(function () {
            $(".personalCenter-bottom-center-title>input").val("");
            $("#type").val("");
