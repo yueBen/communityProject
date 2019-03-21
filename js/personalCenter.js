@@ -210,7 +210,7 @@ layui.use(['laytpl','layer','laydate'],function(){
             data: data,
             contentType: false,
             success: function (data) {
-                console.log(data.data.list+"-");
+                console.log(JSON.stringify(data.data.list));
                 var h = htmlAddFriItem(data.data.list);
                 $(".personalCenter-bottom-center-body").append(h);
             }
@@ -224,7 +224,7 @@ layui.use(['laytpl','layer','laydate'],function(){
             h += '<div class="friendsArticle-item"><div class="friendsArticle-item-title">'+
                 '<div class="friendsArticle-item-title-1">' + v.title + '</div><div class="friendsArticle-item-title-2">'+
                 '<span style="color: #FF5722;width: 65%;float:left;text-align: right;">' + toDate(v.updateTime,0) + '</span>'+
-                '<span style="color: #FFFFBB;width: 35%;float: left;text-align: center;">' + v.status + '</span></div></div>' +
+                '<span style="color: #FFFFBB;width: 35%;float: left;text-align: center;">' + v.labelId + '</span></div></div>' +
                 '<div class="friendsArticle-item-content"><p><marquee direction="left" behavior="scroll" '+
                 'onmouseover=this.stop() onmouseout=this.start()>' + v.content + '</marquee></p></div></div>'
         });

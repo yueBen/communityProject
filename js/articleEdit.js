@@ -31,7 +31,7 @@ layui.use(['layer','laydate'],function () {
             'list',  // 列表
             'justify',  // 对齐方式
             'quote',  // 引用
-            'emoticon',  // 表情
+            //'emoticon',  // 表情
             'image',  // 插入图片
             'table',  // 表格
             // 'video',  // 插入视频
@@ -89,7 +89,6 @@ layui.use(['layer','laydate'],function () {
                     // insertImg 是插入图片的函数，editor 是编辑器对象，result 是服务器端返回的结果
 
                     // 举例：假如上传图片成功后，服务器端返回的是 {url:'....'} 这种格式，即可这样插入图片：
-                    console.log(result);
                     var url = "http://localhost:8088/api/article/article/" + result.data + "/down";
                     insertImg(url);
 
@@ -106,15 +105,8 @@ layui.use(['layer','laydate'],function () {
 
         e.create();
         //内容预览
-        function previewContent(){
-            $('#preview').html(e.txt.html());
-            console.log(e.txt.html());
-            console.log(e.txt.text());
-        }
-
         $('#previewBtn').click(function () {
-            console.log('预览');
-            previewContent();
+            $('#preview').html(e.txt.html());
         })
     }
 
@@ -129,21 +121,23 @@ layui.use(['layer','laydate'],function () {
             url = "/article/article/update";
         }
         $.ajax({
-            type: "post",
             url: path + url,
+            type: "get",
             data: data,
-            dataType: "json",
-            contentType: "application/json;charset=utf-8",
             success: function (data) {
                 if (data.ok) {
                     //成功
+                    console.log("success");
                 } else {
                     if (data.respCode == 0) {
                         //删除
+                        console.log("error1");
                     } else if (data.respCode == 1) {
                         //提示移交管理员
+                        console.log("error2");
                     } else if (data.respCode == 2) {
                         //检查确认发布
+                        console.log("error3");
                     }
                 }
             }
@@ -152,16 +146,16 @@ layui.use(['layer','laydate'],function () {
 
     //发布按钮
     $("#operation-4").click(function () {
-        console.log(e.text.html());
-        var data = JSON.stringify({
-            "content": e.text.html(),
+        console.log(toHtml(e.txt.html()));
+        var data = {
+            "content": toHtml(e.txt.html()),
             "labelId": $("#operation-2").val(),
             "type": $("#operation-1").val(),
-            "uid": user.uid,
+            "uId": user.uid,
             "releaseTime": toDate($("#operation-3").val(),0),
-            "status": 0,
+            "status": 5,
             "title": $("#title").val()
-        });
+        };
         addArticle(data);
     });
 
@@ -171,39 +165,38 @@ layui.use(['layer','laydate'],function () {
 
     //保存按钮
     $("#operation-5").click(function () {
-        console.log(e.text.html());
-        var data = JSON.stringify({
-            "content": e.text.html(),
+        console.log(toHtml(e.txt.html()));
+        var data = {
+            "content": e.txt.html(),
             "labelId": $("#operation-2").val(),
             "type": $("#operation-1").val(),
-            "uid": user.uid,
+            "uId": user.uid,
             "releaseTime": null,
             "status": 0,
             "title": $("#title").val()
-        });
+        };
         addArticle(data);
     });
 
     //保存草稿箱
     $("#operation-6").click(function () {
-        var data = JSON.stringify({
-            "content": e.text.html(),
+        var data = {
+            "content": e.txt.html(),
             "labelId": $("#operation-2").val(),
             "type": $("#operation-1").val(),
             "uid": user.uid,
             "releaseTime": null,
             "status": 3,
             "title": $("#title").val()
-        });
+        };
         addArticle(data);
     });
 
     //加载文章标签列表
     function loadingLabel() {
-        console.log(user.uid);
         $.ajax({
             type: "get",
-            data: {"uid": user.uid},
+            data: {"uId": user.uid},
             url: path+"/article/label/list",
             success: function (data) {
                 $.each(data.data,function (i,v) {
@@ -212,10 +205,5 @@ layui.use(['layer','laydate'],function () {
             }
         });
     }
-
-
-
-
-
 
 });

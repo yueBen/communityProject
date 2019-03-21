@@ -441,6 +441,7 @@ layui.use('layer',function () {
                     var longtime = data.data.photoPath;
                     sessionStorage.setItem("user",JSON.stringify(data.data));
                     sessionStorage.setItem("longtime",longtime);
+                    person = JSON.parse(sessionStorage.getItem("user"));
                     getUserInfo(data.data);
                     layer.closeAll();
                 }

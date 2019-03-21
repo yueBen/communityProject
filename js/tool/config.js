@@ -76,6 +76,18 @@ function toDate(date,type) {
     }
 }
 
+function toHtml(str) {
+    var html = "";
+    for (var i = 0; i < str.length; i++) {
+        if (str.charAt(i) == "\"") {
+            html += "\'";
+        } else {
+            html += str.charAt(i);
+        }
+    }
+    return html;
+}
+
 function isNull(data) {
     if (data != null) {
         if (data.length == 0) {
