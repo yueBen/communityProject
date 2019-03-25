@@ -42,6 +42,7 @@ layui.use(['laytpl','layer'],function () {
             url: path+"/article/article/page",
             data: data,
             success: function (req) {
+                console.log(req);
                 $(".myArticle-bottom-articles").append(myArticleHtml(req.data.list));
             },
             error: function () {
@@ -77,7 +78,7 @@ layui.use(['laytpl','layer'],function () {
     }
 
     //文章编辑
-    $(".btn-1").click(function () {
+    $(".myArticle-bottom-articles").on("click",".btn-1",function () {
         var aid = $(this).attr("name");
         console.log(aid);
     });
