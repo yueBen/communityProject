@@ -1,5 +1,6 @@
-layui.use('laytpl',function () {
+layui.use(['laytpl','layer'],function () {
     var laytpl = layui.laytpl,
+        layer = layui.layer,
         $ = layui.$;
 
     var user = JSON.parse(sessionStorage.getItem("user"));
@@ -41,7 +42,7 @@ layui.use('laytpl',function () {
             url: path+"/article/article/page",
             data: data,
             success: function (req) {
-                console.log(req);
+                $(".myArticle-bottom-articles").append(myArticleHtml(req.data.list));
             },
             error: function () {
 
@@ -55,7 +56,7 @@ layui.use('laytpl',function () {
         $.each(list,function (i,v) {
             html += '<div class="article-item"><div class="article-item-title">'+ v.title +
                     '</div><div class="article-item-time">'+ toDate(v.updateTime) + '</div>'+
-                    '<div class="article-item-btn btn-1" name="' + v.id + '"><div class="article-item-btn btn-2">';
+                    '<div class="article-item-btn btn-1" name="' + v.id + '">编辑</div><div class="article-item-btn btn-2" name="' + v.id + '">';
 
             if (v.status == 0) {
                 html += '未发布';
@@ -74,6 +75,12 @@ layui.use('laytpl',function () {
 
         return html;
     }
+
+    //文章编辑
+    $(".btn-1").click(function () {
+        var aid = $(this).attr("name");
+        console.log(aid);
+    });
 
 
 });

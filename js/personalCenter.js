@@ -7,6 +7,7 @@ layui.use(['laytpl','layer','laydate'],function(){
    var index = 1;//页码
 
    var user = JSON.parse(sessionStorage.getItem("user"));
+   console.log(user);
    if (user != null) {
        userInfo(user);
    }
@@ -210,7 +211,6 @@ layui.use(['laytpl','layer','laydate'],function(){
             data: data,
             contentType: false,
             success: function (data) {
-                console.log(JSON.stringify(data.data.list));
                 var h = htmlAddFriItem(data.data.list);
                 $(".personalCenter-bottom-center-body").append(h);
             }

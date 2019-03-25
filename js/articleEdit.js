@@ -206,4 +206,11 @@ layui.use(['layer','laydate'],function () {
         });
     }
 
+    function queryUpdateArticle() {
+        $.ajax({
+            type: "get",
+            url: path+"/article/article/"
+        });
+    }
+
 });
