@@ -42,7 +42,6 @@ layui.use(['laytpl','layer'],function () {
             url: path+"/article/article/page",
             data: data,
             success: function (req) {
-                console.log(req);
                 $(".myArticle-bottom-articles").append(myArticleHtml(req.data.list));
             },
             error: function () {
@@ -71,7 +70,7 @@ layui.use(['laytpl','layer'],function () {
                 html += '蛤?';
             }
 
-            html += '</div><div class="article-item-content">' + v.content + '</div></div>';
+            html += '</div><div class="article-item-content">' + contentFilter(v.content) + '</div></div>';
         });
 
         return html;
@@ -80,8 +79,22 @@ layui.use(['laytpl','layer'],function () {
     //文章编辑
     $(".myArticle-bottom-articles").on("click",".btn-1",function () {
         var aid = $(this).attr("name");
-        console.log(aid);
+        window.open("articleEdit.html?status=1&aid="+aid);
     });
+    
+    //文章内容处理只保留文字
+    function contentFilter(str) {
+        str = str.replace(/&nbsp;/g,"");
+        var content = "&nbsp;";
+        for (var i = 0; i < str.length; i++) {
+            if (str.charAt(i) == '<') {
+                i = str.indexOf('>',i);
+            } else {
+                content += str.charAt(i);
+            }
+        }
+        return content;
+    }
 
 
 });

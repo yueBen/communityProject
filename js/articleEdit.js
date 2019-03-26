@@ -4,15 +4,35 @@ layui.use(['layer','laydate'],function () {
         laydate = layui.laydate;
 
     //判断是新增(0)还是修改(1)文章
-    var status = location.search.substr(8,9);
-    
+    var status = location.search.substr(8,1);
     var user = JSON.parse(sessionStorage.getItem("user"));
-
-    var con = window.wangEditor;
-    var e = new con('#content');
 
     //加载标签
     loadingLabel();
+
+    //修改文章
+    if (status == 1) {
+        var aid = location.search.substr(14,32);
+        $.ajax({
+            type: 'get',
+            url: path + '/article/article/' + aid,
+            success: function (req) {
+                console.log(req);
+                $("#title").val(req.data.title);
+                $("#operation-1").val(req.data.type);
+                $("#operation-2").val(req.data.labelId);
+                $("#operation-3").val(toDate(req.data.releaseTime));
+                e.txt.html(req.data.content);
+                $('#preview').html(req.data.content);
+            },
+            error: function () {
+
+            }
+        });
+    }
+
+    var con = window.wangEditor;
+    var e = new con('#content');
 
     //文章编辑器部分
     {
@@ -122,8 +142,10 @@ layui.use(['layer','laydate'],function () {
         }
         $.ajax({
             url: path + url,
-            type: "get",
+            type: "post",
             data: data,
+            dataType: "json",
+            contentType: "application/json;charset=utf-8",
             success: function (data) {
                 if (data.ok) {
                     //成功
@@ -147,20 +169,36 @@ layui.use(['layer','laydate'],function () {
     //发布按钮
     $("#operation-4").click(function () {
         console.log(toHtml(e.txt.html()));
-        var data = {
-            "content": toHtml(e.txt.html()),
-            "labelId": $("#operation-2").val(),
-            "type": $("#operation-1").val(),
-            "uId": user.uid,
-            "releaseTime": toDate($("#operation-3").val(),0),
-            "status": 5,
-            "title": $("#title").val()
-        };
+        var data;
+        if (status == 0) {
+            data = JSON.stringify({
+                "content": toHtml(e.txt.html()),
+                "labelId": $("#operation-2").val(),
+                "type": $("#operation-1").val(),
+                "uId": user.uid,
+                "releaseTime": toDate($("#operation-3").val(),0),
+                "status": 5,
+                "title": $("#title").val()
+            });
+        }
+        if (status == 1) {
+            data = JSON.stringify({
+                "content": toHtml(e.txt.html()),
+                "labelId": $("#operation-2").val(),
+                "type": $("#operation-1").val(),
+                "uId": user.uid,
+                "releaseTime": toDate($("#operation-3").val(),0),
+                "status": 5,
+                "title": $("#title").val(),
+                "id": aid
+            });
+        }
         addArticle(data);
     });
 
     laydate.render({
-        elem: '#operation-3'
+        elem: '#operation-3',
+        value: new Date()
     });
 
     //保存按钮
@@ -192,7 +230,7 @@ layui.use(['layer','laydate'],function () {
         addArticle(data);
     });
 
-    //加载文章标签列表
+    //初始化文章标签列表、发布时间
     function loadingLabel() {
         $.ajax({
             type: "get",
@@ -204,13 +242,8 @@ layui.use(['layer','laydate'],function () {
                 });
             }
         });
+
     }
 
-    function queryUpdateArticle() {
-        $.ajax({
-            type: "get",
-            url: path+"/article/article/"
-        });
-    }
 
 });

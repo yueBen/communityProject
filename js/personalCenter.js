@@ -7,7 +7,6 @@ layui.use(['laytpl','layer','laydate'],function(){
    var index = 1;//页码
 
    var user = JSON.parse(sessionStorage.getItem("user"));
-   console.log(user);
    if (user != null) {
        userInfo(user);
    }

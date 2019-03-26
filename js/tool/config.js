@@ -5,15 +5,17 @@ var path = "http://localhost:8088/api";
  * @param paramName
  * @returns {null}
  */
-function getParam(paramName) {
-    var paramValue = "",
-        url = this.location.search;
+function getParam(paramName,url) {
+    var paramValue = "";
+    console.log(paramName);
+    console.log(url);
     if (url.indexOf("?") == 0 && url.indexOf("=") > 1) {
         var param = url.substr(1,url.length);
         var split = param.split("&");
         $.each(split,function (i,v) {
             if (v.lastIndexOf(paramName) >= 0) {
                 paramValue = v.substr(v.indexOf('=')+1, v.length);
+                console.log(paramValue);
                 return paramValue;
             }
         });
@@ -60,11 +62,11 @@ function toDate(date,type) {
     } else if (typeof date == 'number'){
         var time = new Date(date);
         var yyyy = 1900+time.getYear();
-        var MM = time.getMonth()+1;
-        var dd = time.getDate();
-        var hh = time.getHours();
-        var mm = time.getMinutes();
-        var ss = time.getSeconds();
+        var MM = time.getMonth()+1 > 9?time.getMonth()+1:"0"+(time.getMonth()+1);
+        var dd = time.getDate() > 9?time.getDate():"0"+time.getDate();
+        var hh = time.getHours() > 9?time.getHours():"0"+time.getHours();
+        var mm = time.getMinutes() > 9?time.getMinutes():"0"+time.getMinutes();
+        var ss = time.getSeconds() > 9?time.getSeconds():"0"+time.getSeconds();
         if (type == 0) {
             return ""+yyyy+"-"+MM+"-"+dd+" "+hh+":"+mm+":"+ss;
         } else {

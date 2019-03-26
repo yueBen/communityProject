@@ -10,12 +10,12 @@
 <body>
     <div class="title">
         <input placeholder="请输入标题。。。" style="width: 70%;height: 60px;margin: 10px 15% 0 15%;
-            font-size: 50px;background-color: transparent;border: none;
+            font-size: 50px;background-color: transparent;border: none;color: #FFFFFF;
             text-align: center" id="title">
     </div>
 
     <div class="operation">
-        <button class="layui-btn layui-btn-primary" id="previewBtn">预览</button>
+        <div class="div-btn" id="previewBtn">预览</div>
         <!--文章类型-->
         <select id="operation-1">
             <option value="" style="display: none;" selected>类型</option>
@@ -31,21 +31,21 @@
         </select>
 
         <!--添加标签按钮-->
-        <button class="layui-btn" style="width: 40px;height: 40px;" id="operation-2-1">
+        <div class="div-btn" style="width: 40px;height: 40px;" id="operation-2-1">
             <i class="layui-icon">&#xe642;</i>
-        </button>
+        </div>
 
         <!--发布日期-->
         <input type="text" class="layui-input" id="operation-3">
 
         <!--发布按钮-->
-        <button class="layui-btn layui-btn-radius" id="operation-4">发布</button>
+        <div class="div-btn" id="operation-4">发布</div>
 
         <!--保存按钮-->
-        <button class="layui-btn layui-btn-normal layui-btn-radius" id="operation-5">保存</button>
+        <div class="div-btn" id="operation-5">保存</div>
 
         <!--存草稿箱按钮-->
-        <button class="layui-btn layui-btn-warm layui-btn-radius" id="operation-6">存草稿箱</button>
+        <div class="div-btn" id="operation-6">存草稿箱</div>
 
 
     </div>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="preview">
-            <div id="preview" style="overflow-y: scroll;width: 100%;height: 730px;padding: 10px"></div>
+            <div id="preview" style="overflow-y: scroll;width: 100%;height: 730px;padding: 10px;font-size: 22px;"></div>
         </div>
     </div>
 
