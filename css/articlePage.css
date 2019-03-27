@@ -218,6 +218,12 @@
     /*background: rgba(5,5,5,0.6);*/
     border-radius: 10px;
     background: rgba(12,12,12,0.6);
+    color: #FFFFFF;
+    font-size: 20px;
+    overflow: scroll;
+}
+.article-content::-webkit-scrollbar{
+    display: none;
 }
 /*--------------------------------------文章评论--------------------------------------*/
 .article-comments{

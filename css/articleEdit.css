@@ -112,11 +112,24 @@ ul, ol {
 
 .div-btn{
     display: inline-block;
-    width: 70px;
+    width: 90px;
     height: 36px;
     line-height: 36px;
     border-radius: 20px;
     border: 1px solid #FFFFFF;
     text-align: center;
+    margin: 0 20px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: 楷体;
+    font-weight: bold;
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+}
+.div-btn:active{
+    background: #d1d4d5;
+    color: #000000;
 }
 

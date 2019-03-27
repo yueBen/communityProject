@@ -9,7 +9,7 @@ layui.use('layer',function () {
     if (person != null) {
         getUserInfo(person);
     } else {
-        $("#userLanding").attr("value",0);
+        $("#userLanding").attr("value","请登录");
     }
 
     //页面跳转动画和跳转控制
@@ -19,8 +19,8 @@ layui.use('layer',function () {
         isPage[0] = '-';
 
         //刷新iframe页面
-        function refreshIframe(index){
-            $("#iframe-"+index).attr('src', $("#iframe-"+index).attr('src'));
+        function refreshIframe(index,url){
+            $("#iframe-"+index).attr('src', url);
             // $("#iframe-"+index).reload();
         }
 
@@ -29,43 +29,43 @@ layui.use('layer',function () {
             switch(pageNum){
                 case 1:
                     closepage();
-                    refreshIframe(pageNum);
+                    refreshIframe(pageNum,"page/personalCenter.html");
                     $('.home-page-body-1').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(1);
                     break;
                 case 2:
                     closepage();
-                    refreshIframe(pageNum);
+                    refreshIframe(pageNum,"page/myAttention.html");
                     $('.home-page-body-2').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(2);
                     break;
                 case 3:
                     closepage();
-                    refreshIframe(pageNum);
+                    refreshIframe(pageNum,"page/iRelated.html");
                     $('.home-page-body-3').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(3);
                     break;
                 case 4:
                     closepage();
-                    refreshIframe(pageNum);
+                    refreshIframe(pageNum,"page/historical.html");
                     $('.home-page-body-4').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(4);
                     break;
                 case 5:
                     closepage();
-                    refreshIframe(pageNum);
+                    refreshIframe(pageNum,"page/myArticle.html");
                     $('.home-page-body-5').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(5);
                     break;
                 case 6:
                     closepage();
-                    refreshIframe(pageNum);
+                    refreshIframe(pageNum,"page/draftBox.html");
                     $('.home-page-body-6').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(6);
                     break;
                 case 7:
                     closepage();
-                    refreshIframe(pageNum);
+                    refreshIframe(pageNum,"page/notice.html");
                     $('.home-page-body-7').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                     closeotherpage(7);
                     break;
@@ -90,7 +90,7 @@ layui.use('layer',function () {
                 openlastpage(1);
             }else{
                 closepage();
-                refreshIframe(1);
+                refreshIframe(1,"page/personalCenter.html");
                 $('.home-page-body-1').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(1);
             }
@@ -109,7 +109,7 @@ layui.use('layer',function () {
                 openlastpage(2);
             }else{
                 closepage();
-                refreshIframe(2);
+                refreshIframe(2,"page/myAttention.html");
                 $('.home-page-body-2').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(2);
             }
@@ -128,7 +128,7 @@ layui.use('layer',function () {
                 openlastpage(3);
             }else{
                 closepage();
-                refreshIframe(3);
+                refreshIframe(3,"page/iRelated.html");
                 $('.home-page-body-3').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(3);
             }
@@ -147,7 +147,7 @@ layui.use('layer',function () {
                 openlastpage(4);
             }else{
                 closepage();
-                refreshIframe(4);
+                refreshIframe(4,"page/historical.html");
                 $('.home-page-body-4').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(4);
             }
@@ -166,7 +166,7 @@ layui.use('layer',function () {
                 openlastpage(5);
             }else{
                 closepage();
-                refreshIframe(5);
+                refreshIframe(5,"page/myArticle.html");
                 $('.home-page-body-5').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(5);
             }
@@ -185,7 +185,7 @@ layui.use('layer',function () {
                 openlastpage(6);
             }else{
                 closepage();
-                refreshIframe(6);
+                refreshIframe(6,"page/draftBox.html");
                 $('.home-page-body-6').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(6);
             }
@@ -204,7 +204,7 @@ layui.use('layer',function () {
                 openlastpage(7);
             }else{
                 closepage();
-                refreshIframe(7);
+                refreshIframe(7,"page/notice.html");
                 $('.home-page-body-7').animate({width: "76%",height: "90%",margin: "1% 2% 0 2%",opacity: 1},400);
                 closeotherpage(7);
             }
@@ -262,7 +262,6 @@ layui.use('layer',function () {
             $('.home-page-right').animate({width: 0,height: 0,margin: 0},300);
         }
 
-        sessionStorage.setItem("type",1);
         $('.title-type-item').click(function () {
             $('.title-type-item').removeClass('title-type-item-check');
             $(this).addClass('title-type-item-check');
@@ -306,7 +305,7 @@ layui.use('layer',function () {
     var userOut = 0;
     $("#userLanding").click(function () {
         var value = $(this).attr("value");
-        if (value == 0) {
+        if (value == "请登录") {
             layer.open({
                 type: 1,
                 title: false,
@@ -314,15 +313,17 @@ layui.use('layer',function () {
                 skin: 'modelBg',    //弹窗样式
                 area: ['600px','400px'],  //弹窗大小
                 // offset: ['0px','250px'],  //弹窗位置[top,left]，默认auto垂直水平居中
-                closeBtn: 0,     //右上角关闭按钮，有1、2两种样式，0是不显示
+                closeBtn: 2,     //右上角关闭按钮，有1、2两种样式，0是不显示
                 shade: 0.2,     //弹层外区域,可自定义样式shade: [0.8, '#393D49']
-                shadeClose: true,  //点击弹层外区域关闭
+                shadeClose: false,  //点击弹层外区域关闭
                 anim: 0,    //弹出动画
                 isOutAnim: true,    //关闭动画
                 fixed: true,    //鼠标滚动时，层是否固定在可视区域
                 resize: false,  //弹窗大小是否可拖动
-                scrollbar: true   // 是否允许浏览器出现滚动条
-                // cancel: function () {} 右上角关闭按钮触发的回调
+                scrollbar: true,   // 是否允许浏览器出现滚动条
+                cancel: function(index, layero){
+                    cleanLoginRegist();
+                }
             });
         } else {
             if (userOut == 0) {
@@ -335,6 +336,7 @@ layui.use('layer',function () {
         }
     });
 
+    //安全退出
     $("#userOut").click(function () {
        sessionStorage.clear();
        window.location.reload();
@@ -386,7 +388,6 @@ layui.use('layer',function () {
             if ($("#check-code-input").val().toUpperCase() == check.toUpperCase()) {
                 return true;
             } else {
-                return true;
                 return false;
             }
         }
@@ -395,8 +396,7 @@ layui.use('layer',function () {
 
     //加载基本信息
     function getUserInfo(user) {
-        $("#userLanding").text(user.name);
-        $("#userLanding").attr("value",1);
+        $("#userLanding").attr("value",user.name);
         $("#user-photo>img").attr("src",path+"/personInfo/personInfo/" + user.uid + "/down?t="+(new Date()).getTime());
     }
 
@@ -427,7 +427,7 @@ layui.use('layer',function () {
             var user = JSON.stringify({
                 "userName": $("#username").val(),
                 "userPwd": $("#userpwd").val()
-            })
+            });
             $.ajax({
                 url: path + "/login/user/login",
                 type: 'post',
@@ -438,23 +438,30 @@ layui.use('layer',function () {
 
                 },
                 success: function (data) {
-                    var longtime = data.data.photoPath;
-                    sessionStorage.setItem("user",JSON.stringify(data.data));
-                    sessionStorage.setItem("longtime",longtime);
-                    person = JSON.parse(sessionStorage.getItem("user"));
-                    getUserInfo(data.data);
-                    layer.closeAll();
+                    if (data.ok) {
+                        var longtime = data.data.photoPath;
+                        sessionStorage.setItem("user",JSON.stringify(data.data));
+                        sessionStorage.setItem("longtime",longtime);
+                        person = JSON.parse(sessionStorage.getItem("user"));
+                        getUserInfo(data.data);
+                        if (data.data.uid == "0000000001") {
+                            console.log("toPage");
+                            window.open("page/adminIndex.html");
+                        }
+                        cleanLoginRegist();
+                        layer.closeAll();
+                    } else {
+                        layer.msg(data.message,{
+                            time: 1000
+                        })
+                    }
+
                 }
             });
         }
 
         //用户名验证
         $("#username").blur(function () {
-            inputCheck($(this).val());
-        });
-
-        //密码验证
-        $("#userpwd").blur(function () {
             inputCheck($(this).val());
         });
 
@@ -465,23 +472,63 @@ layui.use('layer',function () {
 
         //注册密码验证
         $("#regPwd").blur(function () {
-            inputCheck($(this).val());
+            checkPwd($(this).val());
         });
 
-        //注册
-        $("#regPwdRep").blur(function () {
-            if ($("#regPwd").val() != $(this).val()) {
+
+        //注册按钮
+        $("#registerBtn").click(function () {
+            if ($("#regPwd").val() != $("#regPwdRep").val()) {
                 layer.msg('确认密码不一致',{
+                    time: 600
+                });
+            } else {
+                if (isLog) {
+                    var user = JSON.stringify({
+                        "userName": $("#regName").val(),
+                        "userPwd": $("#regPwd").val()
+                    });
+                    $.ajax({
+                        url: path + "/login/user/add",
+                        type: 'post',
+                        data: user,
+                        dataType: "json",
+                        contentType: "application/json;charset=utf-8",
+                        success: function (data) {
+                            if (data.ok) {
+                                layer.msg("注册成功！等待管理员审核",{
+                                    time: 1000
+                                },function () {
+                                    cleanLoginRegist();
+                                    layer.closeAll();
+                                });
+                            } else {
+                                layer.msg(data.message,{
+                                    time: 1000
+                                })
+                            }
+                        }
+                    });
+                }
+            }
+        });
+
+        //用户名格式检查
+        function inputCheck(content) {
+            var patrm = /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/;
+            if (!patrm.test(content) && content.length>0) {
+                layer.msg('请输入5-16位字母数字下划线,并已字母开头',{
                     time: 600
                 });
                 isLog = false;
             }
-        });
+        }
 
-        function inputCheck(content) {
-            var patrm = /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/;
+        //密码格式检查
+        function checkPwd(content) {
+            var patrm = /^[a-zA-Z0-9_]{5,16}$/;
             if (!patrm.test(content) && content.length>0) {
-                layer.msg('请输入8-16位字母数字下划线',{
+                layer.msg('请输入5-16位字母数字下划线',{
                     time: 600
                 });
                 isLog = false;
@@ -490,6 +537,13 @@ layui.use('layer',function () {
 
     }
 
-
+    //关闭清除登陆注册信息
+    function cleanLoginRegist() {
+        $("#username").val("");
+        $("#userpwd").val("");
+        $("#regName").val("");
+        $("#regPwd").val("");
+        $("#regPwdRep").val("");
+    }
 
 });

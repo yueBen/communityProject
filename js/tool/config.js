@@ -101,3 +101,21 @@ function isNull(data) {
 
     return null;
 }
+
+/**
+ * 文章内容过滤只保留文本
+ * @param str
+ * @returns {string}
+ */
+function contentFilter(str) {
+    str = str.replace(/&nbsp;/g,"");
+    var content = "&nbsp;";
+    for (var i = 0; i < str.length; i++) {
+        if (str.charAt(i) == '<') {
+            i = str.indexOf('>',i);
+        } else {
+            content += str.charAt(i);
+        }
+    }
+    return content;
+}

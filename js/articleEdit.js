@@ -134,6 +134,7 @@ layui.use(['layer','laydate'],function () {
     //保存内容不要使用JSON格式直接获取e.txt.html()
     //文章提交
     function addArticle(data) {
+        console.log(data);
         var url = "";
         if (status == 0) {
             url = "/article/article/add";
@@ -149,7 +150,18 @@ layui.use(['layer','laydate'],function () {
             success: function (data) {
                 if (data.ok) {
                     //成功
-                    console.log("success");
+                    var n = layer.open({
+                        type: 0,
+                        title: "修改成功",
+                        content: "是否留下？",
+                        btn: ["留下","离开"],
+                        btn1: function (index, layero) {
+                            layer.close(n);
+                        },
+                        btn2: function (index, layero) {
+                            window.close();
+                        }
+                    });
                 } else {
                     if (data.respCode == 0) {
                         //删除
@@ -168,14 +180,13 @@ layui.use(['layer','laydate'],function () {
 
     //发布按钮
     $("#operation-4").click(function () {
-        console.log(toHtml(e.txt.html()));
         var data;
         if (status == 0) {
             data = JSON.stringify({
+                "uid": user.uid,
                 "content": toHtml(e.txt.html()),
                 "labelId": $("#operation-2").val(),
                 "type": $("#operation-1").val(),
-                "uId": user.uid,
                 "releaseTime": toDate($("#operation-3").val(),0),
                 "status": 5,
                 "title": $("#title").val()
@@ -183,10 +194,10 @@ layui.use(['layer','laydate'],function () {
         }
         if (status == 1) {
             data = JSON.stringify({
+                "uid": user.uid,
                 "content": toHtml(e.txt.html()),
                 "labelId": $("#operation-2").val(),
                 "type": $("#operation-1").val(),
-                "uId": user.uid,
                 "releaseTime": toDate($("#operation-3").val(),0),
                 "status": 5,
                 "title": $("#title").val(),
@@ -203,7 +214,6 @@ layui.use(['layer','laydate'],function () {
 
     //保存按钮
     $("#operation-5").click(function () {
-        console.log(toHtml(e.txt.html()));
         var data = {
             "content": e.txt.html(),
             "labelId": $("#operation-2").val(),

@@ -38,6 +38,7 @@ layui.use(['laytpl','layer','laydate'],function(){
         $("#updateNot").val(user.introduce);
         $("#photoShow").attr("src",path+"/personInfo/personInfo/" + user.uid + "/down?t="+(new Date()).getTime());
         window.parent.document.getElementById("img-photo").setAttribute("src",path+"/personInfo/personInfo/" + user.uid + "/down?t="+(new Date()).getTime());
+        window.parent.document.getElementById("userLanding").setAttribute("value",user.name);
     }
 
    //页面动画
@@ -144,13 +145,15 @@ layui.use(['laytpl','layer','laydate'],function(){
                 contentType: false,
                 success: function (rep) {
                     if (rep.ok) {
+                        console.log(rep);
                         userInfo(rep.data);
                         sessionStorage.setItem("user",JSON.stringify(rep.data));
-                        window.location.reload();
-                        layer.closeAll();
                         layer.msg(rep.message, {
                             time: 1000,
-                            offset: ['400px','400px']
+                            offset: ['400px','500px']
+                        },function () {
+                            window.location.reload();
+                            layer.closeAll();
                         });
                     }
                 },
@@ -191,17 +194,10 @@ layui.use(['laytpl','layer','laydate'],function(){
     //好友文章列表加载
 
     function queryfriendArticle() {
-        var uid = user != null?user.uid:"-";
         var data = {
             "page": index,
             "pageSize": 10,
-            "uid":  uid,
-            "status": 0,
-            "type": null,
-            "releaseTime": toDate(new Date()),
-            "releaseTime1": null,
-            "releaseTime2": null,
-            "title": null
+            "uId":  user.uid
         };
 
         $.ajax({
@@ -210,6 +206,7 @@ layui.use(['laytpl','layer','laydate'],function(){
             data: data,
             contentType: false,
             success: function (data) {
+                console.log(data);
                 var h = htmlAddFriItem(data.data.list);
                 $(".personalCenter-bottom-center-body").append(h);
             }
@@ -225,7 +222,7 @@ layui.use(['laytpl','layer','laydate'],function(){
                 '<span style="color: #FF5722;width: 65%;float:left;text-align: right;">' + toDate(v.updateTime,0) + '</span>'+
                 '<span style="color: #FFFFBB;width: 35%;float: left;text-align: center;">' + v.labelId + '</span></div></div>' +
                 '<div class="friendsArticle-item-content"><p><marquee direction="left" behavior="scroll" '+
-                'onmouseover=this.stop() onmouseout=this.start()>' + v.content + '</marquee></p></div></div>'
+                'onmouseover=this.stop() onmouseout=this.start()>' + contentFilter(v.content) + '</marquee></p></div></div>'
         });
 
         return h;
