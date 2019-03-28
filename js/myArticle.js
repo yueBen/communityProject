@@ -60,13 +60,15 @@ layui.use(['laytpl','layer'],function () {
                     '<div class="article-item-btn btn-1" name="' + v.id + '">编辑</div><div class="article-item-btn btn-2" name="' + v.id + '">';
 
             if (v.status == 0) {
-                html += '未发布';
+                html += '已保存';
             } else if (v.status == 1) {
                 html += '已下线';
             } else if (v.status == 2) {
                 html += '待审批';
             } else if (v.status == 5) {
                 html += '已发布';
+            } else if (v.status == 6) {
+                html += '待发布';
             } else {
                 html += '蛤?';
             }

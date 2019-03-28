@@ -178,7 +178,13 @@ layui.use(['layer','laydate'],function () {
                 } else {
                     if (data.respCode == 0) {
                         //删除
-                        console.log("error1");
+
+                        console.log(data);
+                        layer.msg("您文章内容不合格请重新编辑！！",{
+                            time: 1000
+                        },function () {
+                            e.txt.html(data.data);
+                        })
                     } else if (data.respCode == 1) {
                         //提示移交管理员
                         console.log("error2");
