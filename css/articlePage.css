@@ -62,8 +62,13 @@
 .article-title-center{
     width: 50%;
     height: 45px;
+    line-height: 45px;
     float: left;
     display: inline-block;
+    font-size: 32px;
+    color: #FFFFFF;
+    font-family: 楷体;
+    text-align: center;
     /*background: #FFB800;*/
 }
 .article-title-right{

@@ -322,7 +322,7 @@ layui.use('layer',function () {
                 area: ['600px','400px'],  //弹窗大小
                 // offset: ['0px','250px'],  //弹窗位置[top,left]，默认auto垂直水平居中
                 closeBtn: 2,     //右上角关闭按钮，有1、2两种样式，0是不显示
-                shade: 0.2,     //弹层外区域,可自定义样式shade: [0.8, '#393D49']
+                shade: 0.4,     //弹层外区域,可自定义样式shade: [0.8, '#393D49']
                 shadeClose: false,  //点击弹层外区域关闭
                 anim: 0,    //弹出动画
                 isOutAnim: true,    //关闭动画
