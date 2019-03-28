@@ -145,8 +145,8 @@ layui.use(['laytpl','layer','laydate'],function(){
                 contentType: false,
                 success: function (rep) {
                     if (rep.ok) {
-                        console.log(rep);
                         userInfo(rep.data);
+                        window.parent.document.getElementById("isPersonInfo").setAttribute("value","1");
                         sessionStorage.setItem("user",JSON.stringify(rep.data));
                         layer.msg(rep.message, {
                             time: 1000,
@@ -206,7 +206,6 @@ layui.use(['laytpl','layer','laydate'],function(){
             data: data,
             contentType: false,
             success: function (data) {
-                console.log(data);
                 var h = htmlAddFriItem(data.data.list);
                 $(".personalCenter-bottom-center-body").append(h);
             }

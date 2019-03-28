@@ -7,19 +7,21 @@ var path = "http://localhost:8088/api";
  */
 function getParam(paramName,url) {
     var paramValue = "";
-    console.log(paramName);
-    console.log(url);
     if (url.indexOf("?") == 0 && url.indexOf("=") > 1) {
         var param = url.substr(1,url.length);
         var split = param.split("&");
         $.each(split,function (i,v) {
             if (v.lastIndexOf(paramName) >= 0) {
                 paramValue = v.substr(v.indexOf('=')+1, v.length);
-                console.log(paramValue);
-                return paramValue;
+                return;
             }
         });
     }
+    return paramValue;
+}
+
+function test(){
+    return 1;
 }
 
 /**
@@ -53,11 +55,13 @@ function toJSON(str) {
  * @returns {*}
  */
 function toDate(date,type) {
+    var time;
     if (typeof date == 'string') {
         if (type == 0) {
             return date;
         } else {
-            return date.substr(0,11);
+            time = date.substr(0,11)
+            return time;
         }
     } else if (typeof date == 'number'){
         var time = new Date(date);
@@ -67,10 +71,12 @@ function toDate(date,type) {
         var hh = time.getHours() > 9?time.getHours():"0"+time.getHours();
         var mm = time.getMinutes() > 9?time.getMinutes():"0"+time.getMinutes();
         var ss = time.getSeconds() > 9?time.getSeconds():"0"+time.getSeconds();
-        if (type == 0) {
-            return ""+yyyy+"-"+MM+"-"+dd+" "+hh+":"+mm+":"+ss;
+        if (type === 0) {
+            time = ""+yyyy+"-"+MM+"-"+dd+" "+hh+":"+mm+":"+ss;
+            return time;
         } else {
-            return ""+yyyy+"-"+MM+"-"+dd;
+            time = ""+yyyy+"-"+MM+"-"+dd;
+            return time;
         }
     }
     if (date == null || date.length <= 0)  {

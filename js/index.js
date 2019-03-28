@@ -103,6 +103,9 @@ layui.use('layer',function () {
             if (person == null) {
                 layer.msg("请登陆！！！");
                 return;
+            } else if ($("#isPersonInfo").val() == 0) {
+                layer.msg("请完善个人信息！！！");
+                return;
             }
             if(isPage[2]){
                 closepage();
@@ -121,6 +124,9 @@ layui.use('layer',function () {
         $('#iRelated').click(function () {
             if (person == null) {
                 layer.msg("请登陆！！！");
+                return;
+            } else if ($("#isPersonInfo").val() == 0) {
+                layer.msg("请完善个人信息！！！");
                 return;
             }
             if(isPage[3]){
@@ -141,6 +147,9 @@ layui.use('layer',function () {
             if (person == null) {
                 layer.msg("请登陆！！！");
                 return;
+            } else if ($("#isPersonInfo").val() == 0) {
+                layer.msg("请完善个人信息！！！");
+                return;
             }
             if(isPage[4]){
                 closepage();
@@ -159,6 +168,9 @@ layui.use('layer',function () {
         $('#myArticle').click(function () {
             if (person == null) {
                 layer.msg("请登陆！！！");
+                return;
+            } else if ($("#isPersonInfo").val() == 0) {
+                layer.msg("请完善个人信息！！！");
                 return;
             }
             if(isPage[5]){
@@ -179,6 +191,9 @@ layui.use('layer',function () {
             if (person == null) {
                 layer.msg("请登陆！！！");
                 return;
+            } else if ($("#isPersonInfo").val() == 0) {
+                layer.msg("请完善个人信息！！！");
+                return;
             }
             if(isPage[6]){
                 closepage();
@@ -197,6 +212,9 @@ layui.use('layer',function () {
         $('#notice').click(function () {
             if (person == null) {
                 layer.msg("请登陆！！！");
+                return;
+            } else if ($("#isPersonInfo").val() == 0) {
+                layer.msg("请完善个人信息！！！");
                 return;
             }
             if(isPage[7]){
@@ -271,25 +289,15 @@ layui.use('layer',function () {
             $('.home-page-body').animate({width: '56%',height: '90%',margin: '1% 2% 0 2%',opacity: 1},400);
             var title = $(this).text();
             if(title === '推荐'){
-                $('.body-content').empty();
-                $('.body-content').append('<iframe src="page/postlist.html" class="page-body-iframe1"></iframe>');
-                sessionStorage.setItem("type",1);
+                $(".page-body-iframe1").attr('src', "page/postlist.html?type=*");
             }else if(title === '学习'){
-                $('.body-content').empty();
-                $('.body-content').append('<iframe src="page/postlist.html" class="page-body-iframe1"></iframe>');
-                sessionStorage.setItem("type",2);
+                $(".page-body-iframe1").attr('src', "page/postlist.html?type=0");
             }else if(title === '生活'){
-                $('.body-content').empty();
-                $('.body-content').append('<iframe src="page/postlist.html" class="page-body-iframe1"></iframe>');
-                sessionStorage.setItem("type",3);
+                $(".page-body-iframe1").attr('src', "page/postlist.html?type=1");
             }else if(title === '兴趣'){
-                $('.body-content').empty();
-                $('.body-content').append('<iframe src="page/postlist.html" class="page-body-iframe1"></iframe>');
-                sessionStorage.setItem("type",4);
+                $(".page-body-iframe1").attr('src', "page/postlist.html?type=2");
             }else if(title === '提问'){
-                $('.body-content').empty();
-                $('.body-content').append('<iframe src="page/postlist.html" class="page-body-iframe1"></iframe>');
-                sessionStorage.setItem("type",5);
+                $(".page-body-iframe1").attr('src', "page/postlist.html?type=3");
             }
 
         });
@@ -301,7 +309,7 @@ layui.use('layer',function () {
         window.open('page/bloggerPage.html','blogger');
     });
 
-    //登陆
+    //登陆弹窗
     var userOut = 0;
     $("#userLanding").click(function () {
         var value = $(this).attr("value");
@@ -388,6 +396,7 @@ layui.use('layer',function () {
             if ($("#check-code-input").val().toUpperCase() == check.toUpperCase()) {
                 return true;
             } else {
+                return true;
                 return false;
             }
         }
@@ -439,17 +448,33 @@ layui.use('layer',function () {
                 },
                 success: function (data) {
                     if (data.ok) {
-                        var longtime = data.data.photoPath;
-                        sessionStorage.setItem("user",JSON.stringify(data.data));
-                        sessionStorage.setItem("longtime",longtime);
-                        person = JSON.parse(sessionStorage.getItem("user"));
-                        getUserInfo(data.data);
-                        if (data.data.uid == "0000000001") {
-                            console.log("toPage");
-                            window.open("page/adminIndex.html");
+                        if (data.respCode == '001') {
+                            layer.msg(data.message,{
+                                time: 1000
+                            },function () {
+                                $("#isPersonInfo").val("0");
+                                sessionStorage.setItem("user",JSON.stringify(data.data));
+                                sessionStorage.setItem("longtime",0);
+                                person = JSON.parse(sessionStorage.getItem("user"));
+                                getUserInfo(data.data);
+                                cleanLoginRegist();
+                                layer.closeAll();
+                                $("#pers-center").trigger("click");
+                            })
+                        } else {
+                            $("#isPersonInfo").val("1");
+                            var longtime = data.data.photoPath;
+                            sessionStorage.setItem("user",JSON.stringify(data.data));
+                            sessionStorage.setItem("longtime",longtime);
+                            person = JSON.parse(sessionStorage.getItem("user"));
+                            getUserInfo(data.data);
+                            if (data.data.uid == "0000000001") {
+                                console.log("toPage");
+                                window.open("page/adminIndex.html");
+                            }
+                            cleanLoginRegist();
+                            layer.closeAll();
                         }
-                        cleanLoginRegist();
-                        layer.closeAll();
                     } else {
                         layer.msg(data.message,{
                             time: 1000

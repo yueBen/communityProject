@@ -4,15 +4,16 @@ layui.use(['layer','laydate'],function () {
         laydate = layui.laydate;
 
     //判断是新增(0)还是修改(1)文章
-    var status = location.search.substr(8,1);
+    var status = getParam('status',location.search);
     var user = JSON.parse(sessionStorage.getItem("user"));
+    var addType;
 
     //加载标签
     loadingLabel();
 
     //修改文章
     if (status == 1) {
-        var aid = location.search.substr(14,32);
+        var aid = getParam('aid',location.search);
         $.ajax({
             type: 'get',
             url: path + '/article/article/' + aid,
@@ -150,15 +151,27 @@ layui.use(['layer','laydate'],function () {
             success: function (data) {
                 if (data.ok) {
                     //成功
+                    var tit = "";
+                    switch (addType) {
+                        case 0:
+                            tit = "发布成功！";
+                            break;
+                        case 1:
+                            tit = "保存成功！";
+                            break;
+                        case 2:
+                            tit = "已存入草稿箱！";
+                            break;
+                    }
                     var n = layer.open({
                         type: 0,
-                        title: "修改成功",
+                        title: tit,
                         content: "是否留下？",
                         btn: ["留下","离开"],
-                        btn1: function (index, layero) {
+                        btn1: function () {
                             layer.close(n);
                         },
-                        btn2: function (index, layero) {
+                        btn2: function () {
                             window.close();
                         }
                     });
@@ -180,6 +193,7 @@ layui.use(['layer','laydate'],function () {
 
     //发布按钮
     $("#operation-4").click(function () {
+        addType = 0;
         var data;
         if (status == 0) {
             data = JSON.stringify({
@@ -214,29 +228,61 @@ layui.use(['layer','laydate'],function () {
 
     //保存按钮
     $("#operation-5").click(function () {
-        var data = {
-            "content": e.txt.html(),
-            "labelId": $("#operation-2").val(),
-            "type": $("#operation-1").val(),
-            "uId": user.uid,
-            "releaseTime": null,
-            "status": 0,
-            "title": $("#title").val()
-        };
+        addType = 1;
+        var data;
+        if (status == 0) {
+            data = JSON.stringify({
+                "content": toHtml(e.txt.html()),
+                "labelId": $("#operation-2").val(),
+                "type": $("#operation-1").val(),
+                "uid": user.uid,
+                "releaseTime": null,
+                "status": 0,
+                "title": $("#title").val()
+            });
+        }
+        if (status == 1) {
+            data = JSON.stringify({
+                "content": toHtml(e.txt.html()),
+                "labelId": $("#operation-2").val(),
+                "type": $("#operation-1").val(),
+                "uid": user.uid,
+                "releaseTime": null,
+                "status": 0,
+                "title": $("#title").val(),
+                "id": aid
+            });
+        }
         addArticle(data);
     });
 
     //保存草稿箱
     $("#operation-6").click(function () {
-        var data = {
-            "content": e.txt.html(),
-            "labelId": $("#operation-2").val(),
-            "type": $("#operation-1").val(),
-            "uid": user.uid,
-            "releaseTime": null,
-            "status": 3,
-            "title": $("#title").val()
-        };
+        addType = 2;
+        var data;
+        if (status == 0) {
+            data = JSON.stringify({
+                "content": toHtml(e.txt.html()),
+                "labelId": $("#operation-2").val(),
+                "type": $("#operation-1").val(),
+                "uid": user.uid,
+                "releaseTime": null,
+                "status": 3,
+                "title": $("#title").val()
+            });
+        }
+        if (status == 1) {
+            data = JSON.stringify({
+                "content": toHtml(e.txt.html()),
+                "labelId": $("#operation-2").val(),
+                "type": $("#operation-1").val(),
+                "uid": user.uid,
+                "releaseTime": null,
+                "status": 3,
+                "title": $("#title").val(),
+                "id": aid
+            });
+        }
         addArticle(data);
     });
 

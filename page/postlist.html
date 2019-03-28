@@ -24,13 +24,19 @@
             {{# $.each(articles,function(i,v){ }}
                 <div class="article-item">
                     <div class="article-item-title">
-                        <a href="articlePage.html?id={{ v.id }}" target="_blank">{{ v.a }}</a>
+                        <a href="articlePage.html?id={{ v.id }}" target="_blank">{{ v.title }}</a>
                     </div>
-                    <div class="article-item-content"><p>{{ v.b }}</p></div>
-                    <div class="article-item-author">{{ v.c }}</div>
-                    <div class="article-item-time">{{ v.d }}</div>
-                    <div class="article-item-comment">{{ v.f }}</div>
-                    <div class="article-item-browse">{{ v.e }}</div>
+                    <div class="article-item-content"><p>{{ contentFilter(v.content) }}</p></div>
+                    <div class="article-item-author">{{ v.labelId }}</div>
+                    <div class="article-item-time">{{ toDate(v.releaseTime,0) }}</div>
+                    <div class="article-item-comment">
+                        <i class="layui-icon" style="font-size: 20px">&#xe63a;</i>&nbsp;&nbsp;
+                        {{ v.commentNum }}
+                    </div>
+                    <div class="article-item-browse">
+                        <i class="layui-icon" style="font-size: 20px">&#xe705;</i>&nbsp;&nbsp;
+                        {{ v.browseNum }}
+                    </div>
                 </div>
             {{# }); }}
         </script>
@@ -40,6 +46,7 @@
 
     </div>
 </div>
-<script src="../layui/layui.js"></script>
 <script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/tool/config.js"></script>
+<script src="../layui/layui.js"></script>
 <script src="../js/postlist.js"></script>

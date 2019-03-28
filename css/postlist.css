@@ -112,7 +112,7 @@ html::-webkit-scrollbar{
 .article-item-time{
     display: inline-block;
     float: left;
-    width: 15%;
+    width: 25%;
     height: 30px;
     line-height: 30px;
     margin: 0;
