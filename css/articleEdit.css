@@ -23,6 +23,7 @@ blockquote {
     line-height: 1.4;
     font-size: 100%;
     background-color: #f1f1f1;
+    color: #000;
 }
 
 /* code 样式 */
@@ -34,6 +35,7 @@ code {
     border-radius: 3px;
     padding: 3px 5px;
     margin: 0 3px;
+    color: #000;
 }
 pre code {
     display: block;
@@ -42,6 +44,9 @@ pre code {
 /* ul ol 样式 */
 ul, ol {
     margin: 10px 0 10px 20px;
+}
+a{
+    color: #1c5ea0;
 }
 .title{
     width: 50%;
