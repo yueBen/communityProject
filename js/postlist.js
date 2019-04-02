@@ -30,6 +30,7 @@ layui.use(['laytpl','laydate','layer'],function () {
             data: data,
             success: function (data) {
                 laytpl(postlistContentScr.innerHTML).render(data,function (html) {
+                    $(".article-item").remove();
                     $("#postlistContentScr").after(html);
                 });
             }
@@ -55,18 +56,7 @@ layui.use(['laytpl','laydate','layer'],function () {
             "labelId": $("#queryAuthor").val()
         }
         if ($("#releaseTimeEnd").val() >= $("#releaseTimeStart").val()) {
-            if ($("#releaseTimeStart").val() == null && $("#releaseTimeStart").val() == "") {
-                delete data.releaseTime1;
-            }
-            if ($("#releaseTimeEnd").val() == null && $("#releaseTimeEnd").val() == "") {
-                delete data.releaseTime2;
-            }
-            if ($("#queryTitle").val() == null && $("#queryTitle").val() == "") {
-                delete data.title;
-            }
-            if ($("#queryAuthor").val() == null && $("#queryAuthor").val() == "") {
-                delete data.labelId;
-            }
+
             queryArticles(data);
         } else {
             layer.msg("结束时间应该大于开始时间",{

@@ -18,7 +18,6 @@ layui.use(['layer','laydate'],function () {
             type: 'get',
             url: path + '/article/article/' + aid,
             success: function (req) {
-                console.log(req);
                 $("#title").val(req.data.title);
                 $("#operation-1").val(req.data.type);
                 $("#operation-2").val(req.data.labelId);
@@ -135,7 +134,6 @@ layui.use(['layer','laydate'],function () {
     //保存内容不要使用JSON格式直接获取e.txt.html()
     //文章提交
     function addArticle(data) {
-        console.log(data);
         var url = "";
         if (status == 0) {
             url = "/article/article/add";
@@ -224,11 +222,13 @@ layui.use(['layer','laydate'],function () {
                 "id": aid
             });
         }
+        console.log(data);
         addArticle(data);
     });
 
     laydate.render({
         elem: '#operation-3',
+        type: 'datetime',
         value: new Date()
     });
 

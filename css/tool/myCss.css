@@ -142,8 +142,14 @@
     color: #73d3ff!important;
 }
 .layui-this{
-    border-radius: 10px!important;
+    /*border-radius: 10px!important;*/
 }
 .laydate-day-next{
     color: #ffc67b!important;
+}
+.laydate-time-list>li>ol::-webkit-scrollbar{
+    display: none;
+}
+.laydate-time-list>li>ol:hover{
+    color: #198680;
 }

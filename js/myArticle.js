@@ -35,7 +35,7 @@ layui.use(['laytpl','layer'],function () {
         if (data == null) {
             data = {
                 "uId": user.uid,
-                "id": 1
+                "id": 2
             }
         }
         $.ajax({
