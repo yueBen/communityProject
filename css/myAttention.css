@@ -182,6 +182,10 @@ html,body{
     display: inline-block;
     float: left;
     background: rgba(255,255,255,0.3);
+    text-align: center;
+    line-height: 33px;
+    -webkit-user-select: none;
+    cursor: pointer;
 }
 .my-attention-name:active{
     border: 1px solid #FF5722;
@@ -189,12 +193,17 @@ html,body{
 .my-attention-del{
     width: 22%;
     height: 94.2%;
+    line-height: 33px;
     margin: 0 0 0 2%;
     border-radius: 10px;
-    border: 1px solid rgba(0,191,255,0.6);
+    border: 1px solid rgba(255,0,0,0.6);
     display: inline-block;
     float: left;
-    background: rgba(255,255,255,0.3);
+    background: transparent;
+    text-align: center;
+    color: #FF5722;
+    cursor: pointer;
+    -webkit-user-select: none;
 }
 .my-attention-del:active{
     border: 1px solid #FF5722;
@@ -222,12 +231,18 @@ html,body{
 .query-blogger-name{
     width: 53%;
     height: 99%;
+    line-height: 30px;
     margin: 0 2% 0 2%;
     border-radius: 10px;
     border: 1px solid #696969;
     background: rgba(255,255,255,0.6);
     display: inline-block;
     float: left;
+    text-align: center;
+    font-weight: bold;
+    font-family: 楷体;
+    color: #0C0C0C;
+    -webkit-user-select: none;
 }
 .query-blogger-name:active{
     border: 1px solid #000000;
@@ -235,12 +250,17 @@ html,body{
 .query-blogger-attention{
     width: 22.7%;
     height: 99%;
+    line-height: 30px;
     margin: 0 2% 0 0;
     border-radius: 10px;
     border: 1px solid #696969;
     background: rgba(255,255,255,0.6);
     display: inline-block;
     float: left;
+    text-align: center;
+    cursor: pointer;
+    color: #0C0C0C;
+    -webkit-user-select: none;
 }
 .query-blogger-attention:active{
     border: 1px solid #000000;
