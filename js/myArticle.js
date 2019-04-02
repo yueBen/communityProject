@@ -56,7 +56,7 @@ layui.use(['laytpl','layer'],function () {
         var html = '';
         $.each(list,function (i,v) {
             html += '<div class="article-item"><div class="article-item-title">'+ v.title +
-                    '</div><div class="article-item-time">'+ toDate(v.updateTime) + '</div>'+
+                    '</div><div class="article-item-time">'+ toDate(v.updateTime,0) + '</div>'+
                     '<div class="article-item-btn btn-1" name="' + v.id + '">编辑</div><div class="article-item-btn btn-2" name="' + v.id + '">';
 
             if (v.status == 0) {

@@ -97,7 +97,7 @@ function toHtml(str) {
 }
 
 function isNull(data) {
-    if (data != null) {
+    if (data != null && data != "") {
         if (data.length == 0) {
             return null;
         } else {

@@ -441,6 +441,7 @@ layui.use('layer',function () {
                 url: path + "/login/user/login",
                 type: 'post',
                 data:user,
+                async:false,
                 dataType: "json",
                 contentType: "application/json;charset=utf-8",
                 error:function(XMLHttpRequest, textStatus, errorThrown) {
@@ -470,7 +471,7 @@ layui.use('layer',function () {
                             getUserInfo(data.data);
                             if (data.data.uid == "0000000001") {
                                 console.log("toPage");
-                                window.open("page/adminIndex.html");
+                                window.open("page/adminIndex.html","_blank");
                             }
                             cleanLoginRegist();
                             layer.closeAll();

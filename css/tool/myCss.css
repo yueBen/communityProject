@@ -107,5 +107,43 @@
     display: none;
 }
 
-
-
+.layui-laydate{
+    background: rgba(45,45,45,0.8)!important;
+    border-radius: 10px!important;
+    color: #FFFFFF!important;
+}
+.laydate-btns-clear{
+    background: transparent!important;
+    border-radius: 5px!important;
+}
+.laydate-btns-now{
+    background: transparent!important;
+    border-radius: 5px!important;
+}
+.laydate-btns-confirm{
+    background: transparent!important;
+    border-radius: 5px!important;
+}
+.layui-laydate-content>table>thead>tr>th{
+    color: #fbffd5!important;
+}
+.layui-laydate-content>table>tbody>tr>td{
+    color: #FFFFFF;
+}
+.layui-laydate-content>table>tbody>tr>td:hover{
+    color: #000000!important;
+    background: rgba(245,245,245,0.6)!important;
+    border-radius: 10px!important;
+}
+.layui-laydate-list{
+    background: #3a382b!important;
+}
+.laydate-day-prev{
+    color: #73d3ff!important;
+}
+.layui-this{
+    border-radius: 10px!important;
+}
+.laydate-day-next{
+    color: #ffc67b!important;
+}
