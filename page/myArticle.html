@@ -37,20 +37,42 @@
         </div>
     </div>
     <div class="myArticle-bottom">
-        <div class="myArticle-bottom-articles">
+        <!--我的文章项-->
+        <div class="myArticle-bottom-articles"></div>
 
-
-        </div>
+        <!--我的文章分类-->
         <div class="myArticle-bottom-class">
+            <!--我的分类添加按钮-->
             <div class="add-class">
-                <i class="layui-icon" style="font-size: 20px">&#xe654;</i>新增分类
+                标签管理
             </div>
-            <div class="class-item">
-                分类一
+            <!--我的标签项-->
+            <div class="class-items">
+                <div class="class-item">
+                    分类一
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<!--标签管理模态框-->
+<div id="addLabel">
+    <div style="margin: 15px 0 0 0;height: 35px;line-height: 35px;">
+        <input type="text" id="labelName" placeholder="请输入标签名">
+        <div id="btnAddLabel"><i class="layui-icon" style="font-size: 30px">&#xe61f;</i></div>
+    </div>
+    <div id="labelItems">
+        <div class="label-item">
+            <div class="label-item-name">标签一</div>
+            <div class="label-item-del">
+                <i class="layui-icon">&#x1007;</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script src="../layui/layui.js"></script>
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/tool/config.js"></script>

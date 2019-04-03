@@ -11,19 +11,19 @@ layui.use(['laytpl','layer'],function () {
     loadMyArticle();
 
     //点击文章选中
-    // $(".myArticle-bottom-articles").on("click",".article-item",function () {
-    //     if (this.className.indexOf('article-item-check')<0){
-    //         $(this).addClass('article-item-check');
-    //     }else{
-    //         $(this).removeClass('article-item-check');
-    //     }
-    // });
+    $(".myArticle-bottom-articles").on("click",".article-item",function () {
+        if (this.className.indexOf('article-item-check')<0){
+            $(this).addClass('article-item-check');
+        }else{
+            $(this).removeClass('article-item-check');
+        }
+    });
 
 
     //阻止父级事件冒泡
-    // $(".myArticle-bottom-articles").on("click",".article-item-btn",function () {
-    //     e.stopPropagation();
-    // });
+    $(".myArticle-bottom-articles").on("click",".article-item-btn",function (e) {
+        e.stopPropagation();
+    });
 
     //新增文章
     $("#addArticle").click(function () {
@@ -98,6 +98,27 @@ layui.use(['laytpl','layer'],function () {
         }
         return content;
     }
+
+    //新增标签弹窗
+    $(".add-class").click(function () {
+        layer.open({
+            type: 1,    //弹窗类型,2为页面层
+            title: false,   //弹出标题
+            content: $("#addLabel"),
+            skin: 'modelBg',    //弹窗样式
+            area: ['240px','150px'],  //弹窗大小
+            offset: ['130px','1175px'],  //弹窗位置[top,left]，默认auto垂直水平居中
+            closeBtn: 2,     //右上角关闭按钮，有1、2两种样式，0是不显示
+            shade: 0,     //弹层外区域,可自定义样式shade: [0.8, '#393D49']
+            shadeClose: false,  //点击弹层外区域关闭
+            anim: 0,    //弹出动画
+            isOutAnim: true,    //关闭动画
+            fixed: true,    //鼠标滚动时，层是否固定在可视区域
+            resize: false  //弹窗大小是否可拖动
+            //scrollbar: true   // 是否允许浏览器出现滚动条
+            // cancel: function () {} 右上角关闭按钮触发的回调
+        });
+    });
 
 
 });
