@@ -106,8 +106,8 @@ layui.use(['laytpl','layer'],function () {
             title: false,   //弹出标题
             content: $("#addLabel"),
             skin: 'modelBg',    //弹窗样式
-            area: ['240px','150px'],  //弹窗大小
-            offset: ['130px','1175px'],  //弹窗位置[top,left]，默认auto垂直水平居中
+            area: ['240px','60px'],  //弹窗大小
+            offset: ['75px','1175px'],  //弹窗位置[top,left]，默认auto垂直水平居中
             closeBtn: 2,     //右上角关闭按钮，有1、2两种样式，0是不显示
             shade: 0,     //弹层外区域,可自定义样式shade: [0.8, '#393D49']
             shadeClose: false,  //点击弹层外区域关闭
@@ -120,5 +120,35 @@ layui.use(['laytpl','layer'],function () {
         });
     });
 
+    //新增标签
+    $("#btnAddLabel").click(function () {
+        var data = JSON.stringify({
+            "labelName": $("#labelName").val(),
+            "uid": user.uid
+        });
+        console.log(data);
+        $.ajax({
+            url: path + "/article/label/add",
+            type: 'post',
+            data: data,
+            dataType: "json",
+            contentType: "application/json;charset=utf-8",
+            success: function (req) {
+                if (req.ok) {
+                    addLabelItem(req.data);
+                } else {
+                    layer.msg(req.message,{
+                        time: 1000
+                    });
+                }
+            }
+        });
+    });
+
+    function addLabelItem(data) {
+        $.each(data,function (i,v) {
+
+        });
+    }
 
 });
