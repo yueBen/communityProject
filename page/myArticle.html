@@ -4,32 +4,28 @@
 <div class="myArticle">
     <div class="myArticle-top">
         <div class="myArticle-top-query">
-            <input type="text" placeholder="TimeStart">
-            <input type="text" placeholder="TimeEnd">
-            <input type="text" placeholder="Title">
-            <select>
-                <option value="" style="display: none;" disabled selected>标签</option>
-                <option>标签一</option>
-                <option>标签二</option>
-                <option>标签三</option>
-            </select>
-            <select>
+            <input type="text" id="updateStart" placeholder="TimeStart">
+            <input type="text" id="updateEnd" placeholder="TimeEnd">
+            <input type="text" id="title" placeholder="Title">
+            <select id="type">
                 <option value="" style="display: none;" disabled selected>类型</option>
-                <option>学习</option>
-                <option>生活</option>
-                <option>兴趣</option>
-                <option>提问</option>
+                <option value="0">学习</option>
+                <option value="1">生活</option>
+                <option value="2">兴趣</option>
+                <option value="3">提问</option>
             </select>
 
-            <select>
+            <select id="status">
                 <option value="" style="display: none;" disabled selected>发布状态</option>
-                <option>已发布</option>
-                <option>已下线</option>
-                <option>未发布</option>
+                <option value="5">已发布</option>
+                <option value="1">已下线</option>
+                <option value="6">未发布</option>
+                <option value="2">待审批</option>
             </select>
 
-            <div class="btn-reset" style="margin: 0 15px 0 30px">重置</div>
-            <div class="btn-search">搜索</div>
+            <div class="btn-search" id="search"  style="margin: 0 15px 0 30px">搜索</div>
+            <div class="btn-reset" id="reset">重置</div>
+            <div class="btn-reset" id="del" style="width: 100px;margin: 0 0 0 30px">删除选中</div>
 
         </div>
         <div class="myArticle-top-add" id="addArticle">
@@ -47,11 +43,7 @@
                 标签管理
             </div>
             <!--我的标签项-->
-            <div class="class-items">
-                <div class="class-item">
-                    分类一
-                </div>
-            </div>
+            <div class="class-items"></div>
         </div>
     </div>
 </div>

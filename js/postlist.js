@@ -53,14 +53,14 @@ layui.use(['laytpl','laydate','layer'],function () {
             "releaseTime1": $("#releaseTimeStart").val(),
             "releaseTime2": $("#releaseTimeEnd").val(),
             "title": $("#queryTitle").val(),
-            "labelId": $("#queryAuthor").val()
+            "content": $("#queryAuthor").val()
         }
         if ($("#releaseTimeEnd").val() >= $("#releaseTimeStart").val()) {
-
             queryArticles(data);
         } else {
             layer.msg("结束时间应该大于开始时间",{
-                time: 800
+                time: 800,
+                offset: ['300px', '400px']
             });
         }
     });
