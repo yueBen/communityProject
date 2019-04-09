@@ -207,25 +207,30 @@ article-item-content>p{
 .class-item{
     width: 90%;
     height: 45px;
-    line-height: 45px;
     margin: 10px 5% 10px 5%;
     border-radius: 15px;
     background: rgba(230,230,230,0.6);
     font-size: 26px;
     font-family: 楷体;
     font-weight: 100;
-    text-align: center;
     color: #2E2D3C;
     /*双击不选中文本*/
     -moz-user-select:none;
     -webkit-user-select: none;
     -ms-user-select: none;
 }
-.class-item:active{
-    color: #9e9e9e;
-    background: rgba(45,45,45,0.6);
+.class-item>p{
+    margin: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 15px;
 }
-
+.class-item>p:active{
+    background: #2E2D3C;
+    color: #FFFFFF;
+}
 #addLabel{
     display: none;
     width: 100%;
@@ -265,6 +270,26 @@ article-item-content>p{
 }
 #btnAddLabel:active{
     color: #7d7b40;
+}
+
+.del-label-item{
+    position: relative;
+    top: -45px;
+    left: 190px;
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    display: none;
+}
+.del-label-item:active{
+    color: #FFFFFF;
+}
+.del-label-item>i{
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 36px;
+    pointer-events: none;
 }
 
 

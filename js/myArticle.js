@@ -28,6 +28,10 @@ layui.use(['laytpl','layer','laydate'],function () {
     $(".myArticle-bottom-articles").on("click",".article-item-btn",function (e) {
         e.stopPropagation();
     });
+    $(".class-item").on("click",".del-label-item",function (e) {
+        e.stopPropagation();
+        $(this)
+    })
 
     //新增文章
     $("#addArticle").click(function () {
@@ -144,7 +148,7 @@ layui.use(['laytpl','layer','laydate'],function () {
             contentType: "application/json;charset=utf-8",
             success: function (req) {
                 if (req.ok) {
-                    $(".class-items").empty();
+                    // $(".class-items").empty();
                     $(".class-items").append(addLabelItem(req.data));
                     $("#labelName").val("");
                     layer.closeAll();
@@ -167,7 +171,7 @@ layui.use(['laytpl','layer','laydate'],function () {
             },
             success: function (req) {
                 if (req.ok) {
-                    $(".class-items").empty();
+                    // $(".class-items").empty();
                     $(".class-items").append(addLabelItem(req.data));
                 } else {
                     layer.msg(req.message,{
@@ -182,7 +186,8 @@ layui.use(['laytpl','layer','laydate'],function () {
     function addLabelItem(data) {
         var html = '';
         $.each(data,function (i,v) {
-            html += '<div class="class-item" id="' + v.id + '">' + v.labelName + '</div>';
+            html += '<div class="class-item" name="' + v.id + '"><p>' + v.labelName
+                + '</p><div class="del-label-item" name="' + v.id + '"><i class="layui-icon">&#xe640;</i></div></div>';
         });
         return html;
     }
@@ -219,6 +224,9 @@ layui.use(['laytpl','layer','laydate'],function () {
     laydate.render({
         elem: "#updateEnd"
     })
+
+    //长按标签出现删除按钮
+
 
 
 });
