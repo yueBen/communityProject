@@ -176,19 +176,40 @@ layui.use(['layer','laydate'],function () {
                 } else {
                     if (data.respCode == 0) {
                         //删除
-
-                        console.log(data);
                         layer.msg("您文章内容不合格请重新编辑！！",{
                             time: 1000
                         },function () {
-                            e.txt.html(data.data);
+                            console.log(data);
+                            e.txt.html(data.message);
                         })
                     } else if (data.respCode == 1) {
                         //提示移交管理员
-                        console.log("error2");
+                        var n = layer.open({
+                            type: 0,
+                            title: "已移交管理员审核",
+                            content: "是否留下？",
+                            btn: ["留下","离开"],
+                            btn1: function () {
+                                layer.close(n);
+                            },
+                            btn2: function () {
+                                window.close();
+                            }
+                        });
                     } else if (data.respCode == 2) {
                         //检查确认发布
-                        console.log("error3");
+                        var n = layer.open({
+                            type: 0,
+                            title: "文章有敏感信息",
+                            content: "是否发布？",
+                            btn: ["发布","编辑"],
+                            btn1: function () {
+                                layer.close(n);
+                            },
+                            btn2: function () {
+                                window.close();
+                            }
+                        });
                     }
                 }
             }
@@ -222,7 +243,6 @@ layui.use(['layer','laydate'],function () {
                 "id": aid
             });
         }
-        console.log(data);
         addArticle(data);
     });
 

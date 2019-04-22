@@ -225,7 +225,19 @@ layui.use(['laytpl','layer','laydate'],function () {
         elem: "#updateEnd"
     })
 
-    //长按标签出现删除按钮
+    //悬浮标签出现删除按钮
+    var isOut = true;
+    $(".class-items").on('mouseenter mouseleave','.class-item',function(){
+        var id = $(this).attr("name");
+        if (isOut) {
+            $(".del-label-item[name=" + id + "]").show();
+            isOut = false;
+        } else{
+            $(".del-label-item[name=" + id + "]").hide();
+            isOut = true;
+        }
+
+    });
 
 
 
