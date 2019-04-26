@@ -4,6 +4,9 @@ layui.use(['laytpl','layer','laydate'],function () {
         laydate = layui.laydate,
         $ = layui.$;
 
+    //当前选择的标签
+    var checkLabel = "";
+
     var user = JSON.parse(sessionStorage.getItem("user"));
     if (user == null) {
         layer.msg("请登录！！！");
@@ -134,7 +137,7 @@ layui.use(['laytpl','layer','laydate'],function () {
         addMyLabel();
     });
 
-    //加载我的标签
+    //添加标签
     function addMyLabel() {
         var data = JSON.stringify({
             "labelName": $("#labelName").val(),
@@ -148,7 +151,7 @@ layui.use(['laytpl','layer','laydate'],function () {
             contentType: "application/json;charset=utf-8",
             success: function (req) {
                 if (req.ok) {
-                    // $(".class-items").empty();
+                    $(".class-items").empty();
                     $(".class-items").append(addLabelItem(req.data));
                     $("#labelName").val("");
                     layer.closeAll();
@@ -171,7 +174,7 @@ layui.use(['laytpl','layer','laydate'],function () {
             },
             success: function (req) {
                 if (req.ok) {
-                    // $(".class-items").empty();
+                    $(".class-items").empty();
                     $(".class-items").append(addLabelItem(req.data));
                 } else {
                     layer.msg(req.message,{
@@ -194,6 +197,10 @@ layui.use(['laytpl','layer','laydate'],function () {
 
     //搜索按钮监听
     $("#search").click(function () {
+        selectMyArticle();
+    });
+
+    function selectMyArticle() {
         var data = {
             "uId": user.uid,
             "id": 2,
@@ -203,9 +210,12 @@ layui.use(['laytpl','layer','laydate'],function () {
             "labelId": $("#label").val(),
             "type": $("#type").val(),
             "status": $("#status").val()
+        };
+        if (checkLabel) {
+            data.labelId = checkLabel;
         }
         loadMyArticle(data);
-    });
+    }
 
     //搜索内容重置
     $("#reset").click(function () {
@@ -215,6 +225,8 @@ layui.use(['laytpl','layer','laydate'],function () {
         $("#label").val("");
         $("#type").val("");
         $("#status").val("");
+        checkLabel = "";
+        loadMyArticle(null);
     });
 
     laydate.render({
@@ -228,6 +240,7 @@ layui.use(['laytpl','layer','laydate'],function () {
     //悬浮标签出现删除按钮
     var isOut = true;
     $(".class-items").on('mouseenter mouseleave','.class-item',function(){
+        console.log("额",isOut);
         var id = $(this).attr("name");
         if (isOut) {
             $(".del-label-item[name=" + id + "]").show();
@@ -237,6 +250,32 @@ layui.use(['laytpl','layer','laydate'],function () {
             isOut = true;
         }
 
+    });
+
+    $(".class-items").on('click','.class-item',function(){
+        checkLabel = $(this).attr("name");
+        selectMyArticle();
+    });
+
+    $(".class-items").on("click",'.del-label-item',function () {
+        var id = $(this).attr("name");
+        $.ajax({
+            url: path + "/article/label/" + id,
+            type: 'get',
+            success: function (req) {
+                if (req.ok) {
+                    queryMyLabel();
+                    layer.msg("删除成功！！",{
+                        time: 1000
+                    });
+                    isOut = true;
+                } else {
+                    layer.msg("删除失败！该标签下可能还有文章！！！",{
+                        time: 1000
+                    });
+                }
+            }
+        });
     });
 
 
