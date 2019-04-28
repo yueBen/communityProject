@@ -22,6 +22,8 @@
                 <option value="6">待发布</option>
                 <option value="2">待审批</option>
                 <option value="0">已保存</option>
+                <option value="7">已驳回</option>
+                <option value="8">已通过</option>
             </select>
 
             <div class="btn-search" id="search"  style="margin: 0 15px 0 30px">搜索</div>
@@ -54,6 +56,23 @@
 <div id="addLabel">
     <input type="text" id="labelName" placeholder="请输入标签名">
     <div id="btnAddLabel"><i class="layui-icon" style="font-size: 35px">&#xe61f;</i></div>
+</div>
+
+<div id="articleOffline">
+    <div class="articleOffline-hint">是否下线:</div>
+    <div class="articleOffline-title"></div>
+    <button class="republication-btn" id="articleOffline-btn">下线</button>
+</div>
+<div id="republication">
+    <div class="republication-title"></div>
+    <div class="republication-time">
+        <input id="republicationTime">
+    </div>
+    <button class="republication-btn" id="republication-btn">发布</button>
+</div>
+<div id="articleDelete">
+    <div class="articleDelete-hint">是否删除选中的<span id="deleteNum"></span>篇文章？？？</div>
+    <button class="republication-btn" id="articleDelete-btn">删除</button>
 </div>
 
 
