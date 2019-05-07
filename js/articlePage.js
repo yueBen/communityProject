@@ -2,11 +2,32 @@ layui.use('laytpl',function () {
    var laytpl = layui.laytpl,
        $ = layui.$;
 
+   var aid = getParam('id',location.search);
+   console.log(aid);
+
    //加载作者头像
    $('.article-author-photo').append('<img src="../img/1.jpg" style="width: 100%;height: 100%;border-radius: 50%;">');
 
-    //评论部分
+   //加载文章内容
+    $.ajax({
+        type: 'get',
+        url: path + '/article/article/' + aid,
+        success: function (req) {
+            $(".article-title-center").text(req.data.title);
+            $('.article-content').html(req.data.content);
+            $('#articleBrwose>.article-title-left-item-num').text(req.data.browseNum);
+            $('#articleHot>.article-title-left-item-num').text(12);
+            $('#articleComment>.article-title-left-item-num').text(req.data.commentNum);
+            $('#articleLike>.article-title-right-item-num').text(req.data.likeNum);
+            $('#articleDisLike>.article-title-right-item-num').text(req.data.dislikeNum);
+            $('#articleCollect>.article-title-right-item-num').text(req.data.collectionNum);
+        },
+        error: function () {
 
+        }
+    });
+
+    //评论部分
     {
         //评论输入框折叠
         $('#article-comments-text').focus(function () {
@@ -25,7 +46,7 @@ layui.use('laytpl',function () {
         //加载评论
         var dataBuffer;
         $.ajax({
-            type: 'post',
+            type: 'get',
             url: '../A_Simulated_json/articlecomments.json',
             dataType: 'json',
             success: function (data) {
