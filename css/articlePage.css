@@ -359,7 +359,7 @@
 }
 .article-comment-content-item-body-textarea>textarea{
     width: 100%;
-    height: 25px;
+    height: 50px;
     background-color: transparent;
     border-radius: 5px;
     color: #FFFFFF;

@@ -51,7 +51,7 @@ layui.use('laytpl',function () {
             dataType: 'json',
             success: function (data) {
                 dataBuffer = data.data.list;
-                commentLevel1(data.data.list);
+                commentLevel1(dataBuffer);
             }
         });
         
