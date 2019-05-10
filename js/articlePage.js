@@ -1,9 +1,11 @@
-layui.use('laytpl',function () {
+layui.use(['laytpl','layer','laydate'],function () {
    var laytpl = layui.laytpl,
+       layer = layui.layer,
        $ = layui.$;
 
    var aid = getParam('id',location.search);
-   console.log(aid);
+
+    var user = JSON.parse(sessionStorage.getItem("user"));
 
    //加载作者头像
    $('.article-author-photo').append('<img src="../img/1.jpg" style="width: 100%;height: 100%;border-radius: 50%;">');
@@ -13,6 +15,7 @@ layui.use('laytpl',function () {
         type: 'get',
         url: path + '/article/article/' + aid,
         success: function (req) {
+            console.log(req);
             $(".article-title-center").text(req.data.title);
             $('.article-content').html(req.data.content);
             $('#articleBrwose>.article-title-left-item-num').text(req.data.browseNum);
@@ -21,11 +24,28 @@ layui.use('laytpl',function () {
             $('#articleLike>.article-title-right-item-num').text(req.data.likeNum);
             $('#articleDisLike>.article-title-right-item-num').text(req.data.dislikeNum);
             $('#articleCollect>.article-title-right-item-num').text(req.data.collectionNum);
+            $('#authorId').val(req.data.uid);
         },
         error: function () {
 
         }
     });
+
+    initArticleComment();
+
+    function initArticleComment() {
+        $.ajax({
+            type: 'get',
+            // url: '../A_Simulated_json/articlecomments.json',
+            // dataType: 'json',
+            url: path + "/article/article/friPage",
+            data: {"pId": "-", "onId": $('#authorId').val()},
+            contentType: false,
+            success: function (data) {
+                commentLevel1(data.data.list);
+            }
+        });
+    }
 
     //评论部分
     {
@@ -35,25 +55,17 @@ layui.use('laytpl',function () {
             $('.article-comments-add').css('display','inherit');
             $('.article-comments-add').animate({height: 33},300);
         });
-        $('#article-comments-text').blur(function () {
-            $('#article-comments-text').animate({height: 30},300);
-            $('.article-comments-add').animate({height: 0},300);
-            setTimeout(function () {
-                $('.article-comments-add').css('display','none');
-            },300);
-        });
+        // $('#article-comments-text').blur(function () {
+        //     $('#article-comments-text').animate({height: 30},300);
+        //     $('.article-comments-add').animate({height: 0},300);
+        //     setTimeout(function () {
+        //         $('.article-comments-add').css('display','none');
+        //     },300);
+        // });
 
         //加载评论
         var dataBuffer;
-        $.ajax({
-            type: 'get',
-            url: '../A_Simulated_json/articlecomments.json',
-            dataType: 'json',
-            success: function (data) {
-                dataBuffer = data.data.list;
-                commentLevel1(dataBuffer);
-            }
-        });
+
         
         //加载主评论（一级评论）
         function commentLevel1(data) {
@@ -192,5 +204,51 @@ layui.use('laytpl',function () {
     //标题头部操作
     {
 
+    }
+
+    //发表文章评论
+    {
+        $('#article-comments-text').keyup(function () {
+            var curLength = $(this).val().trim().length;
+            $('#commentCharNum').text(500-curLength);
+        });
+
+        //文章评论发布
+        $('#btnArticleComm').on('click',function () {
+            if (user) {
+                addComm("-", $('#article-comments-text').val());
+            } else {
+                layer.msg("请登录！！！",{
+                    time: 2000,
+                    // offset: ['150px','1600px'],
+                    skin: 'msg-bg'
+                });
+            }
+        });
+    }
+
+    function addComm(pid, text) {
+        var data = JSON.stringify({
+            "uid": user.uid,
+            "onId": $('#authorId').val(),
+            "pid": $('#authorId').val(),
+            "type": 0,
+            "content": text
+        });
+        console.log(data);
+        $.ajax({
+            url: path + "/article/comment/add",
+            type: 'post',
+            data: data,
+            dataType: "json",
+            contentType: "application/json;charset=utf-8",
+            success: function (req) {
+                if (req.ok) {
+                    alert("ok");
+                } else {
+                    alert("fail");
+                }
+            }
+        });
     }
 });

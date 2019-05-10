@@ -386,3 +386,12 @@
     background-color: #FFFFFF;
     color: #000000;
 }
+.msg-bg{
+    background: #37373c!important;
+    border-color: #37373c!important;
+    border-radius: 20px!important;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 楷体;
+    font-weight: bold;
+}
