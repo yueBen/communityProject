@@ -2,7 +2,7 @@ layui.use('laytpl',function () {
    var laytpl = layui.laytpl,
        $ = layui.$;
 
-
+    var user = JSON.parse(sessionStorage.getItem("user"));
 
     //页面动画
     {
@@ -17,7 +17,37 @@ layui.use('laytpl',function () {
             });
         });
     }
-    
+
+    initPageArticle();
+    function initPageArticle() {
+        var data = {
+            "page": 1,
+            "pageSize": 50,
+            "uId":  user.uid
+        };
+
+        $.ajax({
+            type: "get",
+            url: path + "/article/article/attePage",
+            data: data,
+            contentType: false,
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
+    //拼接我的关注文章
+    function attentionHtml(arr) {
+        $(".myAttention-left").html("");
+        var h = '';
+        $.each(arr, function (i,v) {
+           h += ''
+        });
+        $(".myAttention-left").html(h);
+
+    }
+
     //推荐博主头像显示,background-image: url("../img/6.jpg");
     recommPhoto()
     function recommPhoto() {
@@ -46,5 +76,7 @@ layui.use('laytpl',function () {
             }
         }
     });
+
+
 
 });

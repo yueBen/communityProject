@@ -142,23 +142,6 @@
         <!--好友文章-->
         <div class="personalCenter-bottom-center">
             <div id="bottom-center-hidden">
-                <!--搜索项-->
-                <div class="personalCenter-bottom-center-title">
-                    <input class="layui-input" type="text" id="selTimeSta" style="margin: 15px 0 15px 35px;" placeholder="发布时间Start" readonly>
-                    <input class="layui-input" type="text" id="selTimeEnd" style="margin: 15px 0 15px 15px;" placeholder="发布时间End" readonly>
-                    <input class="layui-input" type="text" id="title" placeholder="标题">
-                    <select id="type">
-                        <option value="" style="display: none;" disabled selected>类型</option>
-                        <option value="0">学习</option>
-                        <option value="1">生活</option>
-                        <option value="2">兴趣</option>
-                        <option value="3">提问</option>
-                    </select>
-
-                    <div class="btn-reset" id="queryResetFri" style="margin: 12px 15px 15px 150px;">重置</div>
-                    <div class="btn-search">搜索</div>
-                </div>
-
                 <!--文章项-->
                 <div class="personalCenter-bottom-center-body">
 
@@ -190,11 +173,11 @@
         <div class="personalCenter-bottom-right">
             <!--添加好友按钮-->
             <div class="add-friend" id="addFriend"><i class="layui-icon">&#xe654;</i></div>
-            <div class="friends-item">
-                <div class="friends-item-img i-b-left bg-3"></div>
-                <div class="friends-item-name i-b-left bg-4"></div>
-                <div class="friends-item-del i-b-left bg-5" style="display: none"></div>
+
+            <div class="friends-items">
+
             </div>
+
         </div>
     </div>
 </div>
@@ -295,29 +278,23 @@
 </style>
 <div id="addFriendModel" style="display: none" class="add">
     <div class="add-query">
-        <input type="text" placeholder="请输入用户名或ID">
-        <button class="modelBtn1"><i class="layui-icon">&#xe615;</i></button>
+        <input type="text" placeholder="请输入用户名或ID" id="firName">
+        <button class="modelBtn1" id="addBtnFir"><i class="layui-icon">&#xe615;</i></button>
     </div>
     <div class="add-items">
 
-        <div class="add-item">
-            <div style="display: inline-block;float: left;width: 75%;height: 80px;">
-                <div class="add-item-name">王二牛儿</div>
-                <hr style="margin: 0 10%;background: #494118;width: 80%;">
-                <div class="add-item-id">12345678</div>
-            </div>
+    </div>
+</div>
 
-            <div class="add-item-add">
-                <i class="layui-icon">&#xe61f;</i>
-            </div>
-        </div>
-
-        <!--<div class="add-item"></div>-->
-        <!--<div class="add-item"></div>-->
-        <!--<div class="add-item"></div>-->
-        <!--<div class="add-item"></div>-->
-        <!--<div class="add-item"></div>-->
-
+<div id="addFriNote" style="display: none" class="add">
+    <div class="addUserName">
+        是否添加<span id="addUserName"></span>为好友：
+    </div>
+    <div class="noteInput">
+        <input id="noteInput" placeholder="说点什么。。。">
+    </div>
+    <div class="addUserFriBtn">
+        添加
     </div>
 </div>
 

@@ -64,6 +64,8 @@ layui.use(['laytpl','layer','laydate'],function(){
     {
         //添加好友
         $("#addFriend").click(function () {
+            $(".add-items").html("");
+            $("#firName").val("");
             layer.open({
                 type: 1,    //弹窗类型,2为页面层
                 title: false,   //弹出标题
@@ -192,11 +194,11 @@ layui.use(['laytpl','layer','laydate'],function(){
     }
 
     //好友文章列表加载
-
     function queryfriendArticle() {
+        $(".personalCenter-bottom-center-body").html("");
         var data = {
             "page": index,
-            "pageSize": 10,
+            "pageSize": 50,
             "uId":  user.uid
         };
 
@@ -217,7 +219,9 @@ layui.use(['laytpl','layer','laydate'],function(){
         var h = '';
         $.each(list,function (i,v) {
             h += '<div class="friendsArticle-item"><div class="friendsArticle-item-title">'+
-                '<div class="friendsArticle-item-title-1">' + v.title + '</div><div class="friendsArticle-item-title-2">'+
+                '<div class="friendsArticle-item-title-1">'+
+                '<a href="articlePage.html?id=' + v.id + '" target="_blank" style="color: #e5e5a4">' + v.title + '</a>'+
+                '</div><div class="friendsArticle-item-title-2">'+
                 '<span style="color: #FF5722;width: 65%;float:left;text-align: right;">' + toDate(v.updateTime,0) + '</span>'+
                 '<span style="color: #FFFFBB;width: 35%;float: left;text-align: center;">' + v.labelId + '</span></div></div>' +
                 '<div class="friendsArticle-item-content"><p><marquee direction="left" behavior="scroll" '+
@@ -227,6 +231,7 @@ layui.use(['laytpl','layer','laydate'],function(){
         return h;
     }
 
+
     //搜索
     {
         //重置
@@ -235,5 +240,177 @@ layui.use(['laytpl','layer','laydate'],function(){
            $("#type").val("");
         });
     }
+
+    //搜索好友
+    $("#addBtnFir").on("click", function () {
+        var data = {
+            "uId": user.uid,
+            "id": "1",
+            "name": $("#firName").val()
+        };
+        $.ajax({
+            type: "get",
+            url: path + "/personInfo/personInfo/SelAddFri",
+            data: data,
+            contentType: false,
+            success: function (data) {
+                addFri(data.data);
+            }
+        });
+    });
+
+    //拼接搜索好友项
+    function addFri(arr) {
+        var h = '';
+        $.each(arr,function(i,v){
+            h += '<div class="add-item"><div style="display: inline-block;float: left;width: 75%;height: 80px;">'+
+                 '<div class="add-item-name">' + v.name + '</div>'+
+                 '<hr style="margin: 0 10%;background: #494118;width: 80%;">'+
+                 '<div class="add-item-id">' + v.uid + '</div></div>'+
+                 '<div class="add-item-add" name="' + v.uid + '"><i class="layui-icon">&#xe61f;</i></div></div>'
+        });
+        $(".add-items").html(h);
+    }
+
+    //添加好友
+    $("body").on("click", ".add-item-add", function () {
+       var uid = $(this).attr("name");
+        layer.open({
+            type: 1,    //弹窗类型,2为页面层
+            title: false,   //弹出标题
+            content: $("#addFriNote"),
+            skin: 'modelBg',    //弹窗样式
+            area: ['300px','200px'],  //弹窗大小
+            offset: ['200px','425px'],  //弹窗位置[top,left]，默认auto垂直水平居中
+            closeBtn: 1,     //右上角关闭按钮，有1、2两种样式，0是不显示
+            shade: 0.2,     //弹层外区域,可自定义样式shade: [0.8, '#393D49']
+            shadeClose: true,  //点击弹层外区域关闭
+            anim: 0,    //弹出动画
+            isOutAnim: true,    //关闭动画
+            fixed: true,    //鼠标滚动时，层是否固定在可视区域
+            resize: false  //弹窗大小是否可拖动
+            //scrollbar: true   // 是否允许浏览器出现滚动条
+            // cancel: function () {} 右上角关闭按钮触发的回调
+        });
+
+        $("body").on("click", ".addUserFriBtn", function () {
+            var data = JSON.stringify({
+                "type": 0,
+                "uid1": user.uid,
+                "uid2": uid,
+                "note": $("#noteInput").val()
+            });
+            $.ajax({
+                url: path + "/personInfo/relation/add",
+                type: "post",
+                data: data,
+                dataType: "json",
+                contentType: "application/json;charset=utf-8",
+                success: function (data) {
+                    console.log(data);
+                    if (data.ok) {
+                        layer.closeAll();
+                        layer.msg(data.data,{
+                            time: 1000
+                        })
+                    }
+
+                }
+            });
+        });
+
+    });
+
+    getUser();
+
+    function getUser() {
+        $.ajax({
+            type: "get",
+            url: path + "/personInfo/personInfo/getUser",
+            data: {
+                "uId": user.uid,
+                "id": "1"
+            },
+            contentType: false,
+            success: function (data) {
+                myFriUser(data.data);
+            }
+        });
+    }
+
+    //拼接我的好友
+    function myFriUser(arr) {
+        var h = '';
+        $.each(arr,function (i, v) {
+            h += '<div class="friends-item" name="' + v.uid + '"><div class="friends-item-img i-b-left">'+
+                 '<img src="' + path + '/personInfo/personInfo/' + v.uid + '/down">'+
+                 '</div><div class="friends-item-name i-b-left bg-4" name="' + v.uid + '">' + v.name + '</div>'+
+                 '<div class="friends-item-del i-b-left" style="display: none;" name="' + v.uid + '">' +
+                 '<i class="layui-icon" style="font-size: 35px;">&#xe640;</i></div></div>';
+        })
+        $(".friends-items").html(h);
+    }
+
+    $(".friends-items").on("mouseenter", ".friends-item", function () {
+        var uid = $(this).attr("name");
+        $(".friends-item-name[name=" + uid + "]").animate({width: '60%'},400,function () {
+            $(".friends-item-del[name=" + uid + "]").show();
+        });
+    });
+
+    $(".friends-items").on("mouseleave", ".friends-item", function () {
+        var uid = $(this).attr("name");
+        $(".friends-item-del[name=" + uid + "]").hide(400, function () {
+            $(".friends-item-name[name=" + uid + "]").animate({width: '76%'},400);
+        });
+    });
+
+    $(".friends-items").on("click", ".friends-item-del", function () {
+        var uid = $(this).attr("name");
+        var data = JSON.stringify({
+            "id": "4",
+            "uid1": uid,
+            "uid2": user.uid,
+            "type": 0,
+            "status": 1
+        });
+        $.ajax({
+            url: path + "/personInfo/relation/update",
+            type: "post",
+            data: data,
+            dataType: "json",
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+                console.log(data);
+                if (data.ok) {
+                    getUser();
+                    queryfriendArticle();
+                } else {
+                    data = JSON.stringify({
+                        "id": "4",
+                        "uid1": user.uid,
+                        "uid2": uid,
+                        "type": 0,
+                        "status": 1
+                    });
+                    $.ajax({
+                        url: path + "/personInfo/relation/update",
+                        type: "post",
+                        data: data,
+                        dataType: "json",
+                        contentType: "application/json;charset=utf-8",
+                        success: function (data) {
+                            console.log(data);
+                            if (data.ok) {
+                                getUser();
+                                queryfriendArticle();
+                            }
+                        }
+                    });
+                }
+
+            }
+        });
+    });
 
 });
