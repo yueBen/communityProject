@@ -3,6 +3,8 @@ layui.use(['laytpl','layer','laydate'],function () {
        layer = layui.layer,
        $ = layui.$;
 
+   var history = {};
+
    var aid = getParam('id',location.search);
 
     var user = JSON.parse(sessionStorage.getItem("user"));
@@ -22,6 +24,14 @@ layui.use(['laytpl','layer','laydate'],function () {
             $('#articleCollect>.article-title-right-item-num').text(req.data.collectionNum?req.data.collectionNum:0);
             $('#authorId').val(req.data.uid);
             $('#articleId').val(req.data.id);
+
+            history.uid = user.uid;
+            history.aid = req.data.id;
+            history.content = contentFilter(req.data.content);
+            history.browseNum = req.data.browseNum?req.data.browseNum:0;
+            history.collectionNum = req.data.collectionNum?req.data.collectionNum:0;
+            history.commentNum = req.data.commentNum?req.data.commentNum:0;
+
             initArticleComment(req.data.id);
             initAuthor(req.data.uid);
         },
@@ -43,6 +53,11 @@ layui.use(['laytpl','layer','laydate'],function () {
                 $("#num6").text(req.data.ranking);
                 $("#articleAuthorName").text(req.data.name);
                 $('.article-author-photo').append('<img src="' + path + '/personInfo/personInfo/' + req.data.uid + '/down" style="width: 100%;height: 100%;border-radius: 50%;">');
+
+                history.authorName = req.data.name;
+
+                historyArticle(JSON.stringify(history));
+
                 $.ajax({
                     url: path + "/personInfo/relation/isAtten",
                     type: "get",
@@ -79,9 +94,21 @@ layui.use(['laytpl','layer','laydate'],function () {
         });
     }
 
+    function historyArticle(data) {
+        $.ajax({
+            url: path + "/article/history/add",
+            type: "post",
+            data: data,
+            dataType: "json",
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
     //关注作者
     $("#articleAuthorNameBtn").on("click", function () {
-        var url = "";
         var data;
         var isB = $("#articleAuthorNameBtn").text() == "关注";
         if (isB) {
@@ -135,8 +162,6 @@ layui.use(['laytpl','layer','laydate'],function () {
             }
         });
     });
-
-
 
     //评论部分
     {
@@ -488,6 +513,10 @@ layui.use(['laytpl','layer','laydate'],function () {
                 contentType: "application/json;charset=utf-8",
                 success: function (req) {
                     if (req.ok) {
+                        if (pid == $("#articleId").val()) {
+                            var num = Number($('#articleComment>.article-title-left-item-num').text()) + 1;
+                            $('#articleComment>.article-title-left-item-num').text(num);
+                        }
 
                         $('#article-comments-text').animate({height: 30},300);
                         $('.article-comments-add').animate({height: 0},300);
@@ -516,6 +545,36 @@ layui.use(['laytpl','layer','laydate'],function () {
     }
 
 
+    initArticleRanking();
+    function initArticleRanking() {
+        $.ajax({
+            type: "get",
+            url: path + "/article/article/articleRanking",
+            data: {
+                "id": "4"
+            },
+            contentType: false,
+            success: function (data) {
+                initArticleRankingHtml(data.data);
+            }
+        });
+
+
+    }
+
+    function initArticleRankingHtml(arr) {
+        $(".article-author-recommend").html("");
+        var h = '';
+        $.each(arr, function (i, v) {
+            h += '<div class="top-item" name="' + v.id + '"><p>' + v.title + '</p></div>';
+        });
+        $(".article-author-recommend").html(h);
+    }
+
+    $("body").on("click", ".top-item", function () {
+        var id = $(this).attr("name");
+        window.open("articlePage.html?id="+id);
+    });
 
 
 });

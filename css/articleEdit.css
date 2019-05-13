@@ -64,7 +64,7 @@ a{
     padding: 0;
     border-radius: 10px;
 }
-.operation>select{
+#model_1>select{
     width: 150px;
     height: 40px;
     margin: 0 25px 0 0;
@@ -75,14 +75,14 @@ a{
     padding: 0 0 0 20px;
 }
 
-.operation>select>option{
+#model_1>select>option{
     background: rgba(32,53,64,0.8);
     border-radius: 20px;
 }
-.operation>button:active{
+#model_1>button:active{
     background: #d1d4d5;
 }
-.operation>input{
+#model_1>input{
     width: 150px;
     height: 40px;
     display: inline-block;
@@ -136,5 +136,12 @@ a{
 .div-btn:active{
     background: #d1d4d5;
     color: #000000;
+}
+
+/*#model_1{*/
+    /*display: inline;*/
+/*}*/
+#model_2{
+    display: none;
 }
 

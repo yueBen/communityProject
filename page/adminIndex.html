@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../layui/css/layui.css">
     <link rel="stylesheet" href="../css/config.css">
     <link rel="stylesheet" href="../css/tool/myCss.css">
+    <link rel="stylesheet" href="../css/tool/modelCss.css">
     <link rel="stylesheet" href="../css/adminIndex.css">
 </head>
 <body>
@@ -14,403 +15,74 @@
     <div class="userManage">
         <!--搜索项-->
         <div class="userManage-query">
-            <input type="text" style="" placeholder="用户名">
-            <input type="text" placeholder="用户ID">
-            <input type="text" placeholder="上线时间Start">
-            <input type="text" placeholder="上线时间Start">
-
-            <!--搜索-->
-            <div class="btn-reset" style="margin: 0 20px 0 50px">重置</div>
-            <div class="btn-search">搜索</div>
+            <input type="text" style="" placeholder="用户名" id="userSel1">
+            <input type="text" placeholder="用户ID" id="userSel2">
+            <input type="text" placeholder="创建时间Start" id="time1">
+            <input type="text" placeholder="创建时间End" id="time2">
 
             <!--违规等级-->
-            <select>
+            <select id="userSel3">
                 <option value="" style="display: none;" disabled selected>全部</option>
-                <option>I</option>
-                <option>II</option>
-                <option>III</option>
-                <option>IV</option>
-                <option>V</option>
+                <option value="1">I</option>
+                <option value="2">II</option>
+                <option value="3">III</option>
+                <option value="4">IV</option>
+                <option value="5">V</option>
             </select>
 
             <!--用户状态-->
-            <select>
+            <select id="userSel4">
                 <option value="" style="display: none;" disabled selected>全部</option>
-                <option>未审批</option>
-                <option>已审批</option>
-                <option>已禁言</option>
-                <option>已注销</option>
+                <option value="0">未审批</option>
+                <option value="1">已审批</option>
+                <option value="2">已禁言</option>
+                <option value="3">已注销</option>
             </select>
+
+            <!--搜索-->
+            <div class="btn-reset" style="margin: 0 20px 0 50px" id="userRepBtn">重置</div>
+            <div class="btn-search" id="userSelBtn">搜索</div>
 
         </div>
         <!--用户-->
         <div class="userManage-items">
 
-            <div class="user-item">
-                <div class="item-photo">
-                    <img src="../img/2.jpg">
-                </div>
-                <div class="item-createTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-name">
-                    张三<br>XXXX-XX-XX
-                </div>
-                <div class="item-onlineTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-violate">
-                    I
-                </div>
-                <div class="item-ranking">
-                    1234
-                </div>
-                <div class="item-state">
-                    已审批
-                </div>
-                <div class="user-operation">
-                    <!--审批-->
-                    <div class="user-operation-btn" style="color: #2b7a2d">审批</div>
-                    <!--禁言-->
-                    <div class="user-operation-btn" style="color: #7d7b40">等级修改</div>
-                    <!--重置密码-->
-                    <div class="user-operation-btn" style="color: #00557d">重置密码</div>
-                    <!--删除-->
-                    <div class="user-operation-btn" style="color: #7d0001">删除</div>
-                </div>
-            </div>
-
-            <div class="user-item">
-                <div class="item-photo">
-                    <img src="../img/2.jpg">
-                </div>
-                <div class="item-createTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-name">
-                    张三<br>XXXX-XX-XX
-                </div>
-                <div class="item-onlineTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-violate">
-                    I
-                </div>
-                <div class="item-ranking">
-                    1234
-                </div>
-                <div class="item-state">
-                    已审批
-                </div>
-                <div class="user-operation">
-                    <!--审批-->
-                    <div class="user-operation-btn" style="color: #2b7a2d">审批</div>
-                    <!--禁言-->
-                    <div class="user-operation-btn" style="color: #7d7b40">禁言</div>
-                    <!--重置密码-->
-                    <div class="user-operation-btn" style="color: #00557d">重置密码</div>
-                    <!--删除-->
-                    <div class="user-operation-btn" style="color: #7d0001">删除</div>
-                </div>
-            </div>
-            <div class="user-item">
-                <div class="item-photo">
-                    <img src="../img/2.jpg">
-                </div>
-                <div class="item-createTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-name">
-                    张三<br>XXXX-XX-XX
-                </div>
-                <div class="item-onlineTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-violate">
-                    I
-                </div>
-                <div class="item-ranking">
-                    1234
-                </div>
-                <div class="item-state">
-                    已审批
-                </div>
-                <div class="user-operation">
-                    <!--审批-->
-                    <div class="user-operation-btn" style="color: #2b7a2d">审批</div>
-                    <!--禁言-->
-                    <div class="user-operation-btn" style="color: #7d7b40">禁言</div>
-                    <!--重置密码-->
-                    <div class="user-operation-btn" style="color: #00557d">重置密码</div>
-                    <!--删除-->
-                    <div class="user-operation-btn" style="color: #7d0001">删除</div>
-                </div>
-            </div>
-            <div class="user-item">
-                <div class="item-photo">
-                    <img src="../img/2.jpg">
-                </div>
-                <div class="item-createTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-name">
-                    张三<br>XXXX-XX-XX
-                </div>
-                <div class="item-onlineTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-violate">
-                    I
-                </div>
-                <div class="item-ranking">
-                    1234
-                </div>
-                <div class="item-state">
-                    已审批
-                </div>
-                <div class="user-operation">
-                    <!--审批-->
-                    <div class="user-operation-btn" style="color: #2b7a2d">审批</div>
-                    <!--禁言-->
-                    <div class="user-operation-btn" style="color: #7d7b40">禁言</div>
-                    <!--重置密码-->
-                    <div class="user-operation-btn" style="color: #00557d">重置密码</div>
-                    <!--删除-->
-                    <div class="user-operation-btn" style="color: #7d0001">删除</div>
-                </div>
-            </div>
-            <div class="user-item">
-                <div class="item-photo">
-                    <img src="../img/2.jpg">
-                </div>
-                <div class="item-createTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-name">
-                    张三<br>XXXX-XX-XX
-                </div>
-                <div class="item-onlineTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-violate">
-                    I
-                </div>
-                <div class="item-ranking">
-                    1234
-                </div>
-                <div class="item-state">
-                    已审批
-                </div>
-                <div class="user-operation">
-                    <!--审批-->
-                    <div class="user-operation-btn" style="color: #2b7a2d">审批</div>
-                    <!--禁言-->
-                    <div class="user-operation-btn" style="color: #7d7b40">禁言</div>
-                    <!--重置密码-->
-                    <div class="user-operation-btn" style="color: #00557d">重置密码</div>
-                    <!--删除-->
-                    <div class="user-operation-btn" style="color: #7d0001">删除</div>
-                </div>
-            </div>
-            <div class="user-item">
-                <div class="item-photo">
-                    <img src="../img/2.jpg">
-                </div>
-                <div class="item-createTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-name">
-                    张三<br>XXXX-XX-XX
-                </div>
-                <div class="item-onlineTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-violate">
-                    I
-                </div>
-                <div class="item-ranking">
-                    1234
-                </div>
-                <div class="item-state">
-                    已审批
-                </div>
-                <div class="user-operation">
-                    <!--审批-->
-                    <div class="user-operation-btn" style="color: #2b7a2d">审批</div>
-                    <!--禁言-->
-                    <div class="user-operation-btn" style="color: #7d7b40">禁言</div>
-                    <!--重置密码-->
-                    <div class="user-operation-btn" style="color: #00557d">重置密码</div>
-                    <!--删除-->
-                    <div class="user-operation-btn" style="color: #7d0001">删除</div>
-                </div>
-            </div>
-            <div class="user-item">
-                <div class="item-photo">
-                    <img src="../img/2.jpg">
-                </div>
-                <div class="item-createTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-name">
-                    张三<br>XXXX-XX-XX
-                </div>
-                <div class="item-onlineTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-violate">
-                    I
-                </div>
-                <div class="item-ranking">
-                    1234
-                </div>
-                <div class="item-state">
-                    已审批
-                </div>
-                <div class="user-operation">
-                    <!--审批-->
-                    <div class="user-operation-btn" style="color: #2b7a2d">审批</div>
-                    <!--禁言-->
-                    <div class="user-operation-btn" style="color: #7d7b40">禁言</div>
-                    <!--重置密码-->
-                    <div class="user-operation-btn" style="color: #00557d">重置密码</div>
-                    <!--删除-->
-                    <div class="user-operation-btn" style="color: #7d0001">删除</div>
-                </div>
-            </div>
-            <div class="user-item">
-                <div class="item-photo">
-                    <img src="../img/2.jpg">
-                </div>
-                <div class="item-createTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-name">
-                    张三<br>XXXX-XX-XX
-                </div>
-                <div class="item-onlineTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-violate">
-                    I
-                </div>
-                <div class="item-ranking">
-                    1234
-                </div>
-                <div class="item-state">
-                    已审批
-                </div>
-                <div class="user-operation">
-                    <!--审批-->
-                    <div class="user-operation-btn" style="color: #2b7a2d">审批</div>
-                    <!--禁言-->
-                    <div class="user-operation-btn" style="color: #7d7b40">禁言</div>
-                    <!--重置密码-->
-                    <div class="user-operation-btn" style="color: #00557d">重置密码</div>
-                    <!--删除-->
-                    <div class="user-operation-btn" style="color: #7d0001">删除</div>
-                </div>
-            </div>
-            <div class="user-item">
-                <div class="item-photo">
-                    <img src="../img/2.jpg">
-                </div>
-                <div class="item-createTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-name">
-                    张三<br>XXXX-XX-XX
-                </div>
-                <div class="item-onlineTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-violate">
-                    I
-                </div>
-                <div class="item-ranking">
-                    1234
-                </div>
-                <div class="item-state">
-                    已审批
-                </div>
-                <div class="user-operation">
-                    <!--审批-->
-                    <div class="user-operation-btn" style="color: #2b7a2d">审批</div>
-                    <!--禁言-->
-                    <div class="user-operation-btn" style="color: #7d7b40">禁言</div>
-                    <!--重置密码-->
-                    <div class="user-operation-btn" style="color: #00557d">重置密码</div>
-                    <!--删除-->
-                    <div class="user-operation-btn" style="color: #7d0001">删除</div>
-                </div>
-            </div>
-            <div class="user-item">
-                <div class="item-photo">
-                    <img src="../img/2.jpg">
-                </div>
-                <div class="item-createTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-name">
-                    张三<br>XXXX-XX-XX
-                </div>
-                <div class="item-onlineTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-violate">
-                    I
-                </div>
-                <div class="item-ranking">
-                    1234
-                </div>
-                <div class="item-state">
-                    已审批
-                </div>
-                <div class="user-operation">
-                    <!--审批-->
-                    <div class="user-operation-btn" style="color: #2b7a2d">审批</div>
-                    <!--禁言-->
-                    <div class="user-operation-btn" style="color: #7d7b40">禁言</div>
-                    <!--重置密码-->
-                    <div class="user-operation-btn" style="color: #00557d">重置密码</div>
-                    <!--删除-->
-                    <div class="user-operation-btn" style="color: #7d0001">删除</div>
-                </div>
-            </div>
-            <div class="user-item">
-                <div class="item-photo">
-                    <img src="../img/2.jpg">
-                </div>
-                <div class="item-createTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-name">
-                    张三<br>XXXX-XX-XX
-                </div>
-                <div class="item-onlineTime">
-                    XXXX-XX-XX XX:XX
-                </div>
-                <div class="item-violate">
-                    I
-                </div>
-                <div class="item-ranking">
-                    1234
-                </div>
-                <div class="item-state">
-                    已审批
-                </div>
-                <div class="user-operation">
-                    <!--审批-->
-                    <div class="user-operation-btn" style="color: #2b7a2d">审批</div>
-                    <!--禁言-->
-                    <div class="user-operation-btn" style="color: #7d7b40">禁言</div>
-                    <!--重置密码-->
-                    <div class="user-operation-btn" style="color: #00557d">重置密码</div>
-                    <!--删除-->
-                    <div class="user-operation-btn" style="color: #7d0001">删除</div>
-                </div>
-            </div>
-
+            <!--<div class="user-item">-->
+                <!--<div class="item-photo">-->
+                    <!--<img src="../img/2.jpg">-->
+                <!--</div>-->
+                <!--<div class="item-createTime">-->
+                    <!--XXXX-XX-XX XX:XX-->
+                <!--</div>-->
+                <!--<div class="item-name">-->
+                    <!--张三<br>XXXX-XX-XX-->
+                <!--</div>-->
+                <!--<div class="item-onlineTime">-->
+                    <!--XXXX-XX-XX XX:XX-->
+                <!--</div>-->
+                <!--<div class="item-violate">-->
+                    <!--I-->
+                <!--</div>-->
+                <!--<div class="item-ranking">-->
+                    <!--1234-->
+                <!--</div>-->
+                <!--<div class="item-state">-->
+                    <!--已审批-->
+                <!--</div>-->
+                <!--<div class="user-operation">-->
+                    <!--&lt;!&ndash;审批&ndash;&gt;-->
+                    <!--<select class="user-upSel">-->
+                        <!--<option value="" style="display: none;" disabled selected>全部</option>-->
+                        <!--<option value="0">未审批</option>' +-->
+                    <!--</select>-->
+                    <!--&lt;!&ndash;禁言&ndash;&gt;-->
+                    <!--<div class="user-operation-btn" style="color: #7d7b40">等级修改</div>-->
+                    <!--&lt;!&ndash;重置密码&ndash;&gt;-->
+                    <!--<div class="user-operation-btn" style="color: #00557d">重置密码</div>-->
+                    <!--&lt;!&ndash;删除&ndash;&gt;-->
+                    <!--<div class="user-operation-btn" style="color: #7d0001">删除</div>-->
+                <!--</div>-->
+            <!--</div>-->
 
         </div>
 
@@ -429,11 +101,11 @@
 
                 <!--搜索项-->
                 <div class="article-lexicon-query">
-                    <input type="text" placeholder="词汇">
-                    <div class="btn-reset">
+                    <input type="text" placeholder="词汇" id="userLevelSelName">
+                    <div class="btn-reset" id="lexiconRep">
                         <i class="layui-icon" style="font-size: 18px;">&#xe669;</i>
                     </div>
-                    <div class="btn-search">
+                    <div class="btn-search" id="lexiconSel">
                         <i class="layui-icon" style="font-size: 18px;">&#xe615;</i>
                     </div>
                     <i class="layui-icon" id="addLexicon">&#xe61f;</i>
@@ -442,244 +114,27 @@
                 <!--敏感词项-->
                 <div class="article-lexicon-items">
 
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-                    <div class="lexicon-item">
-                        <p>哈哈哈</p>
-                        <i class="layui-icon">&#x1006;</i>
-                    </div>
-
+                    <!--<div class="lexicon-item">-->
+                        <!--<p>哈哈哈</p>-->
+                        <!--<i class="layui-icon">&#x1006;</i>-->
+                    <!--</div>-->
 
                 </div>
 
+            </div>
+
+            <!--敏感词模态框-->
+            <div id="lexiconAdd">
+                <input type="text" id="addLexiconName" placeholder="敏感词名称">
+                <select id="addLexiconLevel">
+                    <option value="" style="display: none;" disabled selected>全部</option>
+                    <option value="1">I</option>
+                    <option value="2">II</option>
+                    <option value="3">III</option>
+                    <option value="4">IV</option>
+                    <option value="5">V</option>
+                </select>
+                <div id="addLevelBtn">添加</div>
             </div>
 
             <!--<hr class="layui-bg-gray" style="width: 90%;margin: 0 5% 0 5%;">-->
@@ -687,28 +142,28 @@
             <!--文章管理-->
             <div class="article-items">
                 <!--搜索项-->
-                <div class="article-item-query">
-                    <!--标题-->
-                    <input type="text" placeholder="Title">
-                    <!--文章创建时间-->
-                    <input type="text" placeholder="TimeStart">
-                    <input type="text" placeholder="TimeEnd">
-                    <!--类型-->
-                    <select>
-                        <option value="" style="display: none;" disabled selected>全部</option>
-                        <option>学习</option>
-                        <option>生活</option>
-                        <option>兴趣</option>
-                        <option>提问</option>
-                    </select>
+                <!--<div class="article-item-query">-->
+                    <!--&lt;!&ndash;标题&ndash;&gt;-->
+                    <!--<input type="text" placeholder="Title">-->
+                    <!--&lt;!&ndash;文章创建时间&ndash;&gt;-->
+                    <!--<input type="text" placeholder="TimeStart" id="time3">-->
+                    <!--<input type="text" placeholder="TimeEnd" id="time4">-->
+                    <!--&lt;!&ndash;类型&ndash;&gt;-->
+                    <!--<select>-->
+                        <!--<option value="" style="display: none;" disabled selected>全部</option>-->
+                        <!--<option>学习</option>-->
+                        <!--<option>生活</option>-->
+                        <!--<option>兴趣</option>-->
+                        <!--<option>提问</option>-->
+                    <!--</select>-->
 
-                    <div class="btn-reset" style="margin: 0 15px 0 290px;">
-                        <i class="layui-icon" style="font-size: 18px;">&#xe669;</i>
-                    </div>
-                    <div class="btn-search">
-                        <i class="layui-icon" style="font-size: 18px;">&#xe615;</i>
-                    </div>
-                </div>
+                    <!--<div class="btn-reset" style="margin: 0 15px 0 290px;">-->
+                        <!--<i class="layui-icon" style="font-size: 18px;">&#xe669;</i>-->
+                    <!--</div>-->
+                    <!--<div class="btn-search">-->
+                        <!--<i class="layui-icon" style="font-size: 18px;">&#xe615;</i>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <!--文章项-->
                 <div class="article-massage-items">
 
@@ -1186,422 +641,70 @@
         <div class="noticeManage-hidden">
             <!--公告发布管理-->
             <div class="notice-manage">
-                <!--已发布的公告-->
-                <div class="notice-thePublished">
 
-                    <div class="thePublished-item">
-                        <!--文章配图-->
-                        <div class="thePublished-item-photo">
-                            <img src="../img/4.jpg">
-                        </div>
-
-                        <!--文章信息-->
-                        <div class="thePublished-item-info">
-                            <div class="item-info-title">
-                                我是标题
-                            </div>
-                            <div class="item-info-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                        </div>
-
-                        <!--文章内容-->
-                        <div class="thePublished-item-body">
-                            <p>
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                            </p>
-                        </div>
-
-                        <!--文章操作-->
-                        <div class="thePublished-item-operation">
-                            <div class="btn-reset">查看</div>
-                            <div class="btn-reset">下线</div>
-                        </div>
-
-                    </div>
-
-                    <div class="thePublished-item">
-                        <!--文章配图-->
-                        <div class="thePublished-item-photo">
-                            <img src="../img/4.jpg">
-                        </div>
-
-                        <!--文章信息-->
-                        <div class="thePublished-item-info">
-                            <div class="item-info-title">
-                                我是标题
-                            </div>
-                            <div class="item-info-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                        </div>
-
-                        <!--文章内容-->
-                        <div class="thePublished-item-body">
-                            <p>
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                            </p>
-                        </div>
-
-                        <!--文章操作-->
-                        <div class="thePublished-item-operation">
-                            <div class="btn-reset">查看</div>
-                            <div class="btn-reset">下线</div>
-                        </div>
-
-                    </div>
-                    <div class="thePublished-item">
-                        <!--文章配图-->
-                        <div class="thePublished-item-photo">
-                            <img src="../img/4.jpg">
-                        </div>
-
-                        <!--文章信息-->
-                        <div class="thePublished-item-info">
-                            <div class="item-info-title">
-                                我是标题
-                            </div>
-                            <div class="item-info-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                        </div>
-
-                        <!--文章内容-->
-                        <div class="thePublished-item-body">
-                            <p>
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                            </p>
-                        </div>
-
-                        <!--文章操作-->
-                        <div class="thePublished-item-operation">
-                            <div class="btn-reset">查看</div>
-                            <div class="btn-reset">下线</div>
-                        </div>
-
-                    </div>
-                </div>
 
                 <!--待发布的公告-->
                 <div class="notice-toPublished">
 
                     <!--搜索项-->
                     <div class="toPublished-query">
-                        <!--标题-->
-                        <input type="text" placeholder="Title">
-                        <!--创建时间-->
-                        <input type="text" placeholder="TimeStart">
-                        <input type="text" placeholder="TimeStart">
+                        <!--&lt;!&ndash;标题&ndash;&gt;-->
+                        <!--<input type="text" placeholder="Title">-->
+                        <!--&lt;!&ndash;创建时间&ndash;&gt;-->
+                        <!--<input type="text" placeholder="TimeStart">-->
+                        <!--<input type="text" placeholder="TimeStart">-->
 
-                        <div class="btn-reset">
-                            <i class="layui-icon" style="font-size: 18px;">&#xe669;</i>
-                        </div>
-                        <div class="btn-search">
-                            <i class="layui-icon" style="font-size: 18px;">&#xe615;</i>
-                        </div>
+                        <!--<div class="btn-reset">-->
+                            <!--<i class="layui-icon" style="font-size: 18px;">&#xe669;</i>-->
+                        <!--</div>-->
+                        <!--<div class="btn-search">-->
+                            <!--<i class="layui-icon" style="font-size: 18px;">&#xe615;</i>-->
+                        <!--</div>-->
 
-                        <i class="layui-icon">&#xe61f;</i>
+                        <i class="layui-icon" id="addaffiche">&#xe61f;</i>
 
                     </div>
 
                     <!--待发布文章项-->
                     <div class="toPublished-items">
 
-                        <div class="toPublished-item">
-                            <div class="toPublished-item-title">
-                                我是标题题题题题题题
-                            </div>
-                            <div class="toPublished-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="toPublished-item-operation">
-                                <!--发布-->
-                                <div class="btn-reset">发布</div>
-                                <!--编辑-->
-                                <div class="btn-reset">编辑</div>
-                                <!--删除-->
-                                <div class="btn-reset">删除</div>
-                            </div>
-                            <div class="toPublished-item-body">
-                                <img src="../img/6.jpg">
-                                <p>
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                </p>
-                            </div>
-                        </div>
+                        <!--<div class="toPublished-item">-->
+                            <!--<div class="toPublished-item-title">-->
+                                <!--我是标题题题题题题题-->
+                            <!--</div>-->
+                            <!--<div class="toPublished-item-time">-->
+                                <!--XXXX-XX-XX XX:XX-->
+                            <!--</div>-->
+                            <!--<div class="toPublished-item-operation">-->
+                                <!--&lt;!&ndash;发布&ndash;&gt;-->
+                                <!--<div class="btn-reset">发布</div>-->
+                                <!--&lt;!&ndash;编辑&ndash;&gt;-->
+                                <!--<div class="btn-reset">编辑</div>-->
+                                <!--&lt;!&ndash;删除&ndash;&gt;-->
+                                <!--<div class="btn-reset">删除</div>-->
+                            <!--</div>-->
+                            <!--<div class="toPublished-item-body">-->
+                                <!--<img src="../img/6.jpg">-->
+                                <!--<p>-->
+                                    <!--我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光-->
+                                    <!--四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识-->
+                                    <!--我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉-->
+                                    <!--我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光-->
+                                    <!--四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识-->
+                                    <!--我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉-->
+                                    <!--我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光-->
+                                    <!--四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识-->
+                                    <!--我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉-->
+                                    <!--我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光-->
+                                    <!--四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识-->
+                                    <!--我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉-->
+                                    <!--我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光-->
+                                    <!--四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识-->
+                                    <!--我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
-                        <div class="toPublished-item">
-                            <div class="toPublished-item-title">
-                                我是标题题题题题题题
-                            </div>
-                            <div class="toPublished-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="toPublished-item-operation">
-                                <!--发布-->
-                                <div class="btn-reset">发布</div>
-                                <!--编辑-->
-                                <div class="btn-reset">编辑</div>
-                                <!--删除-->
-                                <div class="btn-reset">删除</div>
-                            </div>
-                            <div class="toPublished-item-body">
-                                <img src="../img/6.jpg">
-                                <p>
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                </p>
-                            </div>
-                        </div>
-                        <div class="toPublished-item">
-                            <div class="toPublished-item-title">
-                                我是标题题题题题题题
-                            </div>
-                            <div class="toPublished-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="toPublished-item-operation">
-                                <!--发布-->
-                                <div class="btn-reset">发布</div>
-                                <!--编辑-->
-                                <div class="btn-reset">编辑</div>
-                                <!--删除-->
-                                <div class="btn-reset">删除</div>
-                            </div>
-                            <div class="toPublished-item-body">
-                                <img src="../img/6.jpg">
-                                <p>
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                </p>
-                            </div>
-                        </div>
-                        <div class="toPublished-item">
-                            <div class="toPublished-item-title">
-                                我是标题题题题题题题
-                            </div>
-                            <div class="toPublished-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="toPublished-item-operation">
-                                <!--发布-->
-                                <div class="btn-reset">发布</div>
-                                <!--编辑-->
-                                <div class="btn-reset">编辑</div>
-                                <!--删除-->
-                                <div class="btn-reset">删除</div>
-                            </div>
-                            <div class="toPublished-item-body">
-                                <img src="../img/6.jpg">
-                                <p>
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                </p>
-                            </div>
-                        </div>
-                        <div class="toPublished-item">
-                            <div class="toPublished-item-title">
-                                我是标题题题题题题题
-                            </div>
-                            <div class="toPublished-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="toPublished-item-operation">
-                                <!--发布-->
-                                <div class="btn-reset">发布</div>
-                                <!--编辑-->
-                                <div class="btn-reset">编辑</div>
-                                <!--删除-->
-                                <div class="btn-reset">删除</div>
-                            </div>
-                            <div class="toPublished-item-body">
-                                <img src="../img/6.jpg">
-                                <p>
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                </p>
-                            </div>
-                        </div>
-                        <div class="toPublished-item">
-                            <div class="toPublished-item-title">
-                                我是标题题题题题题题
-                            </div>
-                            <div class="toPublished-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="toPublished-item-operation">
-                                <!--发布-->
-                                <div class="btn-reset">发布</div>
-                                <!--编辑-->
-                                <div class="btn-reset">编辑</div>
-                                <!--删除-->
-                                <div class="btn-reset">删除</div>
-                            </div>
-                            <div class="toPublished-item-body">
-                                <img src="../img/6.jpg">
-                                <p>
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                </p>
-                            </div>
-                        </div>
-                        <div class="toPublished-item">
-                            <div class="toPublished-item-title">
-                                我是标题题题题题题题
-                            </div>
-                            <div class="toPublished-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="toPublished-item-operation">
-                                <!--发布-->
-                                <div class="btn-reset">发布</div>
-                                <!--编辑-->
-                                <div class="btn-reset">编辑</div>
-                                <!--删除-->
-                                <div class="btn-reset">删除</div>
-                            </div>
-                            <div class="toPublished-item-body">
-                                <img src="../img/6.jpg">
-                                <p>
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                    我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                    四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                    我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                </p>
-                            </div>
-                        </div>
 
                     </div>
 
@@ -1613,525 +716,7 @@
                 <!--float: left;margin: 50px 0 50px 0;"></div>-->
 
             <!--用户申请公告审批-->
-            <div class="user-notice">
-                <!--已发布的用户公告-->
-                <div class="user-notice-thePublished">
 
-                    <div class="user-notice-thePublished-item">
-
-                        <div class="user-notice-thePublished-item-title">
-                            我是标题...
-                        </div>
-
-                        <div class="user-notice-thePublished-item-time">
-                            XXXX-XX-XX XX:XX
-                        </div>
-
-                        <div class="user-notice-thePublished-item-body">
-                            <p>
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                            </p>
-                        </div>
-
-                        <div class="user-notice-thePublished-item-operation">
-
-                            <div class="btn-reset">查看</div>
-                            <div class="btn-reset">下线</div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="user-notice-thePublished-item">
-
-                        <div class="user-notice-thePublished-item-title">
-                            我是标题...
-                        </div>
-
-                        <div class="user-notice-thePublished-item-time">
-                            XXXX-XX-XX XX:XX
-                        </div>
-
-                        <div class="user-notice-thePublished-item-body">
-                            <p>
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                            </p>
-                        </div>
-
-                        <div class="user-notice-thePublished-item-operation">
-
-                            <div class="btn-reset">查看</div>
-                            <div class="btn-reset">下线</div>
-
-                        </div>
-
-                    </div>
-                    <div class="user-notice-thePublished-item">
-
-                        <div class="user-notice-thePublished-item-title">
-                            我是标题...
-                        </div>
-
-                        <div class="user-notice-thePublished-item-time">
-                            XXXX-XX-XX XX:XX
-                        </div>
-
-                        <div class="user-notice-thePublished-item-body">
-                            <p>
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                            </p>
-                        </div>
-
-                        <div class="user-notice-thePublished-item-operation">
-
-                            <div class="btn-reset">查看</div>
-                            <div class="btn-reset">下线</div>
-
-                        </div>
-
-                    </div>
-                    <div class="user-notice-thePublished-item">
-
-                        <div class="user-notice-thePublished-item-title">
-                            我是标题...
-                        </div>
-
-                        <div class="user-notice-thePublished-item-time">
-                            XXXX-XX-XX XX:XX
-                        </div>
-
-                        <div class="user-notice-thePublished-item-body">
-                            <p>
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                            </p>
-                        </div>
-
-                        <div class="user-notice-thePublished-item-operation">
-
-                            <div class="btn-reset">查看</div>
-                            <div class="btn-reset">下线</div>
-
-                        </div>
-
-                    </div>
-                    <div class="user-notice-thePublished-item">
-
-                        <div class="user-notice-thePublished-item-title">
-                            我是标题...
-                        </div>
-
-                        <div class="user-notice-thePublished-item-time">
-                            XXXX-XX-XX XX:XX
-                        </div>
-
-                        <div class="user-notice-thePublished-item-body">
-                            <p>
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                            </p>
-                        </div>
-
-                        <div class="user-notice-thePublished-item-operation">
-
-                            <div class="btn-reset">查看</div>
-                            <div class="btn-reset">下线</div>
-
-                        </div>
-
-                    </div>
-                    <div class="user-notice-thePublished-item">
-
-                        <div class="user-notice-thePublished-item-title">
-                            我是标题...
-                        </div>
-
-                        <div class="user-notice-thePublished-item-time">
-                            XXXX-XX-XX XX:XX
-                        </div>
-
-                        <div class="user-notice-thePublished-item-body">
-                            <p>
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                                我们中国的汉字落笔成画留下五千年的历史让世界都认识我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光
-                                四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉我们中国的汉字落笔成画留下五千年的历史让世界都认识
-                                我们中国的汉字一撇一捺都是故事跪举火把虔诚像道光四方田地落谷成仓古人象形声意辨恶良魃魈魁鬾魑魅魍魉
-                            </p>
-                        </div>
-
-                        <div class="user-notice-thePublished-item-operation">
-
-                            <div class="btn-reset">查看</div>
-                            <div class="btn-reset">下线</div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!--待审批的用户公告-->
-                <div class="user-notice-pending">
-
-                    <!--待审批的用户公告查询-->
-                    <div class="user-notice-pending-query">
-                        <!--用户名-->
-                        <input type="text" placeholder="Title">
-                        <!--标题-->
-                        <input type="text" placeholder="TimeStart">
-                        <input type="text" placeholder="TimeEnd">
-
-                        <div class="btn-reset">
-                            <i class="layui-icon" style="font-size: 18px;">&#xe669;</i>
-                        </div>
-                        <div class="btn-search">
-                            <i class="layui-icon" style="font-size: 18px;">&#xe615;</i>
-                        </div>
-
-                        <!--时间排序-->
-                        <i class="layui-icon" id="userNotice-timeRank">&#xe61a;</i>
-
-                    </div>
-
-                    <div class="user-notice-pending-items">
-
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-                        <div class="user-notice-pending-item">
-                            <div class="user-notice-pending-item-time">
-                                XXXX-XX-XX XX:XX
-                            </div>
-                            <div class="user-notice-pending-item-title">
-                                <p>
-                                    我是标题。。。。
-                                </p>
-                            </div>
-                            <div class="user-notice-pending-item-operation">
-                                <div class="btn-reset">查看</div>
-                                <div class="btn-reset">驳回</div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
         </div>
 
         <!--模块隐藏提示语-->
@@ -2140,12 +725,45 @@
         </div>
     </div>
 
+    <!--公告弹窗-->
+    <div id="afficheModel">
+        <div class="afficheModel-title">
+            <input id="afficheModel-title-input">
+        </div>
+        <div class="afficheModel-info">
+            <div class="afficheModel-info-name" style="width: 35%;">管理员</div>
+            <div class="afficheModel-info-time" style="width: 65%;"></div>
+        </div>
+        <div class="afficheModel-img">
+            <input type="file" id="photo" style="display: none" name="articleImg">
+            <img src="../img/add.jpg" id="img">
+        </div>
+        <button id="upload">上传</button>
+        <div class="afficheModel-console">
+            <textarea id="content"></textarea>
+        </div>
+        <button class="afficheModel-btn" id="afficheModel-btn1">保存</button>
+        <button class="afficheModel-btn" id="afficheModel-btn2">发布</button>
+    </div>
+
 
 </body>
 
+<div id="userLevel">
+    <select id="userLevelSel">
+        <option value="" style="display: none;" disabled selected>全部</option>
+        <option value="1">I</option>
+        <option value="2">II</option>
+        <option value="3">III</option>
+        <option value="4">IV</option>
+        <option value="5">V</option>
+    </select>
+    <div id="userLevelBtn">确定</div>
+</div>
 
 
 <script src="../layui/layui.js"></script>
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/adminIndex.js"></script>
+<script src="../js/tool/config.js"></script>
 </html>

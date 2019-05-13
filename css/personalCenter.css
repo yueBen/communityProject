@@ -171,7 +171,8 @@ html,body{
     background: rgba(255,255,255,0.6);
 }
 .personalCenter-bottom-center{
-    width: 70%;
+    /*width: 70%;*/
+    width: 78%;
     height: 99%;
     display: inline-block;
     float: left;

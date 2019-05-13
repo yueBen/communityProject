@@ -42,23 +42,23 @@ layui.use(['laytpl','layer','laydate'],function(){
     }
 
    //页面动画
-    {
-        $('.personalCenter-bottom-left').click(function () {
-            $('#bottom-center-hidden').hide("normal");
-            $('.personalCenter-bottom-center').animate({width: '6%'},400);
-            $('.personalCenter-bottom-left').animate({width: '70%'},400,function () {
-                $('#bottom-left-hidden').show("normal");
-            });
-        });
-
-        $('.personalCenter-bottom-center').click(function () {
-            $('#bottom-left-hidden').hide("normal");
-            $('.personalCenter-bottom-left').animate({width: '6%'},400);
-            $('.personalCenter-bottom-center').animate({width: '70%'},400);
-            $('#bottom-center-hidden').css('display','inherit');
-            $(".personalCenter-bottom-center-title").show("normal");
-        });
-    }
+   //  {
+   //      $('.personalCenter-bottom-left').click(function () {
+   //          $('#bottom-center-hidden').hide("normal");
+   //          $('.personalCenter-bottom-center').animate({width: '6%'},400);
+   //          $('.personalCenter-bottom-left').animate({width: '70%'},400,function () {
+   //              $('#bottom-left-hidden').show("normal");
+   //          });
+   //      });
+   //
+   //      $('.personalCenter-bottom-center').click(function () {
+   //          $('#bottom-left-hidden').hide("normal");
+   //          $('.personalCenter-bottom-left').animate({width: '6%'},400);
+   //          $('.personalCenter-bottom-center').animate({width: '70%'},400);
+   //          $('#bottom-center-hidden').css('display','inherit');
+   //          $(".personalCenter-bottom-center-title").show("normal");
+   //      });
+   //  }
 
     //添加好友弹窗
     {
@@ -307,7 +307,6 @@ layui.use(['laytpl','layer','laydate'],function(){
                 dataType: "json",
                 contentType: "application/json;charset=utf-8",
                 success: function (data) {
-                    console.log(data);
                     if (data.ok) {
                         layer.closeAll();
                         layer.msg(data.data,{
@@ -333,6 +332,7 @@ layui.use(['laytpl','layer','laydate'],function(){
             },
             contentType: false,
             success: function (data) {
+                console.log(data);
                 myFriUser(data.data);
             }
         });
@@ -353,15 +353,15 @@ layui.use(['laytpl','layer','laydate'],function(){
 
     $(".friends-items").on("mouseenter", ".friends-item", function () {
         var uid = $(this).attr("name");
-        $(".friends-item-name[name=" + uid + "]").animate({width: '60%'},400,function () {
-            $(".friends-item-del[name=" + uid + "]").show();
+        $(".friends-item-name[name=" + uid + "]").animate({width: '60%'},100,function () {
+            $(".friends-item-del[name=" + uid + "]").show(200);
         });
     });
 
     $(".friends-items").on("mouseleave", ".friends-item", function () {
         var uid = $(this).attr("name");
-        $(".friends-item-del[name=" + uid + "]").hide(400, function () {
-            $(".friends-item-name[name=" + uid + "]").animate({width: '76%'},400);
+        $(".friends-item-del[name=" + uid + "]").hide(100, function () {
+            $(".friends-item-name[name=" + uid + "]").animate({width: '76%'},200);
         });
     });
 
@@ -381,7 +381,6 @@ layui.use(['laytpl','layer','laydate'],function(){
             dataType: "json",
             contentType: "application/json;charset=utf-8",
             success: function (data) {
-                console.log(data);
                 if (data.ok) {
                     getUser();
                     queryfriendArticle();
@@ -400,7 +399,6 @@ layui.use(['laytpl','layer','laydate'],function(){
                         dataType: "json",
                         contentType: "application/json;charset=utf-8",
                         success: function (data) {
-                            console.log(data);
                             if (data.ok) {
                                 getUser();
                                 queryfriendArticle();

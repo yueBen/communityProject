@@ -85,6 +85,7 @@
     font-family: 宋体;
     font-size: 16px;
     color: #fff9ec;
+    text-align: center;
 }
 
 
@@ -491,3 +492,126 @@
     cursor: pointer;
 }
 
+.marquee-item{
+    display: inline-block;
+    float: left;
+    width: auto;
+    height: 45px;
+    line-height: 45px;
+    font-family: 楷体;
+    font-size: 22px;
+    margin: 0 10px;
+    text-decoration:underline;
+    cursor: pointer;
+}
+#afficheModel{
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    border-radius: 20px;
+    background: #e5e5a4;
+    text-align: center;
+}
+#afficheModel::-webkit-scrollbar{
+    display: none;
+}
+.afficheModel-title{
+    width: 100%;
+    line-height: 40px;
+    margin: 10px 0 0 0;
+}
+.afficheModel-title>input{
+    width: 100%;
+    line-height: 40px;
+    border-bottom: 1px solid #000000;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    background: transparent;
+    text-align: center;
+    font-size: 20px;
+}
+.afficheModel-info{
+    width: 100%;
+    line-height: 40px;
+    margin: 10px 0 0 0;
+}
+.afficheModel-info>div{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+.afficheModel-img{
+    width: 100%;
+    height: 140px;
+    line-height: 80px;
+    margin: 60px 0 0 0;
+}
+.afficheModel-img>img{
+    width: 60%;
+    height: 120px;
+    margin: 0 20%;
+}
+.afficheModel-img>input{
+    margin: 0;
+}
+#upload{
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    color: #000000;
+    background: transparent;
+}
+#upload:active{
+    border: 1px solid #ffb47c;
+    color: #ffb47c;
+}
+
+.afficheModel-console{
+    width: 100%;
+    height: 400px;
+    margin: 10px 0 0 0;
+}
+.afficheModel-console>textarea{
+    width: 100%;
+    height: 100%;
+    font-family: 仿宋;
+    font-size: 22px;
+}
+.afficheModel-btn{
+    width: 80px;
+    height: 40px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    color: #000000;
+    background: transparent;
+    margin: 10px 10px 0 10px;
+}
+.afficheModel-btn:active{
+    border: 1px solid #ffb47c;
+    color: #ffb47c;
+}
+.btn-reset-this{
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #d1d4d5;
+    border-radius: 10px;
+    background: rgba(0,0,0,0);
+    color: #d1d4d5;
+    font-family: 宋体;
+    display: inline-block;
+    /*双击不选中文本*/
+    -moz-user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}

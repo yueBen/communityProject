@@ -5,6 +5,8 @@ layui.use('layer',function () {
     //找圆
     $(".user-photo").height($(".user-photo").width());
 
+    initmarquee();
+
     var person = JSON.parse(sessionStorage.getItem("user"));
     if (person != null) {
         getUserInfo(person);
@@ -396,7 +398,7 @@ layui.use('layer',function () {
             if ($("#check-code-input").val().toUpperCase() == check.toUpperCase()) {
                 return true;
             } else {
-                return true;
+                // return true;
                 return false;
             }
         }
@@ -407,6 +409,10 @@ layui.use('layer',function () {
     function getUserInfo(user) {
         $("#userLanding").attr("value",user.name);
         $("#user-photo>img").attr("src",path+"/personInfo/personInfo/" + user.uid + "/down?t="+(new Date()).getTime());
+        $("#articleNum").text(user.messageNum);
+        $("#commNum").text(user.commentNum);
+        $("#colleNum").text(user.ranking);
+        $("#likeNum").text(user.praiseNum);
     }
 
     //登录注册
@@ -470,7 +476,6 @@ layui.use('layer',function () {
                             person = JSON.parse(sessionStorage.getItem("user"));
                             getUserInfo(data.data);
                             if (data.data.uid == "0000000001") {
-                                console.log("toPage");
                                 window.open("page/adminIndex.html","_blank");
                             }
                             cleanLoginRegist();
@@ -571,5 +576,124 @@ layui.use('layer',function () {
         $("#regPwd").val("");
         $("#regPwdRep").val("");
     }
+
+
+    function initmarquee() {
+        $.ajax({
+            type: "get",
+            url: path + "/admin/affiche/page",
+            data: {
+                "type": 2
+            },
+            contentType: false,
+            success: function (data) {
+                if (data.ok){
+                    initAfficheHtml(data.data.list)
+                }
+            }
+        });
+    }
+
+    function initAfficheHtml(arr) {
+        $("#marquee").html("");
+        var h = '';
+        $.each(arr,function (i, v) {
+           h += '<div class="marquee-item" name="' + v.id + '">' + v.title + '</div>'
+        });
+        $("#marquee").html(h);
+
+    }
+
+    $("body").on("click", '.marquee-item', function () {
+        var id = $(this).attr("name");
+        $.ajax({
+            type: "get",
+            url: path + "/admin/affiche/"+id,
+            contentType: false,
+            success: function (data) {
+                $("#afficheModel-title-input").val(data.data.title);
+                $(".afficheModel-info-time").text(toDate(data.data.createTime,0));
+                $("#img").attr("src", path + "/article/article/" + data.data.phontPath + "/down");
+                $("#content").val(data.data.content);
+            }
+        });
+        layer.open({
+            type: 1,    //弹窗类型,2为页面层
+            title: false,   //弹出标题
+            content: $("#afficheModel"),
+            skin: 'modelBg',    //弹窗样式
+            area: ['500px','750px'],  //弹窗大小
+            offset: ['100px','780px'],  //弹窗位置[top,left]，默认auto垂直水平居中
+            closeBtn: 2,     //右上角关闭按钮，有1、2两种样式，0是不显示
+            shade: 0,     //弹层外区域,可自定义样式shade: [0.8, '#393D49']
+            shadeClose: false,  //点击弹层外区域关闭
+            anim: 0,    //弹出动画
+            isOutAnim: true,    //关闭动画
+            fixed: true,    //鼠标滚动时，层是否固定在可视区域
+            resize: false,  //弹窗大小是否可拖动
+            //scrollbar: true   // 是否允许浏览器出现滚动条
+            cancel: function () {
+                //右上角关闭按钮触发的回调
+            },
+            success: function () {
+
+            }
+        });
+    });
+
+
+    initArticleRanking();
+    function initArticleRanking() {
+        $.ajax({
+            type: "get",
+            url: path + "/article/article/articleRanking",
+            data: {
+                "id": "1"
+            },
+            contentType: false,
+            success: function (data) {
+                initArticleRankingHtml(1,data.data);
+            }
+        });
+        $.ajax({
+            type: "get",
+            url: path + "/article/article/articleRanking",
+            data: {
+                "id": "2"
+            },
+            contentType: false,
+            success: function (data) {
+                initArticleRankingHtml(2,data.data);
+            }
+        });
+        $.ajax({
+            type: "get",
+            url: path + "/article/article/articleRanking",
+            data: {
+                "id": "3"
+            },
+            contentType: false,
+            success: function (data) {
+                initArticleRankingHtml(3,data.data);
+            }
+        });
+
+    }
+    
+    function initArticleRankingHtml(id,arr) {
+        $("#top"+id).html("");
+        var h = '';
+        $.each(arr, function (i, v) {
+            h += '<div class="top-item" name="' + v.id + '"><p>' + v.title + '</p></div>';
+        });
+        $("#top"+id).html(h);
+    }
+
+    $("body").on("click", ".top-item", function () {
+        var id = $(this).attr("name");
+        window.open("page/articlePage.html?id="+id);
+    });
+
+
 
 });

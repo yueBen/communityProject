@@ -16,39 +16,46 @@
     </div>
 
     <div class="operation">
-        <div class="div-btn" id="previewBtn">预览</div>
-        <!--文章类型-->
-        <select id="operation-1">
-            <option value="" style="display: none;" selected>类型</option>
-            <option value="0">学习</option>
-            <option value="1">生活</option>
-            <option value="2">兴趣</option>
-            <option value="3">提问</option>
-        </select>
+        <div id="model_1">
 
-        <!--文章标签-->
-        <select id="operation-2" style="margin: 0 3px 0 0">
-            <option value="" style="display: none;" selected>标签</option>
-        </select>
+            <div class="div-btn" id="previewBtn">预览</div>
+            <!--文章类型-->
+            <select id="operation-1">
+                <option value="" style="display: none;" selected>类型</option>
+                <option value="0">学习</option>
+                <option value="1">生活</option>
+                <option value="2">兴趣</option>
+                <option value="3">提问</option>
+            </select>
 
-        <!--添加标签按钮-->
-        <div class="div-btn" style="width: 40px;height: 40px;" id="operation-2-1">
-            <i class="layui-icon">&#xe642;</i>
+            <!--文章标签-->
+            <select id="operation-2" style="margin: 0 3px 0 0">
+                <option value="" style="display: none;" selected>标签</option>
+            </select>
+
+            <!--添加标签按钮-->
+            <!--<div class="div-btn" style="width: 40px;height: 40px;" id="operation-2-1">-->
+                <!--<i class="layui-icon">&#xe642;</i>-->
+            <!--</div>-->
+
+            <!--发布日期-->
+            <input type="text" class="layui-input" style="width: 240px" id="operation-3">
+
+            <!--发布按钮-->
+            <div class="div-btn" style="color: #65e53b;" id="operation-4">发布</div>
+
+            <!--保存按钮-->
+            <div class="div-btn" style="color: #ff5200" id="operation-5">保存</div>
+
+            <!--存草稿箱按钮-->
+            <div class="div-btn" style="color: #befcff" id="operation-6">存草稿箱</div>
+
         </div>
+        <div id="model_2">
+            <div class="div-btn" style="color: #65e53b;" id="operation-7">通过</div>
 
-        <!--发布日期-->
-        <input type="text" class="layui-input" style="width: 240px" id="operation-3">
-
-        <!--发布按钮-->
-        <div class="div-btn" style="color: #65e53b;" id="operation-4">发布</div>
-
-        <!--保存按钮-->
-        <div class="div-btn" style="color: #ff5200" id="operation-5">保存</div>
-
-        <!--存草稿箱按钮-->
-        <div class="div-btn" style="color: #befcff" id="operation-6">存草稿箱</div>
-
-
+            <div class="div-btn" style="color: #ff5200" id="operation-8">驳回</div>
+        </div>
     </div>
 
     <div style="background: rgba(12,12,12,0.6);width: 95%;height: 730px;margin: 20px 2.5% 0 2.5%;overflow: hidden;

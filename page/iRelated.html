@@ -1,463 +1,49 @@
 <link rel="stylesheet" href="../css/iRelated.css"/>
+<link rel="stylesheet" href="../layui/css/layui.css">
 <link rel="stylesheet" href="../css/tool/myCss.css">
+<link rel="stylesheet" href="../css/tool/modelCss.css">
 <div class="iRelated">
     <div class="iRelated-top" style="width: 74%;margin: 0 1% 1% 0;">
-        <input type="text" placeholder="TimeStart">
-        <input type="text" placeholder="TimeEnd">
+        <input type="text" placeholder="TimeStart" id="TimeStart">
+        <input type="text" placeholder="TimeEnd" id="TimeEnd">
 
-        <div class="btn-reset" style="margin: 0 10px 0 20px">重置</div>
-        <div class="btn-search">搜索</div>
+        <div class="btn-reset" style="margin: 0 10px 0 20px" id="repBtn">重置</div>
+        <div class="btn-search" id="selBtn">搜索</div>
 
-        <div class="btn-reset" style="width: 120px;border-radius: 10px;margin: 0 0 0 60px;">一键已读</div>
-        <div class="btn-reset" style="width: 120px;border-radius: 10px;margin: 0 0 0 20px;">未读/已读</div>
-        <div class="btn-reset" style="width: 120px;border-radius: 10px;margin: 0 0 0 20px;">清空已读</div>
+        <div class="btn-reset" style="width: 120px;border-radius: 10px;margin: 0 0 0 60px;" id="btn1">一键已读</div>
+        <div class="btn-reset" style="width: 120px;border-radius: 10px;margin: 0 0 0 20px;" id="btn2">未读/已读</div>
+        <div class="btn-reset" style="width: 120px;border-radius: 10px;margin: 0 0 0 20px;" id="btn3">清空已读</div>
 
     </div>
 
     <div class="iRelated-top iRelated-top-item" style="margin: 0 0 1% 0;">
-        <div class="iRelated-top-item-text">1</div>
-        <div class="iRelated-top-item-text" style="">动态</div>
+        <div class="iRelated-top-item-text" id="articleNum"></div>
+        <div class="iRelated-top-item-text" style="">文章</div>
     </div>
 
     <div class="iRelated-top iRelated-top-item">
-        <div class="iRelated-top-item-text">12</div>
-        <div class="iRelated-top-item-text">关注</div>
+        <div class="iRelated-top-item-text" id="commNum"></div>
+        <div class="iRelated-top-item-text">评论</div>
     </div>
 
     <div class="iRelated-top iRelated-top-item">
-        <div class="iRelated-top-item-text">123</div>
+        <div class="iRelated-top-item-text" id="colleNum"></div>
         <div class="iRelated-top-item-text">收藏</div>
     </div>
 
     <div class="iRelated-top iRelated-top-item">
-        <div class="iRelated-top-item-text">1234</div>
-        <div class="iRelated-top-item-text">粉丝</div>
+        <div class="iRelated-top-item-text" id="likeNum"></div>
+        <div class="iRelated-top-item-text">赞</div>
     </div>
 
     <div class="iRelated-bottom">
         <!--消息项-->
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
 
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
 
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
-
-        <div class="iRelated-message-item">
-            <div class="massage-item-title">
-                <div class="item-title-time i-b-left">
-                    XXXX-XX-XX
-                </div>
-                <div class="item-title-btn i-b-left" style="margin: 5px 0 5px 10%;">已读</div>
-                <div class="item-title-btn i-b-left">删除</div>
-            </div>
-            <hr style="width: 94%;border: 0.5px solid #000000;margin: 0 3% 0 3%;">
-            <div class="massage-item-content">
-                <div style="line-height: 32px;"></div>
-            </div>
-        </div>
 
     </div>
 </div>
 <script src="../layui/layui.js"></script>
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/iRelated.js"></script>
+<script src="../js/tool/config.js"></script>

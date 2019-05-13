@@ -1,137 +1,36 @@
-<link rel="stylesheet" href="../css/tool/myCss.css"/>
 <link rel="stylesheet" href="../css/historical.css"/>
+<link rel="stylesheet" href="../layui/css/layui.css">
+<link rel="stylesheet" href="../css/tool/myCss.css">
+<link rel="stylesheet" href="../css/tool/modelCss.css">
 <div class="historical">
-    <div class="historical-top">
-        <!--
-            浏览历史搜索项
-            1、文章作者
-            2、文章标题
-            3、文章类型
-            4、发布时间
-        -->
-        <input type="text" class="historical-input" placeholder="Author">
-        <input type="text" class="historical-input" placeholder="Title">
-        <input type="text" class="historical-input" placeholder="Type">
-        <input type="text" class="historical-input" placeholder="TimeStart">
-        <input type="text" class="historical-input" placeholder="TimeEnd">
+    <!--<div class="historical-top">-->
+        <!--&lt;!&ndash;-->
+            <!--浏览历史搜索项-->
+            <!--1、文章作者-->
+            <!--2、文章标题-->
+            <!--3、文章类型-->
+            <!--4、发布时间-->
+        <!--&ndash;&gt;-->
+        <!--<input type="text" class="historical-input" placeholder="Author">-->
+        <!--<input type="text" class="historical-input" placeholder="Title">-->
+        <!--<input type="text" class="historical-input" placeholder="Type">-->
+        <!--<input type="text" class="historical-input" placeholder="TimeStart">-->
+        <!--<input type="text" class="historical-input" placeholder="TimeEnd">-->
 
-        <div class="btn-search historical-btn">
-            搜索
-        </div>
+        <!--<div class="btn-search historical-btn">-->
+            <!--搜索-->
+        <!--</div>-->
 
-        <div class="historical-btn btn-reset" style="color: #d1d4d5;margin: 13px 0 0 0;">
-            重置
-        </div>
+        <!--<div class="historical-btn btn-reset" style="color: #d1d4d5;margin: 13px 0 0 0;">-->
+            <!--重置-->
+        <!--</div>-->
 
-    </div>
+    <!--</div>-->
     <!--浏览历史文章-->
     <div class="historical-bottom">
-        <!--文章项-->
-        <div class="historical-article-item">
-        <!--作者头像-->
-        <div class="author-photo">
-            <img style="width: 100%;height: 100%;border-radius: 50%" src="../img/4.jpg">
-        </div>
-        <!--文章内容-->
-        <div class="author-content">
-            <!--文本部分-->
-            <div class="i-b-left" style="width: 84%;height: 100px;">
-                <!--标题-->
-                <div class="i-b-left" style="width: 400px;line-height: 30px;
-                            text-align: center;font-size: 23px;font-family: 楷体;color: #fbffd5;">
-                    我是标题
-                </div>
-                <!--作者-->
-                <div class="i-b-left" style="width: 200px;line-height: 30px;
-                            text-align: center;font-size: 20px;font-family: 楷体;color: #cee0ff;">
-                    滴滴滴
-                </div>
-                <!--日期-->
-                <div class="i-b-left" style="width: 200px;line-height: 30px;
-                            text-align: center;font-size: 20px;font-family: 楷体;color: #ff8f1a;">
-                    XXXX-XX-XX
-                </div>
-                <!--正文-->
-                <div class="author-content-body" style="width: 98%;line-height: 33px;font-size: 18px;margin: 0 0 0 2%">
-                    <div>
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                    </div>
-                    <marquee loop="-1" direction="up" height="60">
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                        甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角旮旯甲乙丙丁魑魅魍魉醍醐灌顶犄角
-                    </marquee>
-                </div>
-            </div>
-            <!--内容图片-->
-            <div class="i-b-left" style="width: 16%;height: 100px;">
-                <img style="width: 145px;height: 90px;margin: 5px 5px 5px 10px;border-radius: 15px" src="../img/2.jpg">
-            </div>
-        </div>
-        <!--文章指标-->
-        <div class="article-num">
-            <div class="border-L-rad" style="width: 50%;height: 44px;">
-                <img style="width: 80%;height: 80%;margin: 10%;" src="../img/icon/white/13.png">
-            </div>
-            <div class="border-R-rad" style="width: 50%;line-height: 44px;background: #d1d4d5;text-align: center;
-                        color: #23262E">
-                2324
-            </div>
-        </div>
-        <div class="article-num">
-            <div class="border-L-rad" style="width: 50%;height: 44px;">
-                <img style="width: 80%;height: 80%;margin: 10%;" src="../img/icon/white/collect_1.png">
-            </div>
-            <div class="border-R-rad" style="width: 50%;line-height: 44px;background: #d1d4d5;text-align: center;
-                        color: #23262E">
-                22
-            </div>
-        </div>
-        <div class="article-num">
-            <div class="border-L-rad" style="width: 50%;height: 44px;">
-                <img style="width: 80%;height: 80%;margin: 10%;" src="../img/icon/white/4.png">
-            </div>
-            <div class="border-R-rad" style="width: 50%;line-height: 44px;background: #d1d4d5;text-align: center;
-                        color: #23262E">
-                8
-            </div>
-        </div>
-        <div class="article-num historical-btn-del">
-            删除记录
-        </div>
-    </div>
-
-
-
     </div>
 </div>
 <script src="../layui/layui.js"></script>
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/historical.js"></script>
+<script src="../js/tool/config.js"></script>

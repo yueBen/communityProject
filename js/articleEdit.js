@@ -3,16 +3,17 @@ layui.use(['layer','laydate'],function () {
         $ = layui.$,
         laydate = layui.laydate;
 
-    //判断是新增(0)还是修改(1)文章
+    //判断是新增(0)还是修改(1)文章,(2)管理员查看文章
     var status = getParam('status',location.search);
     var user = JSON.parse(sessionStorage.getItem("user"));
     var addType;
 
-    //加载标签
-    loadingLabel();
-
     //修改文章
-    if (status == 1) {
+    if (status != 0) {
+        if (status == 2) {
+            $("#model_1").attr("style","display: none;");
+            $("#model_2").attr("style","display: inline;");
+        }
         var aid = getParam('aid',location.search);
         $.ajax({
             type: 'get',
@@ -30,6 +31,9 @@ layui.use(['layer','laydate'],function () {
             }
         });
     }
+
+    //加载标签
+    loadingLabel();
 
     var con = window.wangEditor;
     var e = new con('#content');
@@ -326,6 +330,52 @@ layui.use(['layer','laydate'],function () {
         });
 
     }
+
+    //驳回or通过
+    $("#operation-7").click(function () {
+        $.ajax({
+            url: path + "/article/article/update",
+            type: "post",
+            data: JSON.stringify({
+                "status": 8,
+                "id": aid
+            }),
+            dataType: "json",
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+                if (data.ok) {
+                    layer.msg("文章已通过！！", {
+                        time: 1000
+                    }, function () {
+                        window.close();
+                    });
+
+                }
+            }
+        });
+    });
+    $("#operation-8").click(function () {
+        $.ajax({
+            url: path + "/article/article/update",
+            type: "post",
+            data: JSON.stringify({
+                "status": 7,
+                "id": aid
+            }),
+            dataType: "json",
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+                if (data.ok) {
+                    layer.msg("文章已驳回！！", {
+                        time: 1000
+                    }, function () {
+                        window.close();
+                    });
+
+                }
+            }
+        });
+    });
 
 
 });

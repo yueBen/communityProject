@@ -1,48 +1,10 @@
 <link rel="stylesheet" href="../css/myAttention.css"/>
+<link rel="stylesheet" href="../layui/css/layui.css">
+<link rel="stylesheet" href="../css/tool/myCss.css">
+<link rel="stylesheet" href="../css/tool/modelCss.css">
 <div class="myAttention">
     <!--关注的人新发布的文章-->
     <div class="myAttention-left">
-
-        <div class="myAttention-left-item">
-            <div class="item-photo"></div>
-            <div class="item-article">
-                <div class="item-article-title">我是标题</div>
-                <div class="item-article-time">XXXX-XX-XX XX:XX</div>
-                <div class="item-article-author">XXX</div>
-                <div class="item-article-text">
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-            <div class="item-state">
-                <div style="width: 100%;height: 36px;margin: 0 0 4px 0;border-radius: 10px;overflow: hidden">
-                    <!--该文章获得的赞-->
-                    <div class="item-state-item" style="margin: 0 2.5% 0 0;">
-                        <div class="item-state-item-img"></div>
-                        <div class="item-state-item-num"></div>
-                    </div>
-                    <!--该文章获得的踩-->
-                    <div class="item-state-item" style="margin: 0 0 0 2.5%;">
-                        <div class="item-state-item-img"></div>
-                        <div class="item-state-item-num"></div>
-                    </div>
-                </div>
-                <div style="width: 100%;height: 36px;margin: 8px 0 0 0;border-radius: 10px;overflow: hidden">
-                    <!--该文章的评论量-->
-                    <div class="item-state-item" style="margin: 0 2.5% 0 0;">
-                        <div class="item-state-item-img"></div>
-                        <div class="item-state-item-num"></div>
-                    </div>
-                    <!--该文章的浏览量-->
-                    <div class="item-state-item" style="margin: 0 0 0 2.5%;">
-                        <div class="item-state-item-img"></div>
-                        <div class="item-state-item-num"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="layui-bg-blue" style="width: 94%;margin: 0 0 0 2%">
 
     </div>
     <div class="myAttention-right">
@@ -50,26 +12,22 @@
         <div class="myAttention-right-top">
             <!--搜索框-->
             <input style="width: 73%;height: 30px;margin: 10px 0 0 5%;border-radius: 10px;outline:none;
-                background: transparent;padding: 0 0 0 6px;color: #FFFFFF;" type="text" placeholder="查找作者">
+                background: transparent;padding: 0 0 0 6px;color: #FFFFFF;" type="text" id="queryBloggerName" placeholder="查找作者">
             <button style="width: 14%;height: 30px;margin: 10px 5% 0 0;border-radius: 10px;outline:none;" id="queryBloggerBtn">+</button>
             <!--搜索结果-->
             <div style="width: 89%;margin: 0 5% 10px 5%;background: rgba(255,255,255,0.6);border-radius: 10px;
             padding: 5px 0 1px 0;display: none;" id="queryBlogger">
-                <div class="query-blogger">
-                    <div class="query-blogger-img">
-                        <img src="../img/2.jpg" style="width: 100%;height: 100%;border-radius: 50%">
-                    </div>
-                    <div class="query-blogger-name">秦明</div>
-                    <div class="query-blogger-attention">关注</div>
-                </div>
             </div>
 
             <!--我已经关注的博主-->
-            <div class="my-attention">
-                <div class="my-attention-img"></div>
-                <div class="my-attention-name">王二牛儿</div>
-                <div class="my-attention-del" style="display: none">del</div>
+            <div class="my-attentions">
+                <!--<div class="my-attention">-->
+                    <!--<div class="my-attention-img"></div>-->
+                    <!--<div class="my-attention-name">王二牛儿</div>-->
+                    <!--<div class="my-attention-del" style="display: none">del</div>-->
+                <!--</div>-->
             </div>
+
         </div>
         <!--博主推荐六个（根据浏览爱好推荐）-->
         <div class="myAttention-right-bottom">
@@ -85,3 +43,4 @@
 <script src="../layui/layui.js"></script>
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/myAttention.js"></script>
+<script src="../js/tool/config.js"></script>

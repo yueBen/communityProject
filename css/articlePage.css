@@ -395,3 +395,23 @@
     font-family: 楷体;
     font-weight: bold;
 }
+.top-item{
+    width: 100%;
+    height: 40px;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+}
+.top-item>p{
+    width: 100%;
+    line-height: 40px;
+    font-family: "Courier New";
+    font-size: 22px!important;
+    /*word-break: keep-all;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 宋体;
+    font-size: 16px;
+    color: #fff9ec;
+    text-align: center;
+}
